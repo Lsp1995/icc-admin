@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <selection name="com.vnbig.trading.ordersStatus.select">
+        <option value="0">Wait for new</option>
+        <option value="1">Newly build</option>
+        <option value="2">Partial transaction</option>
+        <option value="3">Complete transaction</option>
+        <option value="4">Wait for revocation</option>
+        <option value="5">Revoke</option>
+        <option value="6">Partial transaction and cancellation</option>
+        <option value="7">modify</option>
+        <option value="8">Stop it</option>
+        <option value="9">refuse</option>
+        <option value="10">Overdue</option>
+    </selection>
+    <selection name="com.vnbig.trading.feeType.select">
+        <option value="1">Bid</option>
+        <option value="2">Ask</option>
+    </selection>
+
+
+    <!--     资金     -->
+
+    <selection name="com.vnbig.FinancialTransfer.outStatus.select">
+        <option value="0">processing</option>
+        <option value="1">processingSuccess</option>
+        <option value="2">Processing Failed</option>
+    </selection>
+
+    <selection name="com.vnbig.inOutMoney.status.select">
+        <option value="0">To be reviewed</option>
+        <option value="1">Review passed</option>
+        <option value="2">Review failed</option>
+        <option value="3">To be reviewed second time</option>
+        <option value="4">To be finished</option>
+    </selection>
+    <selection name="com.vnbig.AssetWater.cause.select">
+        <option value="0">Charge money</option>
+        <option value="1">Recharge commission</option>
+        <option value="2">Mention money</option>
+        <option value="3">Withdrawal fee</option>
+        <option value="4">buy</option>
+        <option value="5">Buying commission</option>
+        <option value="6">sell</option>
+        <option value="7">Selling commission</option>
+        <option value="8">borrowing</option>
+        <option value="9">Loan interest</option>
+        <option value="10">lending</option>
+        <option value="11">Loan proceeds</option>
+        <option value="12">transfer</option>
+        <option value="13">Transfer fee</option>
+        <option value="14">freeze</option>
+        <option value="15">thaw</option>
+        <option value="16">defrost (partial withdrawal)</option>
+        <option value="17">thaw (return of trade)</option>
+        <option value="18">defrost (full withdrawal)</option>
+        <option value="19">administrator award</option>
+        <option value="20">activity award</option>
+        <option value="21">Unfreeze (withdrawal rejected)</option>
+        <option value="22">Trading cashback</option>
+        <option value="23">Transaction cashback deduct capital pool</option>
+        <option value="24">Reward drop</option>
+        <option value="25">Using bonuses</option>
+        <option value="99">Initialize the</option>
+    </selection>
+
+    <selection name="com.vnbig.inOutMoney.freezeItem.select">
+        <option value="0">To be reviewed</option>
+        <option value="1">Review passed</option>
+        <option value="2">Review failed</option>
+        <option value="3">To be reviewed second time</option>
+        <option value="4">To be finished</option>
+    </selection>
+
+    <selection name="com.vnbig.capitalDetail.tag.select">
+        <option value="0">principal</option>
+        <option value="1">freeze</option>
+        <option value="2">financing</option>
+        <option value="3">Financing interest</option>
+        <option value="4">with funding</option>
+        <option value="5">With a yield</option>
+        <option value="6">reward</option>
+        <option value="7">poundage</option>
+        <option value="8">locked position</option>
+    </selection>
+
+    <selection name="com.vnbig.financial.grantAwardStatus.select">
+        <option value="0">To be audited</option>
+        <option value="1">Audit failure</option>
+        <option value="2">Audit success</option>
+        <option value="3">Already airdrop</option>
+    </selection>
+    <selection name="com.vnbig.capitalAccount.category.select">
+        <option value="0">Platform account</option>
+        <option value="1">The user account</option>
+        <option value="2">Third party recharge account</option>
+        <option value="3">Fund manager account</option>
+    </selection>
+
+    <selection name="com.vnbig.capitalAccount.type.select">
+        <option value="0">Hot wallet account (out)</option>
+        <option value="1">Hot wallet account (in)</option>
+        <option value="2">Cold wallet account</option>
+        <option value="3">The fund account</option>
+        <option value="4">Income account</option>
+        <option value="5">Dividends account</option>
+        <option value="6">Trade mining accounts</option>
+        <option value="7">Handling account</option>
+        <option value="8">Leverage account</option>
+        <option value="9">Coin currency account</option>
+        <option value="10">Fund account</option>
+        <option value="11">Account of the contract</option>
+        <option value="12">otc account</option>
+        <option value="13">The wallet account</option>
+        <option value="14">Third party recharge account</option>
+    </selection>
+
+    <selection name="com.vnbig.inOutMoney.inOut.select">
+        <option value="0">Out of gold</option>
+        <option value="1">Gold entry</option>
+    </selection>
+
+    <selection name="com.vnbig.inOutMoney.enabled.select">
+        <option value="true">Enable</option>
+        <option value="false">Disable</option>
+    </selection>
+
+    <selection name="com.vnbig.financial.walletType.select">
+        <option value="0">Recharge Wallet</option>
+        <option value="1">Cash withdrawal Wallet</option>
+    </selection>
+
+
+    <!--杠桿 -->
+    <selection name="com.vnbig.leverage.type.select">
+        <option value="0">Direct borrowing</option>
+        <option value="1">Transaction loan</option>
+    </selection>
+
+</object-views>

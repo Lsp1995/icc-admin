@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.0.xsd">
+    <module name="leverage" package="com.vnbig.leverage.db"/>
+
+    <entity name="BadLoans" table="BadLoans" sequential="false" cacheable="false">
+        <string name="currency" required="true"/>
+        <string name="account" required="true"/>
+        <string name="user" column="`user`" required="true"/>
+        <decimal name="amount" required="true"/>
+        <integer name="status" required="true"/>
+        <string name="cd" required="true"/>
+        <string name="lmd" required="true"/>
+    </entity>
+
+</domain-models>

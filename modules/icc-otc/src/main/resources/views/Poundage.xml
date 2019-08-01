@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+
+    <!--手续费-->
+    <grid name="Poundage-grid" title="Poundage" model="com.vnbig.otc.db.Poundage">
+        <field name="adRate"/>
+        <field name="userRate"/>
+        <field name="enabled"/>
+    </grid>
+    <form name="Poundage-form" title="Poundage" model="com.vnbig.otc.db.Poundage"
+          canNew="true" canDelete="true" canEdit="true" canSave="true">
+        <panel title="Poundage" itemSpan="12">
+            <field name="id" readonly="true"/>
+
+            <field name="adRate" required="true" />
+            <field name="userRate" required="true" />
+            <field name="enabled" required="true" />
+
+            <field name="cd" />
+            <field name="lmd"  />
+            <field name="cu"   />
+            <field name="lmu"   />
+
+        </panel>
+    </form>
+
+
+
+
+        <!--
+`id` varchar(32) NOT NULL,
+  `ad_rate` decimal(40,20) unsigned NOT NULL DEFAULT '0.00000000000000000000' COMMENT '广告商手续费费率',
+  `user_rate` decimal(40,20) unsigned NOT NULL DEFAULT '0.00000000000000000000' COMMENT '用户手续费费率',
+  `enabled` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否禁用',
+  `cd` datetime DEFAULT NULL,
+  `lmd` datetime DEFAULT NULL,
+  `cu` varchar(32) DEFAULT '',
+  `lmu` varchar(32) DEFAULT ''
+        -->
+
+</object-views>

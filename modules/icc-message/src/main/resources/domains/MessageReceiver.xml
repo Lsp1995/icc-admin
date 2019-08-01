@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.0.xsd">
+
+    <module name="message" package="com.vnbig.message.db"/>
+    <entity name="MessageReceiver"  table="MessageReceiver" sequential="false" cacheable="false">
+        <string name="messageId" unique="false"/>
+        <boolean name="readStatus" required="true" unique="false"/>
+        <datetime name="receiverTime" unique="false"/>
+        <string name="value" unique="false"/>
+    </entity>
+</domain-models>

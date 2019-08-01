@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <grid name="LendingWater-grid" title="LendingWater" model="com.vnbig.leverage.db.LendingWater" canNew="false"
+          canEdit="false" canDelete="false" edit-icon="false" orderBy="-lendingTime">
+        <field name="capitalDetailId"/>
+        <field name="applyCode"/>
+        <field name="variety"/>
+        <field name="currency"/>
+        <field name="user"/>
+        <field name="amount" title="LendingAmount"/>
+        <field name="lendingTime"/>
+        <field name="interestRate"/>
+        <field name="lendingSubject"/>
+        <field name="cd"/>
+    </grid>
+    <form name="LendingWater-form" title="LendingWater" model="com.vnbig.leverage.db.LendingWater" canNew="false"
+          canEdit="false" canDelete="false" canAttach="false" width="large">
+        <panel title="LendingWater" itemSpan="4" readonly="true">
+            <field name="capitalDetailId"/>
+            <field name="applyCode"/>
+            <field name="variety"/>
+            <field name="currency"/>
+            <field name="user"/>
+            <field name="amount" title="LendingAmount"/>
+            <field name="lendingTime"/>
+            <field name="interestRate"/>
+            <field name="lendingSubject"/>
+            <field name="cd" title="Cd"/>
+            <field name="cu" title="Cu"/>
+            <field name="lmd" title="Lmd"/>
+            <field name="lmu" title="Lmu"/>
+        </panel>
+    </form>
+
+</object-views>

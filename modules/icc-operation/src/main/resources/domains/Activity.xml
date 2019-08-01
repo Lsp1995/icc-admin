@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.0.xsd">
+
+    <module name="operation" package="com.vnbig.operation.db"/>
+    <entity name="Activity"  table="Activity" sequential="false" cacheable="false">
+        <string name="awardId" unique="false"/>
+        <boolean name="enabled" required="true" unique="false"/>
+        <datetime name="endTime" unique="false"/>
+        <string name="name" unique="false"/>
+        <integer name="rank" required="true" unique="false"/>
+        <datetime name="startTime" unique="false"/>
+        <integer name="type" unique="false"/>
+        <decimal name="totalAmount" unique="false"/>
+        <decimal name="transactionAmount" unique="false"/>
+        <string name="transactionCurrency" unique="false"/>
+        <datetime name="cd" unique="false"/>
+        <datetime name="lmd" unique="false"/>
+        <string name="cu" unique="false"/>
+        <string name="lmu" unique="false"/>
+        <integer name="ve" unique="false"/>
+        <string name="val" unique="false"/>
+    </entity>
+</domain-models>

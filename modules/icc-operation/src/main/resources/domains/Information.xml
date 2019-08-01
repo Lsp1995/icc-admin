@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.0.xsd">
+
+    <module name="operation" package="com.vnbig.operation.db"/>
+    <entity name="Information"  table="Information" sequential="false" cacheable="false">
+        <string name="author" unique="false"/>
+        <string name="categoryId" unique="false"/>
+        <string name="context" column="`context`" unique="false" large="true"/>
+        <string name="digest" unique="false" large="true"/>
+        <boolean name="enabled" unique="false" required="true"/>
+        <string name="fileId" unique="false"/>
+        <integer name="hot" unique="false" required="true"/>
+        <string name="language" unique="false" selection="com.vnbig.operation.language.select"/>
+        <string name="metaDescription" unique="false" large="true"/>
+        <string name="metaKeywords" unique="false" large="true"/>
+        <datetime name="releaseTime" unique="false"/>
+        <string name="source" unique="false"/>
+        <integer name="status" unique="false"/>
+        <string name="tags" unique="false" large="true"/>
+        <binary name="thumbnail" help="Max size 4MB." image="true"/>
+        <string name="title" unique="false"/>
+        <string name="createUserAccount" unique="false"/>
+        <boolean name="enableHot" unique="false"/>
+        <long name="hotTime" unique="false"/>
+        <string name="lastModifyUserAccount" unique="false"/>
+        <binary name="projectPartyIcon" help="Max size 4MB." image="true"/>
+        <datetime name="cd" unique="false"/>
+        <datetime name="lmd" unique="false"/>
+        <string name="cu" unique="false"/>
+        <string name="lmu" unique="false"/>
+        <integer name="ve" unique="false"/>
+        <string name="val" unique="false"/>
+    </entity>
+</domain-models>

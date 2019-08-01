@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <grid name="grantAward-grid" title="GrantAward" model="com.vnbig.financial.db.GrantAward" canDelete="false" canNew="false" canEdit="false" edit-icon="false" orderBy="-cd">
+        <field name="userCode"/>
+        <field name="currency"/>
+        <field name="amount" title="grantAwardAmount"/>
+        <field name="cd" widget="date-time"/>
+        <field name="remark"/>
+        <field name="examineTime"/>
+        <field name="examineRemark"/>
+        <field name="status" selection="com.vnbig.financial.grantAwardStatus.select"/>
+    </grid>
+    <form name="grantAward-form" title="GrantAward" model="com.vnbig.financial.db.GrantAward" canDelete="false" canNew="false" canEdit="false" width="large" canAttach="false">
+        <panel title="GrantAward" itemSpan="4">
+            <field name="cd" widget="date-time"/>
+            <field name="currency"/>
+            <field name="userTotal" title="userTotal"/>
+            <field name="amountTotal" title="amountTotal"/>
+            <field name="activityCode" title="activityCode"/>
+            <field name="activityName" title="activityName"/>
+            <field name="status" selection="com.vnbig.financial.grantAwardStatus.select"/>
+            <field name="examineRemark"/>
+            <!--<field name="userName" title="Award User Name"/>
+            <field name="realName" title="Real Name"/>
+            <field name="userCode"/>
+            <field name="accountCode" title="Account Code"/>
+            <field name="amount"/>
+            <field name="currency"/>
+            <field name="accountType"/>
+            <field name="status" selection="com.vnbig.financial.grantAwardStatus.select"/>
+            <field name="examineRemark"/>
+            <field name="examineTime"/>
+            <field name="remark" widget="Text"/>-->
+        </panel>
+        <panel-dashlet action="grantAward-detail-grid" canSearch="true" height="500"/>
+    </form>
+    <action-view name="grantAward-detail-grid" title="GrantAward" model="com.vnbig.financial.db.GrantAward">
+        <view type="grid" name="grant-award-detail-grid"/>
+        <context name="_tenantId" expr="financial" />
+        <!--<domain>self.orders=:id</domain>-->
+    </action-view>
+    <grid name="grant-award-detail-grid" title="GrantAward" model="com.vnbig.financial.db.GrantAward" canDelete="false" canNew="false" canEdit="false" edit-icon="false" orderBy="-cd">
+        <field name="userCode"/>
+        <field name="currency"/>
+        <field name="amount" title="grantAwardAmount"/>
+    </grid>
+    <!--奖励发放审核-->
+    <grid name="grantAward-audit-grid" title="AwardAudit" model="com.vnbig.financial.db.GrantAward" canDelete="false" canNew="false" canEdit="false" edit-icon="false" width="large">
+        <field name="cd"/>
+        <field name="currency"/>
+        <field name="userTotal" title="userTotal"/>
+        <field name="amountTotal" title="amountTotal"/>
+        <field name="activityCode" title="activityCode"/>
+        <field name="activityName" title="activityName"/>
+        <field name="status" selection="com.vnbig.financial.grantAwardStatus.select"/>
+        <!--<field name="userCode"/>
+        <field name="amount" title="grantAwardAmount"/>
+        <field name="remark"/>
+        <field name="status" selection="com.vnbig.financial.grantAwardStatus.select"/>-->
+        <button name="auditPass" icon="fa-check" title="Audit pass" onClick="com.vnbig.financial.controller.BonusController:grantAwardAuditPass"
+        prompt="Are you sure you want to perform this operation?"/>
+        <button name="auditFailed" icon="fa-times" title="Audit failed" onClick="action-grantAward-audit" />
+
+    </grid>
+    <!--奖励审核-->
+    <grid name="grantAward-record-grid" title="AwardRecord" model="com.vnbig.financial.db.GrantAward" canDelete="false" canNew="false" canEdit="false" edit-icon="false" width="large">
+        <field name="userCode"/>
+        <field name="currency"/>
+        <field name="amount" title="grantAwardAmount"/>
+        <field name="cd" widget="date-time"/>
+        <field name="remark"/>
+        <field name="status" selection="com.vnbig.financial.grantAwardStatus.select"/>
+    </grid>
+
+    <form name="grantAward-audit-popup" title="AwardAudit" model="com.vnbig.financial.db.GrantAward" canDelete="false" canNew="false" canEdit="false">
+        <panel title="" colSpan="12">
+            <field name="examineRemark" title="examineRemark" widget="Text" required="true" canEdit="true"/>
+            <button name="auditFailed" title="Audit failed" onClick="com.vnbig.financial.controller.BonusController:grantAwardAuditFail" />
+        </panel>
+    </form>
+    <action-view name="action-grantAward-audit" title="AwardAudit" model="com.vnbig.financial.db.GrantAward">
+        <view type="form" name="grantAward-audit-popup"/>
+        <view-param name="popup" value="reload"/>
+        <view-param name="show-toolbar" value="false"/>
+        <view-param name="show-confirm" value="false" />
+        <view-param name="popup-save" value="false"/>
+        <view-param name="forceEdit" value="true"/>
+        <context name="_showRecord" expr="eval:id"/>
+        <context name="_tenantId" expr="financial" />
+    </action-view>
+</object-views>

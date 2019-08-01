@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.0.xsd">
+
+    <module name="financial" package="com.vnbig.financial.db"/>
+    <entity name="FinancialTransfer" table="FinancialTransfer" sequential="false" cacheable="false">
+        <string name="currency" unique="false"/>
+        <decimal name="actualAmount" unique="false"/>
+        <decimal name="actualMinerFee" unique="false"/>
+        <string name="addressId" unique="false"/>
+        <decimal name="amount" unique="false"/>
+        <decimal name="fee" unique="false"/>
+        <decimal name="feeScale" unique="false"/>
+        <decimal name="minerFee" unique="false"/>
+        <string name="minerFeeCurrency" unique="false"/>
+        <integer name="outStatus" unique="false" selection="com.vnbig.FinancialTransfer.outStatus.select"/>
+        <string name="outTradeNo" unique="false"/>
+        <string name="remark" unique="false"/>
+        <string name="transferUser" unique="false"/>
+        <integer name="type" unique="false" title="Wallet Type" selection="com.vnbig.financial.walletType.select"/>
+        <datetime name="cd" unique="false"/>
+        <datetime name="lmd" unique="false"/>
+        <string name="cu" unique="false"/>
+        <string name="lmu" unique="false"/>
+        <string name="val" unique="false"/>
+    </entity>
+</domain-models>

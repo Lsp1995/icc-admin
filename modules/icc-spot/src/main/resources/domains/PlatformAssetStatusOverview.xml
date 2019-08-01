@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.0.xsd">
+
+    <module name="financial" package="com.vnbig.financial.db"/>
+    <entity name="PlatformAssetStatusOverview" table="PlatformAssetStatusOverview" sequential="false" cacheable="false">
+        <string name="currency" unique="false"/>
+        <decimal name="rechargeTotalAsset" unique="false"/>
+        <decimal name="virtualRecharge" unique="false"/>
+        <decimal name="userAssetBalance" unique="false"/>
+        <decimal name="paradropFreeze" unique="false"/>
+        <decimal name="withdrawTotalAsset" unique="false"/>
+        <decimal name="virtualWithdraw" unique="false"/>
+    </entity>
+</domain-models>

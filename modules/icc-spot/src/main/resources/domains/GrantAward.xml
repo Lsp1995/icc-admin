@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.0.xsd">
+
+    <module name="financial" package="com.vnbig.financial.db"/>
+    <entity name="GrantAward"  table="GrantAward" sequential="false" cacheable="false">
+        <string name="accountCode" unique="false"/>
+        <decimal name="amount" unique="false"/>
+        <string name="currency" unique="false"/>
+        <string name="realName" unique="false"/>
+        <string name="remark" unique="false"/>
+        <string name="status" unique="false" selection="com.vnbig.financial.grantAwardStatus.select"/>
+        <string name="userCode" unique="false"/>
+        <string name="examineRemark" unique="false"/>
+        <datetime name="examineTime" unique="false"/>
+        <integer name="accountType" unique="false"/>
+        <string name="userName" unique="false"/>
+        <datetime name="cd" unique="false"/>
+        <datetime name="lmd" unique="false"/>
+        <string name="cu" unique="false"/>
+        <string name="lmu" unique="false"/>
+    </entity>
+</domain-models>

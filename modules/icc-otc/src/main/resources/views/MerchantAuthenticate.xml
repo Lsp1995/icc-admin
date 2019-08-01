@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+
+    <!--商家认证界面-->
+    <grid name="merchantauthenticate-grid" title="MerchantAuthenticate" model="com.vnbig.otc.db.MerchantAuthenticate"
+          canNew="true" canDelete="false">
+        <field name="id" hidden="false"/>
+        <field name="amount"/>
+        <field name="status" selection="merauth-check-status-select"/>
+        <field name="auditor"/>
+        <field name="auditDate"/>
+        <field name="currency"/>
+        <field name="userCode"/>
+        <field name="accountCode"/>
+        <field name="remark"/>
+        <!--<button name="merchantauthenticate-data-bt" title="view-details" icon="fa-group"-->
+        <!--onClick="action-merchantauthenticate-event-detail"-->
+        <!--/>-->
+        <!--<button name="merchantauthenticate-data-bt" title="verifying" icon="fa-check-circle"-->
+        <!--onClick="com.vnbig.otc.controller.OtcController:rejectApply"-->
+        <!--/>-->
+        <!--<button name="merchantauthenticate-data-bt" title="verifying" icon="fa-check"-->
+        <!--onClick="com.vnbig.otc.controller.OtcController:approvedApply"-->
+        <!--/>-->
+    </grid>
+
+
+    <!--<action-view name="action-merchantauthenticate-event-check" title="action-merchantauthenticate-event-check"-->
+    <!--model="com.vnbig.otc.db.MerchantAuthenticate">-->
+    <!--<view type="form" name="ma-check-form"/>-->
+    <!--</action-view>-->
+    <!--审核-->
+    <form name="merchantauthenticate-form" title="ma-check-form" model="com.vnbig.otc.db.MerchantAuthenticate"
+          canEdit="true" canNew="false" canSave="true" canArchive="true" canDelete="false"
+          onNew="action-user-attrs"
+          onLoad="action-user-attrs">
+
+        <panel title="MerchantAuthenticate" colSpan="12">
+            <field name="id" hidden="false"/>
+            <field name="currency" title="FreezeCurrency" colSpan="6" readonly="true"/>
+            <field name="amount" title="FreezeAmount" colSpan="6" readonly="true"/>
+            <field name="userCode" colSpan="6" readonly="true"/>
+            <field name="accountCode" colSpan="6" readonly="true"/>
+            <field colSpan="6" name="auditDate" readonly="true"/>
+            <field colSpan="12" name="status" readonly="true"/>
+
+            <field colSpan="12" name="auditor"/>
+
+
+            <field name="remark" colSpan="12" widget="html"/>
+
+            <!--<field colSpan="12" name="hahah" title="IsSurePassCheck"/>-->
+            <button name="confirm" title="Confirm-Merauth" icon="fa-play"
+                    showIf="status == 1 || status == 2"
+                    onClick="com.vnbig.otc.controller.OtcController:merAuthPass"
+            />
+            <button name="cancel" title="Cancel-Merauth" icon="fa-times" css="btn-danger"
+                    showIf="status == 1 || status == 2"
+                    onClick="com.vnbig.otc.controller.OtcController:merAuthReject"/>
+
+
+            <!--<button name="testsave" title="testsave" icon="fa-play"-->
+            <!--onClick="com.vnbig.otc.controller.TestController:setValue"/>-->
+        </panel>
+
+
+    </form>
+
+    <!--<action-attrs name="action-user-attrs">-->
+        <!--<attribute name="hidden" for="confirm" if="status == 3" expr="__self__"/>-->
+        <!--<attribute name="hidden" for="cancel" if="status == 3" expr="id" />-->
+    <!--</action-attrs>-->
+
+    <!--<form name="merchantauthenticate-form" title="MerchantAuthenticate" model="com.vnbig.otc.db.MerchantAuthenticate"-->
+    <!--onLoad="action-group-merchantauthenticate-form-onload"-->
+    <!--onSave="action-group-merchantauthenticate-form-save"-->
+    <!--width="large">-->
+    <!--<panel title="MerchantAuthenticate" itemSpan="4">-->
+    <!--<field name="amount"/>-->
+    <!--<field name="status"/>-->
+    <!--<field name="auditor"/>-->
+    <!--<field name="auditDate"/>-->
+    <!--<field name="currency"/>-->
+    <!--<field name="userCode"/>-->
+    <!--<field name="accountCode"/>-->
+    <!--<field name="remark"/>-->
+    <!--</panel>-->
+    <!--</form>-->
+
+    <!--form加载 处理事件-->
+    <!--<action-group name="action-group-merchantauthenticate-form-onload">-->
+    <!--<action name="action-merchantauthenticate-attrs-change-name"/>-->
+    <!--<action name="action-merchantauthenticate-validate"/>-->
+    <!--</action-group>-->
+
+    <!--<action-attrs name="action-merchantauthenticate-attrs-change-name">-->
+    <!--<attribute name="title" for="remark" expr="remark attribute name"/>-->
+    <!--<attribute name="hidden" for="currency" expr="eval: amount &lt; 0"/>-->
+    <!--</action-attrs>-->
+
+    <!--<action-validate name="action-merchantauthenticate-validate">-->
+    <!--<error message="Please select multiple records" if="userCode == null ||  amount &lt; 2"/>-->
+    <!--</action-validate>-->
+</object-views>

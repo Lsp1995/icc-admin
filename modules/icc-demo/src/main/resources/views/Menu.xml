@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns="http://axelor.com/xml/ns/object-views"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.1.xsd">
+
+    <menuitem name="menu-demo" order="-180" title="示例管理" icon="fa-tasks" icon-background="violet"/>
+
+    <menuitem name="menu-demo-work" parent="menu-demo" title="工作记录" action="demo.work.all"/>
+
+    <action-view name="demo.work.all" title="工作记录" model="com.axelor.demo.db.DemoWork">
+        <view type="grid" name="demo-work-grid"/>
+        <view type="form" name="demo-work-form"/>
+    </action-view>
+
+
+</object-views>

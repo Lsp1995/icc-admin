@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <grid name="capitalAccount-grid" title="CapitalAccount" model="com.vnbig.financial.db.CapitalAccount" canDelete="false" canNew="false" canEdit="false" edit-icon="false">
+        <field name="code" title="accountCode"/>
+        <field name="user" title="userCode"/>
+        <field name="currency"/>
+        <field name="category" title="accountCategory" selection="com.vnbig.capitalAccount.category.select"/>
+        <field name="type" title="accountType" selection="com.vnbig.capitalAccount.type.select"/>
+        <field name="enabled"/>
+        <field name="exchange"/>
+        <field name="thirdParty"/>
+        <field name="fatherId"/>
+        <field name="rank"/>
+        <field name="cd" title="Cd" widget="date-time"/>
+        <field name="cu" title="Cu"/>
+    </grid>
+    <form name="capitalAccount-form" title="CapitalAccount" model="com.vnbig.financial.db.CapitalAccount" canDelete="false" canEdit="false" canNew="false" width="large" canAttach="false">
+        <panel title="CapitalAccount" itemSpan="4" readonly="true">
+            <field name="id" hidden="false"/>
+            <field name="cd" title="Cd" widget="date-time"/>
+            <field name="cu" title="Cu"/>
+            <field name="lmd" title="Lmd" widget="date-time"/>
+            <field name="lmu" title="Lmu"/>
+            <field name="ve" title="Ve"/>
+            <field name="val" title="Val"/>
+            <field name="code" title="accountCode"/>
+            <field name="user" title="userCode"/>
+            <field name="currency"/>
+            <field name="category" title="accountCategory" selection="com.vnbig.capitalAccount.category.select"/>
+            <field name="type" title="accountType" selection="com.vnbig.capitalAccount.type.select"/>
+            <field name="enabled"/>
+            <field name="exchange"/>
+            <field name="thirdParty"/>
+            <field name="fatherId"/>
+            <field name="rank"/>
+        </panel>
+    </form>
+
+</object-views>

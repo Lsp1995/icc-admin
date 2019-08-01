@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <grid name="LeverageInfor-grid" title="Answer information" model="com.vnbig.leverage.db.LeverageInfor" canNew="false"
+          canEdit="false" canDelete="false" edit-icon="false">
+        <field name="account"/>
+        <field name="user" column="`user`"/>
+        <field name="code"/>
+        <field name="score"/>
+        <field name="variety"/>
+        <field name="cu" />
+        <field name="lmd" />
+        <field name="lmu" />
+        <field name="level"/>
+    </grid>
+    <form name="LeverageInfor-form" title="Answer information" model="com.vnbig.leverage.db.LeverageInfor" canNew="false"
+          canEdit="false" canDelete="false" canAttach="false" width="large">
+        <panel title="Answer information" itemSpan="4" readonly="true">
+            <field name="account"/>
+            <field name="user" column="`user`"/>
+            <field name="code"/>
+            <field name="score"/>
+            <field name="variety"/>
+            <field name="cu" />
+            <field name="lmd" />
+            <field name="lmu" />
+            <field name="level"/>
+        </panel>
+    </form>
+
+</object-views>

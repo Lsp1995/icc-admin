@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.0.xsd">
+    <module name="otc" package="com.vnbig.otc.db"/>
+
+    <entity name="PaymentInfo" table="payment_info" sequential="false" cacheable="true">
+        <string name="userName"/>
+        <string name="accountName"/>
+        <string name="openingBank"/>
+        <string name="openingBranch"/>
+        <string name="bankCard"/>
+        <string name="imgUrl"/>
+        <string name="userCode"/>
+        <string name="pmId"/>
+        <boolean name="isShow" required="true" default="0"/>
+
+        <string name="cu"/>
+        <string name="lmu"/>
+        <datetime name="cd"/>
+        <datetime name="lmd"/>
+    </entity>
+
+    <!--
+    `id` varchar(32) NOT NULL,
+  `user_name` varchar(32) DEFAULT '' COMMENT '姓名/',
+  `account_name` varchar(32) DEFAULT '' COMMENT '账户',
+  `opening_bank` varchar(32) DEFAULT '' COMMENT '开户行',
+  `opening_branch` varchar(32) DEFAULT '' COMMENT '开户支行',
+  `bank_card` varchar(32) DEFAULT '' COMMENT '银行卡号',
+  `img_url` varchar(128) DEFAULT '' COMMENT '付款/二维码信息',
+  `user_code` varchar(32) NOT NULL DEFAULT '' COMMENT '用户id',
+  `pm_id` varchar(32) NOT NULL DEFAULT '' COMMENT '交易方式',
+  `is_show` bit(1) DEFAULT b'0' COMMENT '是否展示在订单页面\n0 — 否\n1 — 是',
+  `cd` datetime DEFAULT NULL,
+  `md` datetime DEFAULT NULL,
+  `cu` varchar(32) DEFAULT '',
+  `lmu` varchar(32) DEFAULT ''
+
+    -->
+</domain-models>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.0.xsd">
+    <module name="leverage" package="com.vnbig.leverage.db"/>
+
+    <entity name="LendingWater" table="LendingWater" sequential="false" cacheable="false">
+        <string name="capitalDetailId" required="true"/>
+        <string name="applyCode" required="true"/>
+        <string name="variety" required="true"/>
+        <string name="currency" required="true"/>
+        <string name="user" column="`user`" required="true"/>
+        <decimal name="amount" required="true"/>
+        <date name="lendingTime" required="true"/>
+        <decimal name="interestRate" required="true"/>
+        <integer name="lendingSubject" required="true"/>
+        <datetime name="cd" required="true"/>
+        <string name="cu" required="true"/>
+        <datetime name="lmd" required="true"/>
+        <string name="lmu" required="true"/>
+    </entity>
+
+</domain-models>

@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+
+    <!--广告订单界面-->
+    <grid name="advertisement-order-grid" title="Advertisement" model="com.vnbig.otc.db.Advertisement">
+        <field name="id" hidden="false"/>
+
+        <field name="tradeType"/>
+
+        <!--<field name="digitalcurrency" title="tradeCurrency"/>-->
+        <!--<field name="legalmoney" title="tradeMoney"/>-->
+
+        <field name="tradeCurrency" />
+        <field name="tradeMoney" />
+        <field name="exchange"/>
+        <field name="pmIds"/>
+
+        <field name="quantity"/>
+        <field name="price"/>
+
+        <field name="availableQuantity"/>
+        <field name="isRecommend"/>
+        <field name="transactionsNumber"/>
+
+        <field name="status"/>
+        <field name="buyerDeadline"/>
+
+        <field name="orderCount"/>
+        <field name="authType"/>
+
+
+    </grid>
+
+
+    <form name="advertisement-order-form" title="Advertisement" model="com.vnbig.otc.db.Advertisement"
+          width="large"
+          canNew="false" canDelete="false" canEdit="false" canSave="false"
+    >
+
+        <menubar>
+            <menu title="advertisement-type" icon="fa-files-o" showTitle="true">
+                <item title="sell" action="action-crm-lead-method-print"/>
+                <item title="buy" action="action-crm-lead-method-print"/>
+            </menu>
+        </menubar>
+
+        <panel name="baseinfo" showTitle="false" itemSpan="4">
+
+            <field name="id" hidden="false"/>
+            <field name="reqNo" readonly="true"/>
+
+            <field name="tradeType" widget="RadioSelect"/>
+
+            <field name="tradeCurrency" />
+            <field name="tradeMoney" />
+
+            <field name="exchange" />
+            <field name="pmIds" />
+
+            <field name="accountCode" readonly="true" title="AccountCode"/>
+            <field name="userCode" readonly="true" />
+            <!--<field name="userCode" readonly="false">-->
+            <!--<editor>-->
+            <!--<field name="title" colSpan="3"/>-->
+            <!--<field name="firstName" colSpan="4"/>-->
+            <!--<field name="lastName" colSpan="5"/>-->
+            <!--</editor>-->
+            <!--</field>-->
+            <field name="remark" />
+
+            <field name="instruction"/>
+            <field name="greetings"/>
+            <field name="ending"/>
+
+            <field name="quantity"/>
+            <field name="price"/>
+            <field name="premiumRate"/>
+            <field name="acceptPrice"/>
+            <field name="minVolume"/>
+            <field name="maxVolume"/>
+            <field name="availableQuantity"/>
+            <field name="rate" x-scale="8"/>
+            <field name="fee" x-scale="8"/>
+            <field name="isRecommend" widget="RadioSelect"/>
+            <field name="priceFixed" widget="RadioSelect"/>
+            <field name="processingNumber"/>
+            <field name="transactionsNumber"/>
+            <field name="status" widget="RadioSelect"/>
+            <field name="buyerDeadline"/>
+            <field name="sellerDeadline"/>
+            <field name="appealDeadline"/>
+            <field name="adDeadline"/>
+            <field name="orderCount"/>
+            <field name="authType"/>
+            <field name="startSt"/>
+            <field name="endSt"/>
+            <field name="endDate"/>
+            <field name="cu"/>
+            <field name="lmd"/>
+            <field name="cd"/>
+        </panel>
+        <!--<panel-related field="accountCode"-->
+        <!--form-view="ma-check-form">-->
+        <!--<field name="exchange"/>-->
+        <!--<field name="pmIds"/>-->
+        <!--<field name="accountCode"/>-->
+        <!--<field name="userCode"/>-->
+        <!--</panel-related>-->
+
+        <panel-tabs>
+            <panel title="OrderInfo" canSearch="true">
+                <panel-include view="orderinfo-ads"/>
+            </panel>
+            <panel title="Appeal" canSearch="true">
+                <panel-include view="appeal-ads"/>
+            </panel>
+            <!--<panel-dashlet action="order.info" title="orderinfo" canSearch="true"/>-->
+            <!--<panel-dashlet action="appeal" title="appealinfo" canSearch="true"/>-->
+            <panel title="typeads" canSearch="true">
+                <panel-include view="type-ads"/>
+            </panel>
+
+
+        </panel-tabs>
+
+        <!--<panel name="settings" sidebar="true" title="Settings">-->
+            <!--<field name="language" canEdit="false"/>-->
+            <!--<panel title="Assigned to" canCollapse="true" colSpan="12">-->
+                <!--<field name="user" colSpan="6" form-view="user-form" grid-view="user-grid" canNew="false"-->
+                       <!--canEdit="false" canView="false"/>-->
+                <!--<field name="team" canEdit="false" colSpan="6" form-view="team-form" grid-view="team-grid"-->
+                <!--/>-->
+                <!--<field name="companySet" colSpan="12" widget="TagSelect" canNew="false" form-view="company-form"-->
+                       <!--grid-view="company-grid"/>-->
+            <!--</panel>-->
+        <!--</panel>-->
+
+        <!--<panel name="notes" title="Notes" colSpan="12" sidebar="true">-->
+        <!--<field name="description" showTitle="false" colSpan="12" height="6" widget="Html"/>-->
+        <!--</panel>-->
+
+        <!--<panel-mail>-->
+        <!--<mail-messages limit="4"/>-->
+        <!--<mail-followers/>-->
+        <!--</panel-mail>-->
+
+    </form>
+
+
+    <cards name="advertisement-order-cards" title="advertisement.quotations.cards"
+           model="com.vnbig.otc.db.Advertisement"
+           width="large" css="rect-image">
+
+        <field name="id" hidden="false"/>
+        <field name="reqNo"/>
+        <field name="tradeType"/>
+        <field name="tradeCurrency"/>
+        <field name="tradeMoney"/>
+        <field name="exchange"/>
+        <field name="pmIds"/>
+        <field name="accountCode"/>
+        <field name="userCode"/>
+        <field name="remark"/>
+        <field name="instruction"/>
+        <field name="greetings"/>
+        <field name="ending"/>
+        <field name="quantity"/>
+        <field name="price" x-scale="2"/>
+        <field name="premiumRate"/>
+        <field name="acceptPrice"/>
+        <field name="minVolume"/>
+        <field name="maxVolume"/>
+        <field name="availableQuantity"/>
+        <field name="rate"/>
+        <field name="fee"/>
+        <field name="isRecommend"/>
+        <field name="priceFixed"/>
+        <field name="processingNumber"/>
+        <field name="transactionsNumber"/>
+        <field name="status"/>
+        <field name="buyerDeadline"/>
+        <field name="sellerDeadline"/>
+        <field name="appealDeadline"/>
+        <field name="adDeadline"/>
+        <field name="orderCount"/>
+        <field name="authType"/>
+        <field name="startSt"/>
+        <field name="endSt"/>
+        <field name="endDate"/>
+        <field name="cu"/>
+        <field name="lmd"/>
+        <field name="cd"/>
+
+        <template><![CDATA[
+		    <div class="span12">
+		        <strong>广告ID  :  {{ id }}
+		    	<div>
+		    	<span class="label label-important pull-left" ng-show="record.tradeType && record.tradeType == '0'" x-translate> 购买广告</span>
+		    	<span class="label label-success pull-left" ng-show="record.tradeType && record.tradeType == '1'" x-translate> 出售广告</span>
+		    	</div>
+		    	<div>
+		    	<span class="pull-right muted"><strong><span x-translate>价格 ：</span>{{ price }} </strong><br/>
+		    	</div>
+	    	</div>
+	    	<div class="span12" class="pull-right">
+	    	        <span>交易币种 ：{{ tradeCurrency }}</span>
+	    	        <br>
+	    	        <span>支付币种 ：{{ tradeMoney }}</span>
+	    	        <br>
+
+                    发起人userCode ：<a class="pull-right muted"> {{ userCode }} </a>
+                    <br>
+					发起时间 ：<a class="pull-right muted">{{ $fmt('startSt') }}</a>
+                    <br>
+                    结束时间 ：<a class="pull-right muted">{{ $fmt('endSt') }}</a>
+                    <br>
+                    注意 ： <span class="pull-right muted" ng-show="record.remark" x-translate>{{ remark }}</span>
+                    <br>
+			</div>
+		]]>
+        </template>
+    </cards>
+
+
+    <!--订单部分-->
+    <form name="orderinfo-ads" model="com.vnbig.otc.db.Advertisement" title="orderinfo-ads">
+        <panel-dashlet colSpan="12" action="orderinfo-ads-actions" canSearch="true"/>
+    </form>
+
+    <action-view name="orderinfo-ads-actions" title="orderinfo-ads" model="com.vnbig.otc.db.OrderInfo">
+        <view type="grid" name="OrderInfo-grid"/>
+        <view type="form" name="OrderInfo-form"/>
+        <domain>self.advertisementId = :id</domain>
+        <context name="_tenantId" expr="otc" />
+    </action-view>
+
+
+    <!--申诉部分-->
+    <form name="appeal-ads" model="com.vnbig.otc.db.Appeal" title="appeal-ads">
+        <panel-dashlet colSpan="12" action="appeal-ads-actions" canSearch="true"/>
+    </form>
+
+    <action-view name="appeal-ads-actions" title="appeal-ads" model="com.vnbig.otc.db.Appeal">
+        <view type="grid" name="Appeal-grid"/>
+        <view type="form" name="Appeal-form"/>
+        <domain>self.advertisementId = :id</domain>
+        <context name="_tenantId" expr="otc" />
+    </action-view>
+
+    <!--买卖类型部分-->
+    <form name="type-ads" title="typeads" model="com.vnbig.otc.db.Advertisement">
+        <panel-dashlet colSpan="12" action="buy-ads" canSearch="true"/>
+        <panel-dashlet colSpan="12" action="sell-ads" canSearch="true"/>
+    </form>
+
+    <action-view name="buy-ads" title="buyads" model="com.vnbig.otc.db.Advertisement">
+        <view type="grid" name="advertisement-order-grid"/>
+        <view type="form" name="advertisement-order-form"/>
+        <domain>self.tradeType in (0)</domain>
+        <context name="_tenantId" expr="otc" />
+        <!-- AND self.id = :id-->
+    </action-view>
+    <action-view name="sell-ads" title="sellads" model="com.vnbig.otc.db.Advertisement">
+        <view type="grid" name="advertisement-order-grid"/>
+        <view type="form" name="advertisement-order-form"/>
+        <domain>self.tradeType in (1)</domain>
+        <context name="_tenantId" expr="otc" />
+    </action-view>
+
+
+</object-views>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <grid name="LendingReturnLeverage-grid" title="Loan return records" model="com.vnbig.leverage.db.LendingReturnLeverage" canNew="false"
+          canEdit="false" canDelete="false" edit-icon="false">
+        <field name="applyId"/>
+        <field name="lendingIds"/>
+        <field name="refundId" title="Refund id"/>
+        <field name="refundAmount"/>
+        <field name="refundInterest"/>
+        <field name="variety"/>
+        <field name="account"/>
+        <field name="userCode" title="User"/>
+        <field name="applyDays"/>
+        <field name="refundTime"/>
+        <field name="cd" />
+        <field name="cu"/>
+    </grid>
+    <form name="LendingReturnLeverage-form" title="Loan return records" model="com.vnbig.leverage.db.LendingReturnLeverage" canNew="false"
+          canEdit="false" canDelete="false" canAttach="false" width="large">
+        <panel title="Loan return records" itemSpan="4" readonly="true">
+            <field name="applyId"/>
+            <field name="lendingIds"/>
+            <field name="refundId"/>
+            <field name="refundAmount"/>
+            <field name="refundInterest"/>
+            <field name="variety"/>
+            <field name="account"/>
+            <field name="userCode" title="User"/>
+            <field name="applyDays"/>
+            <field name="refundTime"/>
+            <field name="cd" />
+            <field name="cu"/>
+        </panel>
+    </form>
+
+</object-views>

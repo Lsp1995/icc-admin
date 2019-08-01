@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.0.xsd">
+
+    <module name="wallet" package="com.vnbig.wallet.db"/>
+    <entity name="WalletsCapitalWaters" table="CapitalWater" sequential="false" cacheable="false">
+        <long name="userCode" unique="false" required="true"/>
+        <string name="accountId" unique="false"/>
+        <string name="currency" unique="false"/>
+        <string name="feeCurrency" unique="false"/>
+        <decimal name="amount" unique="false"/>
+        <decimal name="fee" unique="false"/>
+        <integer name="tag" unique="false"/>
+        <integer name="cause" unique="false" selection="com.vnbig.wallet.cause.select"/>
+        <string name="sourceId" unique="false" required="true"/>
+        <string name="encrypt" unique="false"/>
+        <string name="remark" unique="false"/>
+        <datetime name="cd" unique="false"/>
+        <string name="cu" unique="false"/>
+        <datetime name="lmd" unique="false"/>
+        <string name="lmu" unique="false"/>
+    </entity>
+</domain-models>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <selection name="com.vnbig.user.type.select">
+        <option value="0">The average user</option>
+        <option value="1">Management personnel</option>
+        <option value="2">A market maker</option>
+        <option value="3">Users of the system</option>
+        <option value="4">thirdParty</option>
+    </selection>
+    <selection name="com.vnbig.user.status.select">
+        <option value="0">normals</option>
+        <option value="1">freeze</option>
+        <option value="2">disable</option>
+    </selection>
+    <selection name="com.vnbig.authentication.authTypeId.select">
+        <option value="AUTH_CARD">auth card</option>
+        <option value="AUTH_MOBILE">auth mobile</option>
+        <option value="AUTH_EMAIL">auth email</option>
+    </selection>
+    <selection name="com.vnbig.authentication.authStatus.select">
+        <option value="0">To be reviewed</option>
+        <option value="1">Review passed</option>
+        <option value="2">Review failed</option>
+    </selection>
+
+    <selection name="com.vnbig.user.digitalCurrency.select">
+        <option value=""></option>
+    </selection>
+    <selection name="com.vnbig.user.denominatedCurrency.select">
+        <option value=""></option>
+    </selection>
+    <selection name="com.vnbig.user.withdrawCoinRange.select">
+        <option value=""></option>
+    </selection>
+    <selection name="com.vnbig.user.country.select">
+        <option value=""></option>
+    </selection>
+</object-views>

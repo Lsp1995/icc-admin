@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.0.xsd">
+    <module name="otc" package="com.vnbig.otc.db"/>
+
+    <entity name="PaymentMethod" table="payment_method" sequential="false" cacheable="true">
+        <string name="code" unique="true"/>
+        <string name="name" unique="true"/>
+        <string name="icon"/>
+        <boolean name="enabled" required="true" default="0"/>
+
+        <string name="en_name"/>
+        <string name="hk_name"/>
+        <string name="vn_name"/>
+
+        <string name="cu"/>
+        <string name="lmu"/>
+        <datetime name="cd"/>
+        <datetime name="lmd"/>
+    </entity>
+
+
+    <!--
+    `id` varchar(32) NOT NULL,
+      `code` varchar(32) NOT NULL DEFAULT '' COMMENT '支付方式code',
+      `name` varchar(16) NOT NULL DEFAULT '' COMMENT '支付名称：\n银行转账\n支付宝\n微信\nPayPal',
+      `icon` varchar(128) NOT NULL DEFAULT '',
+      `enabled` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否禁用',
+      `cd` datetime DEFAULT NULL,
+      `md` datetime DEFAULT NULL,
+      `cu` varchar(32) DEFAULT '',
+      `lmu` varchar(32) DEFAULT ''
+
+
+    -->
+</domain-models>

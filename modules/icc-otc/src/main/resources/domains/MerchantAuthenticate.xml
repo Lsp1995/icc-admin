@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.0.xsd">
+    <module name="otc" package="com.vnbig.otc.db"/>
+
+    <entity name="MerchantAuthenticate" table="merchant_authenticate" sequential="false" cacheable="false">
+        <decimal name="amount" required="true"/>
+        <integer name="status" required="true" selection="merauth-check-status-select"/>
+        <string name="auditor" required="true"/>
+        <string name="remark" required="true"/>
+        <string name="currency" required="true"/>
+        <string name="userCode" required="true"/>
+        <string name="accountCode" required="true"/>
+        <datetime name="auditDate"  />
+
+        <string name="cu"/>
+        <datetime name="cd"/>
+
+    </entity>
+
+    <!--
+     `id` varchar(32) NOT NULL,
+      `cd` datetime NOT NULL COMMENT '创建日期',
+      `cu` varchar(32) NOT NULL DEFAULT '' COMMENT '创建者',
+      `amount` decimal(40,20) unsigned NOT NULL DEFAULT '0.00000000000000000000' COMMENT '保证金/冻结',
+      `status` tinyint(4) unsigned NOT NULL DEFAULT '0' COMMENT '状态\n0 — 取消\n1 — 已提交，待审核\n2 — 审核中\n3 — 已通过\n4 — 驳回',
+      `remark` varchar(64) DEFAULT '' COMMENT '备注',
+      `auditor` varchar(32) DEFAULT '' COMMENT '审核人',
+      `audit_date` datetime DEFAULT NULL COMMENT '审核时间',
+      `currency` varchar(8) DEFAULT 'VNBT' COMMENT '冻结的币种',
+      `user_code` varchar(32) NOT NULL DEFAULT '' COMMENT '用户code',
+      `account_code` varchar(32) NOT NULL DEFAULT '' COMMENT '账户code'
+
+    -->
+
+
+</domain-models>

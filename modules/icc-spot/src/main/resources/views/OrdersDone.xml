@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <grid name="ordersDone-grid" title="OrdersDone" model="com.vnbig.trading.db.OrdersDone" canDelete="false" canNew="false" canEdit="false" edit-icon="false" orderBy="-entrustTime">
+        <field name="asset"/>
+        <field name="entrustTime" widget="date-time"/>
+        <field name="variety"/>
+        <field name="type"/>
+        <field name="command"/>
+        <field name="price"/>
+        <field name="volume"/>
+        <field name="amount"/>
+        <field name="dealTime" widget="date-time"/>
+        <field name="dealPrice"/>
+        <field name="dealVolume"/>
+        <field name="dealAmount"/>
+        <field name="status"/>
+    </grid>
+    <form name="ordersDone-form" title="OrdersDone" model="com.vnbig.trading.db.OrdersDone" canDelete="false" canEdit="false" canNew="false" width="large">
+        <panel title="OrdersDone" itemSpan="4" readonly="true">
+            <field name="id" hidden="false"/>
+            <field name="id" column="entrust_id" title="Entrust ID"/>
+            <field name="asset"/>
+            <field name="val"/>
+            <field name="entrustTime" widget="date-time"/>
+            <field name="variety"/>
+            <field name="type"/>
+            <field name="command"/>
+            <field name="price"/>
+            <field name="volume"/>
+            <field name="amount"/>
+            <field name="dealTime" widget="date-time"/>
+            <field name="dealPrice"/>
+            <field name="dealVolume"/>
+            <field name="dealAmount"/>
+            <field name="status"/>
+        </panel>
+        <panel-dashlet action="action-order-ordersDone-grid" canSearch="true" height="500"/>
+    </form>
+    <action-view name="action-order-ordersDone-grid" title="OrdersDetail" model="com.vnbig.trading.db.OrdersDetail">
+        <view type="grid" name="ordersDetail-grid"/>
+        <view-param name="popup" value="reload"/>
+        <view-param name="show-toolbar" value="false"/>
+        <view-param name="show-confirm" value="false" />
+        <view-param name="popup-save" value="false"/>
+        <view-param name="forceEdit" value="false"/>
+        <domain>self.orders = :_id</domain>
+        <context name="_tenantId" expr="trading" />
+    </action-view>
+</object-views>

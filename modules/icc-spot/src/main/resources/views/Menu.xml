@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <menuitem name="trading" order="9" title="Trading" icon="fa-handshake-o" icon-background="blue"/>
+    <!--<menuitem name="menu-assetList" parent="trading" title="AssetList" action="assetList"/>-->
+    <!--<action-view name="assetList" title="AssetList" model="com.vnbig.financial.db.CapitalDetail">-->
+    <!--<view type="grid" name="assetList-grid"/>-->
+    <!--<view type="form" name="capitalDetail-form"/>-->
+    <!--</action-view>-->
+    <!--<action-view name="assetList" title="assetList" model="com.axelor.meta.db.MetaJsonRecord">-->
+        <!--<view type="grid" name="custom-model-CapitalDetailVO-grid" />-->
+        <!--<domain>self.jsonModel = :jsonModel</domain>-->
+        <!--<context name="jsonModel" expr="CapitalDetailVO" />-->
+        <!--<context name="dubboService" expr="com.vnbig.trading.controller.CapitalListController" />-->
+    <!--</action-view>-->
+
+    <!--<menuitem name="menu-assetWater" parent="trading" title="AssetList" action="assetWater"/>-->
+    <!--<action-view name="assetList" title="AssetList" model="com.vnbig.financial.db.CapitalDetail">-->
+    <!--<view type="grid" name="assetList-grid"/>-->
+    <!--<view type="form" name="capitalDetail-form"/>-->
+    <!--</action-view>-->
+    <!--<action-view name="assetWater" title="assetWater" model="com.axelor.meta.db.MetaJsonRecord">-->
+        <!--<view type="grid" name="custom-model-CapitalWaterVO-grid" />-->
+        <!--<domain>self.jsonModel = :jsonModel</domain>-->
+        <!--<context name="jsonModel" expr="CapitalWaterVO" />-->
+        <!--<context name="dubboService" expr="com.vnbig.trading.controller.CapitalWaterController" />-->
+    <!--</action-view>-->
+
+
+    <menuitem name="menu-orders" parent="trading" title="Orders" action="orders"/>
+    <action-view name="orders" title="Orders" model="com.vnbig.trading.db.Orders">
+        <view type="grid" name="orders-grid"/>
+        <view type="form" name="orders-form"/>
+        <context name="_tenantId" expr="trading" />
+    </action-view>
+    <menuitem name="menu-ordersCancel" parent="trading" title="OrdersCancel" action="ordersCancel"/>
+    <action-view name="ordersCancel" title="OrdersCancel" model="com.vnbig.trading.db.OrdersCancel">
+        <view type="grid" name="ordersCancel-grid"/>
+        <view type="form" name="ordersCancel-form"/>
+        <context name="_tenantId" expr="trading" />
+    </action-view>
+    <menuitem name="menu-ordersDone" parent="trading" title="OrdersDone" action="ordersDone"/>
+    <action-view name="ordersDone" title="OrdersDone" model="com.vnbig.trading.db.OrdersDone">
+        <view type="grid" name="ordersDone-grid"/>
+        <view type="form" name="ordersDone-form"/>
+        <context name="_tenantId" expr="trading" />
+    </action-view>
+    <menuitem name="menu-ordersDetail" parent="trading" title="OrdersDetail" action="ordersDetail"/>
+    <action-view name="ordersDetail" title="OrdersDetail" model="com.vnbig.trading.db.OrdersDetail">
+        <view type="grid" name="ordersDetail-grid"/>
+        <view type="form" name="ordersDetail-form"/>
+        <context name="_tenantId" expr="trading" />
+    </action-view>
+
+    <menuitem name="menu-tradeFlow" parent="trading" title="TradeFlow" action="tradeFlow"/>
+    <action-view name="tradeFlow" title="TradeFlow" model="com.vnbig.market.db.TradeFlow">
+        <view type="grid" name="tradeFlow-grid"/>
+        <view type="form" name="tradeFlow-form"/>
+        <context name="_tenantId" expr="trading" />
+    </action-view>
+
+
+
+
+    <!--     资金     -->
+
+    <menuitem name="financial" order="3" title="Financial" icon="fa-money" icon-background="grey"/>
+
+    <menuitem name="menu-capitalAccount" order="-999" parent="financial" title="CapitalAccount" action="capitalAccount"/>
+    <action-view name="capitalAccount" title="CapitalAccount" model="com.vnbig.financial.db.CapitalAccount">
+        <view type="grid" name="capitalAccount-grid"/>
+        <view type="form" name="capitalAccount-form"/>
+        <context name="_tenantId" expr="financial" />
+    </action-view>
+
+    <menuitem name="menu-assetTag" order="-998" parent="financial" title="AssetTag" action="assetTag"/>
+    <action-view name="assetTag" title="AssetTag" model="com.vnbig.financial.db.AssetTag">
+        <view type="grid" name="assetTag-grid"/>
+        <view type="form" name="assetTag-form"/>
+        <context name="_tenantId" expr="financial" />
+    </action-view>
+
+    <menuitem name="menu-capitalWater" order="-997" parent="financial" title="CapitalWater" action="capitalWater"/>
+    <action-view name="capitalWater" title="CapitalWater" model="com.vnbig.financial.db.CapitalWater">
+        <view type="grid" name="capitalWater-grid"/>
+        <view type="form" name="capitalWater-form"/>
+        <context name="_tenantId" expr="financial" />
+    </action-view>
+
+    <menuitem name="menu-capitalFreezeThawWater" order="-997" parent="financial" title="CapitalFreezeThawWater" action="capitalFreezeThawWater"/>
+    <action-view name="capitalFreezeThawWater" title="CapitalFreezeThawWater" model="com.vnbig.financial.db.CapitalFreezeThawWater">
+        <view type="grid" name="capitalFreezeThawWater-grid"/>
+        <view type="form" name="capitalFreezeThawWater-form"/>
+        <context name="_tenantId" expr="financial" />
+    </action-view>
+
+    <menuitem name="menu-paymentAccount" order="-996" parent="financial" title="PaymentAccount" action="paymentAccount"/>
+    <action-view name="paymentAccount" title="PaymentAccount" model="com.vnbig.financial.db.PaymentAccount">
+        <view type="grid" name="paymentAccount-grid"/>
+        <view type="form" name="paymentAccount-form"/>
+        <context name="_tenantId" expr="financial" />
+    </action-view>
+
+    <menuitem name="menu-rate" order="-995" parent="financial" title="Rates" action="rate"/>
+    <action-view name="rate" title="Rates" model="com.vnbig.financial.db.Rate">
+        <view type="grid" name="rate-grid"/>
+        <view type="form" name="rate-form"/>
+        <context name="_tenantId" expr="financial" />
+    </action-view>
+
+    <menuitem name="menu-paymentChannel" order="-994" parent="financial" title="PaymentChannel" action="paymentChannel"/>
+    <action-view name="paymentChannel" title="PaymentChannel" model="com.vnbig.financial.db.PaymentChannels">
+        <view type="grid" name="paymentChannel-grid"/>
+        <view type="form" name="paymentChannel-form"/>
+        <context name="_tenantId" expr="financial" />
+    </action-view>
+
+    <menuitem name="financialCapitalDetail" order="-993" parent="financial" title="CapitalDetail" action="financialCapitalDetail"/>
+    <action-view name="financialCapitalDetail" title="CapitalDetail" model="com.vnbig.financial.db.CapitalDetail">
+        <view type="grid" name="financialCapitalDetail-grid"/>
+        <view type="form" name="financialCapitalDetail-form"/>
+        <context name="_tenantId" expr="financial" />
+    </action-view>
+
+    <!--平台资产列表-->
+    <menuitem name="platformAssetList" order="-993" parent="financial" title="PlatformAssetList" action="all.json.PlatAccountInOutVO"/>
+    <action-view name="all.json.PlatAccountInOutVO" title="PlatformAssetList" model="com.axelor.meta.db.MetaJsonRecord">
+        <view type="grid" name="custom-model-PlatAccountInOutVO-grid" />
+        <view type="form" name="custom-model-PlatAccountInOutVO-form" />
+        <domain>self.jsonModel = :jsonModel</domain>
+        <context name="jsonModel" expr="PlatAccountInOutVO" />
+        <context name="dubboService" expr="com.vnbig.financial.rpc.PlatAccountInOutDubbo" />
+        <context name="_tenantId" expr="financial" />
+    </action-view>
+
+    <!--平台资产流水-->
+    <menuitem name="platformAssetWater" order="-994" parent="financial" title="PlatformAssetWater" action="all.json.PlatAccountWaterVO"/>
+    <action-view name="all.json.PlatAccountWaterVO" title="PlatformAssetWater" model="com.axelor.meta.db.MetaJsonRecord">
+        <view type="grid" name="custom-model-PlatAccountWaterVO-grid" />
+        <view type="form" name="custom-model-PlatAccountWaterVO-form" />
+        <domain>self.jsonModel = :jsonModel</domain>
+        <context name="jsonModel" expr="PlatAccountWaterVO" />
+        <context name="dubboService" expr="com.vnbig.financial.rpc.PlatAccountWaterDubbo" />
+        <context name="_tenantId" expr="financial" />
+    </action-view>
+
+
+    <!--<menuitem name="menu-activity" parent="financial" title="activity award" action="activity"/>-->
+    <!--<action-view name="activity" title="activity award" model="com.axelor.meta.db.MetaJsonRecord">-->
+    <!--<view type="grid" name="custom-model-ActivityVO-grid" />-->
+    <!--<domain>self.jsonModel = :jsonModel</domain>-->
+    <!--<context name="jsonModel" expr="ActivityVO" />-->
+    <!--<context name="dubboService" expr="com.vnbig.financial.controller.ActivityController" />-->
+    <!--</action-view>-->
+
+    <!--<action-view name="action-AwardDistributionVO-popup" title="AwardDetails" model="com.axelor.meta.db.MetaJsonRecord">-->
+    <!--<view type="grid" name="custom-model-AwardDistributionVO-grid" />-->
+    <!--<domain>self.jsonModel = :jsonModel</domain>-->
+    <!--<context name="jsonModel" expr="AwardDistributionVO" />-->
+    <!--<context name="dubboService" expr="com.vnbig.financial.controller.AwardController" />-->
+    <!--</action-view>-->
+
+
+    <menuitem name="menu-wallet" order="-992" parent="financial" title="Wallet"/>
+    <menuitem name="menu-walletAddress" parent="menu-wallet" title="WalletAddress" action="walletAddress"/>
+    <action-view name="walletAddress" title="WalletAddress" model="com.vnbig.financial.db.WalletAddress">
+        <view type="grid" name="walletAddress-grid"/>
+        <view type="form" name="walletAddress-form"/>
+        <context name="_tenantId" expr="financial" />
+    </action-view>
+    <menuitem name="financialTransfer" parent="menu-wallet" title="Currency record" action="financialTransfer"/>
+    <action-view name="financialTransfer" title="Currency record" model="com.vnbig.financial.db.FinancialTransfer">
+        <view type="grid" name="financialTransfer-grid"/>
+        <view type="form" name="financialTransfer-form"/>
+        <context name="_tenantId" expr="financial" />
+    </action-view>
+
+    <!-- <menuitem name="menu-other" parent="financial" title="Other"/>
+     <menuitem name="menu-auditLog" parent="menu-other" title="AuditLog" action="auditLog"/>
+     <action-view name="auditLog" title="AuditLog" model="com.vnbig.operation.db.AuditLog">
+         <view type="grid" name="auditLog-grid"/>
+         <view type="form" name="auditLog-form"/>
+     </action-view>
+     <menuitem name="menu-btcRate" parent="menu-other" title="BtcRate" action="btcRate"/>
+     <action-view name="btcRate" title="BtcRate" model="com.vnbig.statistics.db.BtcRate">
+         <view type="grid" name="btcRate-grid"/>
+         <view type="form" name="btcRate-form"/>
+     </action-view>-->
+    <!--<menuitem name="menu-userDailySum" parent="menu-other" title="UserDailySum" action="userDailySum"/>
+    <action-view name="userDailySum" title="UserDailySum" model="com.vnbig.statistics.db.UserDailySum">
+        <view type="grid" name="userDailySum-grid"/>
+        <view type="form" name="userDailySum-form"/>
+    </action-view>-->
+    <!--<menuitem name="menu-userTradFeeConfig" parent="menu-other" title="UserTradFeeConfig" action="userTradFeeConfig"/>
+    <action-view name="userTradFeeConfig" title="UserTradFeeConfig" model="com.vnbig.financial.db.UserTradFeeConfig">
+        <view type="grid" name="userTradFeeConfig-grid"/>
+        <view type="form" name="userTradFeeConfig-form"/>
+    </action-view>-->
+
+    <menuitem name="menu-digital" parent="financial" title="Digital"/>
+    <!--&lt;!&ndash;入币记录&ndash;&gt;
+    <menuitem name="menu-inMoney" parent="menu-digital" title="InMoney" action="inMoney"/>
+    <action-view name="inMoney" title="InMoney" model="com.vnbig.financial.db.InOutMoney">
+        <view type="grid" name="inOutMoney-grid"/>
+        <view type="form" name="inOutMoney-form"/>
+        <domain>self.status!=0 and self.status!=3 and inOut=1</domain>
+    </action-view>
+    &lt;!&ndash;出币记录&ndash;&gt;
+    <menuitem name="menu-outMoney" parent="menu-digital" title="OutMoney" action="outMoney"/>
+    <action-view name="outMoney" title="OutMoney" model="com.vnbig.financial.db.InOutMoney">
+        <view type="grid" name="inOutMoney-grid"/>
+        <view type="form" name="inOutMoney-form"/>
+        <domain>self.status!=0 and self.status!=3 and inOut=0</domain>
+    </action-view>-->
+    <!--第三方资产划转记录-->
+    <menuitem name="menu-thirdTransferRecord" order="-999" parent="financial" title="ThirdTransferRecord" action="thirdTransferRecord"/>
+    <action-view name="thirdTransferRecord" title="ThirdTransferRecord" model="com.vnbig.financial.db.InOutMoney">
+        <view type="grid" name="thirdTransferRecord-grid"/>
+        <view type="form" name="thirdTransferRecord-form"/>
+        <domain>self.postscript='bibao'</domain>
+        <context name="_tenantId" expr="financial" />
+    </action-view>
+    <!--第三方充币到账门槛-->
+    <!--<menuitem name="menu-thirdRechargeThreshold" order="-999" parent="financial" title="ThirdRechargeThreshold" action="all.json.ThirdRechargeThresholdVO"/>-->
+    <!--<action-view name="thirdRechargeThreshold" title="ThirdRechargeThreshold" model="com.vnbig.financial.db.ThirdRechargeThreshold">-->
+    <!--<view type="grid" name="thirdRechargeThreshold-grid"/>-->
+    <!--<view type="form" name="thirdRechargeThreshold-form"/>-->
+    <!--<context name="_tenantId" expr="financial" />-->
+    <!--</action-view>-->
+    <!--&lt;!&ndash; 入币审核 &ndash;&gt;
+    <menuitem name="menu-inAudit" parent="menu-digital" title="InAudit" action="inAudit"/>
+    <action-view name="inAudit" title="InAudit" model="com.vnbig.financial.db.InOutMoney">
+        <view type="grid" name="inOutMoney-audit-in-grid"/>
+        <view type="form" name="inOutMoney-form"/>
+        <domain>self.status=0 AND self.inOut=1</domain>
+    </action-view>
+    &lt;!&ndash; 出币审核 &ndash;&gt;
+    <menuitem name="menu-outAudit" parent="menu-digital" title="OutAudit" action="outAudit"/>
+    <action-view name="outAudit" title="OutAudit" model="com.vnbig.financial.db.InOutMoney">
+        <view type="grid" name="inOutMoney-audit-out-grid"/>
+        <view type="form" name="inOutMoney-form"/>
+        <domain>self.status=0 AND self.inOut=0</domain>
+    </action-view>
+    &lt;!&ndash; 出币终核 &ndash;&gt;
+    <menuitem name="menu-outLastAudit" parent="menu-digital" title="OutLastAudit" action="outLastAudit"/>
+    <action-view name="outLastAudit" title="OutLastAudit" model="com.vnbig.financial.db.InOutMoney">
+        <view type="grid" name="inOutMoney-audit-out-third-grid"/>
+        <view type="form" name="inOutMoney-form"/>
+        <domain>self.status=4 AND self.inOut=0</domain>
+    </action-view>-->
+    <!--<menuitem name="menu-grantAward" parent="menu-digital" title="AwardAudit" action="grantAward"/>-->
+    <!--<action-view name="grantAward" title="AwardAudit" model="com.vnbig.financial.db.GrantAward">-->
+    <!--<view type="grid" name="grantAward-audit-grid"/>-->
+    <!--<view type="form" name="grantAward-form"/>-->
+    <!--&lt;!&ndash;<domain>self.status=0</domain>&ndash;&gt;-->
+    <!--</action-view>-->
+
+    <!--<menuitem name="menu-awardRecord" parent="menu-digital" title="AwardRecord" action="awardRecord"/>
+    <action-view name="awardRecord" title="AwardRecord" model="com.vnbig.financial.db.GrantAward">
+        <view type="grid" name="grantAward-record-grid"/>
+        <view type="form" name="grantAward-form"/>
+        <domain>self.status!=0</domain>
+    </action-view>-->
+
+    <menuitem name="menu-StatisticsProfitAudit" parent="menu-digital" title="StatisticsProfitAudit" action="statisticsProfitAudit"/>
+    <action-view name="statisticsProfitAudit" title="StatisticsProfitAudit" model="com.vnbig.trading.db.StatisticsProfit">
+        <view type="grid" name="statisticsProfitAudit-grid"/>
+        <view type="form" name="statisticsProfitAudit-form"/>
+        <context name="_tenantId" expr="financial" />
+    </action-view>
+
+    <action-view name="financial.inOutCoinAccount" title="InOutCoinAccount">
+        <view type="dashboard" name="financial.inOutCoinAccount.dashboard"/>
+        <context name="_tenantId" expr="financial" />
+    </action-view>
+    <!--资产概况-->
+    <menuitem name="menu-assetOverview" parent="financial" title="Asset overview" action="assetOverview"/>
+    <action-view name="assetOverview" title="Asset overview" model="com.vnbig.financial.db.CapitalDetail">
+        <view type="dashboard" name="financial.dashboard.assetOverview"/>
+        <context name="_tenantId" expr="financial" />
+    </action-view>
+    <!--子业务账户资产-->
+    <menuitem name="menu-subBusinessAsset" parent="financial" title="SubBusinessAsset" action="subBusinessAsset"/>
+    <action-view name="subBusinessAsset" title="SubBusinessAsset" model="com.vnbig.financial.db.CapitalDetail">
+        <view type="dashboard" name="financial.dashboard.subBusinessAsset"/>
+        <context name="_tenantId" expr="financial" />
+    </action-view>
+
+    <dashboard title="AssetOverview" name="financial.dashboard.assetOverview">
+        <dashlet colSpan="12" action="all.json.platformAssets" canSearch="true"/>
+        <dashlet colSpan="12" action="all.json.platformIncome" canSearch="true"/>
+        <dashlet colSpan="12" action="all.json.platformExpend" canSearch="true"/>
+    </dashboard>
+
+    <action-view name="platformAssets" title="PlatformAssets" model="com.vnbig.financial.db.PlatformAssetStatusOverview">
+        <view type="grid" name="platformAssets-grid"/>
+        <view type="form" name="platformAssets-form"/>
+        <context name="_tenantId" expr="financial" />
+    </action-view>
+    <action-view name="platformIncome" title="PlatformIncome" model="com.vnbig.financial.db.PlatformIncomeAssetOverview">
+        <view type="grid" name="platformIncome-grid"/>
+        <view type="form" name="platformIncome-form"/>
+        <context name="_tenantId" expr="financial" />
+    </action-view>
+    <action-view name="platformExpend" title="PlatformExpend" model="com.vnbig.financial.db.PlatformExpendAssetOverview">
+        <view type="grid" name="platformExpend-grid"/>
+        <view type="form" name="platformExpend-form"/>
+        <context name="_tenantId" expr="financial" />
+    </action-view>
+
+
+    <dashboard title="SubBusinessAsset" name="financial.dashboard.subBusinessAsset">
+        <dashlet colSpan="12" action="walletAsset" canSearch="true"/>
+        <dashlet colSpan="12" action="coinTradeAsset" canSearch="true"/>
+        <dashlet colSpan="12" action="contractTradeAsset" canSearch="true"/>
+    </dashboard>
+
+    <action-view name="walletAsset" title="WalletAsset" model="com.vnbig.financial.db.WalletAsset">
+        <view type="grid" name="walletAsset-grid"/>
+        <view type="form" name="walletAsset-form"/>
+        <context name="_tenantId" expr="financial" />
+    </action-view>
+    <action-view name="coinTradeAsset" title="CoinTradeAsset" model="com.vnbig.financial.db.CoinTradeAsset">
+        <view type="grid" name="coinTradeAsset-grid"/>
+        <view type="form" name="coinTradeAsset-form"/>
+        <context name="_tenantId" expr="financial" />
+    </action-view>
+    <action-view name="contractTradeAsset" title="ContractTradeAsset" model="com.vnbig.financial.db.ContractTradeAsset">
+        <view type="grid" name="contractTradeAsset-grid"/>
+        <view type="form" name="contractTradeAsset-form"/>
+        <context name="_tenantId" expr="financial" />
+    </action-view>
+
+    <menuitem name="menu-dailyPlatformIncome" parent="financial" title="DailyPlatformIncome" action="dailyPlatformIncome"/>
+    <action-view name="dailyPlatformIncome" title="DailyPlatformIncome" model="com.vnbig.financial.db.DailyPlatformIncome">
+        <view type="grid" name="dailyPlatformIncome-grid"/>
+        <view type="form" name="dailyPlatformIncome-form"/>
+        <context name="_tenantId" expr="financial" />
+    </action-view>
+
+    <menuitem name="menu-dailyPlatformExpend" parent="financial" title="DailyPlatformExpend" action="dailyPlatformExpend"/>
+    <action-view name="dailyPlatformExpend" title="DailyPlatformExpend" model="com.vnbig.financial.db.DailyPlatformExpend">
+        <view type="grid" name="dailyPlatformExpend-grid"/>
+        <view type="form" name="dailyPlatformExpend-form"/>
+        <context name="_tenantId" expr="financial" />
+    </action-view>
+
+    <menuitem name="menu-dailyRechargeWithdrawCoin" parent="financial" title="DailyRechargeWithdrawCoin" action="dailyRechargeWithdrawCoin"/>
+    <action-view name="dailyRechargeWithdrawCoin" title="DailyRechargeWithdrawCoin" model="com.vnbig.financial.db.DailyRechargeWithdrawCoin">
+        <view type="grid" name="dailyRechargeWithdrawCoin-grid"/>
+        <view type="form" name="dailyRechargeWithdrawCoin-form"/>
+        <context name="_tenantId" expr="financial" />
+    </action-view>
+
+
+
+
+    <!--杠桿-->
+    <menuitem name="leverage" order="4" title="Leverage" icon="fa-level-up" icon-background="red"/>
+    <menuitem name="menu-apply-leverage" parent="leverage" title="ApplyLeverage" action="applyLeverages"/>
+    <action-view name="applyLeverages" title="ApplyLeverage" model="com.vnbig.leverage.db.ApplyLeverage">
+        <view type="grid" name="ApplyLeverage-grid"/>
+        <view type="form" name="ApplyLeverage-form"/>
+        <context name="_tenantId" expr="leverage" />
+    </action-view>
+
+    <menuitem name="menu-bad-loans" parent="leverage" title="BadLoans" action="badLoans"/>
+    <action-view name="badLoans" title="BadLoans" model="com.vnbig.leverage.db.BadLoans">
+        <view type="grid" name="BadLoans-grid"/>
+        <view type="form" name="BadLoans-form"/>
+        <context name="_tenantId" expr="leverage" />
+    </action-view>
+
+    <menuitem name="menu-lending-water" parent="leverage" title="LendingWater" action="lendingWaters"/>
+    <action-view name="lendingWaters" title="LendingWater" model="com.vnbig.leverage.db.LendingWater">
+        <view type="grid" name="LendingWater-grid"/>
+        <view type="form" name="LendingWater-form"/>
+        <context name="_tenantId" expr="leverage" />
+    </action-view>
+
+    <menuitem name="menu-lending-return-leverage" parent="leverage" title="Loan return records" action="action.lendingReturnLeverage"/>
+    <action-view name="action.lendingReturnLeverage" title="Loan return records" model="com.vnbig.leverage.db.LendingReturnLeverage">
+        <view type="grid" name="LendingReturnLeverage-grid"/>
+        <view type="form" name="LendingReturnLeverage-form"/>
+        <context name="_tenantId" expr="leverage" />
+    </action-view>
+    <menuitem name="menu-return-leverage" parent="leverage" title="ReturnLeverage" action="returnLeverages"/>
+    <action-view name="returnLeverages" title="ReturnLeverage" model="com.vnbig.leverage.db.ReturnLeverage">
+        <view type="grid" name="ReturnLeverage-grid"/>
+        <view type="form" name="ReturnLeverage-form"/>
+        <context name="_tenantId" expr="leverage" />
+    </action-view>
+    <menuitem name="leverage-infor" parent="leverage" title="Answer information" action="action.leverageInfor"/>
+    <action-view name="action.leverageInfor" title="Answer information" model="com.vnbig.leverage.db.LeverageInfor">
+        <view type="grid" name="LeverageInfor-grid"/>
+        <view type="form" name="LeverageInfor-form"/>
+        <context name="_tenantId" expr="leverage" />
+    </action-view>
+
+
+</object-views>

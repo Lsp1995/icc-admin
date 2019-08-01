@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.0.xsd">
+
+    <module name="bourse" package="com.vnbig.bourse.db"/>
+    <entity name="Variety" table="Variety" sequential="false"  cacheable="false">
+        <string name="code" required="true" unique="true"/>
+        <string name="commodity" title="Commodity" unique="false" required="true"/>
+        <string name="currency" title="Currency" unique="false" required="true"/>
+        <string name="description" unique="false"/>
+        <boolean name="enabled" required="true" unique="false" default="true"
+                 selection="com.vnbig.market.enabled.select"/>
+        <string name="exchange" title="Exchange" unique="false" required="true"/>
+        <string name="name" required="true" unique="false"/>
+        <integer name="rank" unique="false"/>
+        <datetime name="cd" unique="false"/>
+        <datetime name="lmd" unique="false"/>
+        <string name="cu" unique="false"/>
+        <string name="lmu" unique="false"/>
+        <string name="val" unique="false"/>
+    </entity>
+</domain-models>

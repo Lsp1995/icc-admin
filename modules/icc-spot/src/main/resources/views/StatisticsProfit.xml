@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <grid name="statisticsProfit-grid" title="StatisticsProfit" model="com.vnbig.trading.db.StatisticsProfit"
+          canDelete="false" canEdit="false" canNew="false" edit-icon="false">
+        <field name="summaryDate"/>
+        <field name="totalTradeAmount"/>
+        <field name="feeAmount"/>
+        <field name="totalFeeAmount"/>
+        <field name="profitEnbaled"/>
+    </grid>
+    <grid name="statisticsProfitAudit-grid" title="StatisticsProfitAudit" model="com.vnbig.trading.db.StatisticsProfit" canDelete="false" canNew="false" canEdit="false">
+        <field name="summaryDate"/>
+        <field name="userCode"/>
+        <field name="profitAmount"/>
+        <field name="examineEnabled"/>
+        <!--<button name="profitAuditBtn" icon="fa-check" onClick="" title="profitAuditBtn"/>-->
+    </grid>
+    <form name="statisticsProfit-form" title="StatisticsProfit" model="com.vnbig.trading.db.StatisticsProfit"
+          canDelete="false" canNew="false" canEdit="false" width="large" canAttach="false">
+        <panel title="StatisticsProfit" itemSpan="4">
+            <field name="abonusAmount"/>
+            <field name="currency"/>
+            <field name="examineEnabled"/>
+            <field name="feeAmount"/>
+            <field name="profitEnbaled"/>
+            <field name="rate"/>
+            <field name="summaryDate"/>
+            <field name="tradeAmount"/>
+            <field name="userCode"/>
+            <field name="userAccount"/>
+            <field name="satisfyPositions"/>
+            <field name="cd" title="Cd" readonly="true" widget="date-time"/>
+            <field name="cu" title="Cu" readonly="true"/>
+            <field name="lmd" title="Lmd" readonly="true" widget="date-time"/>
+            <field name="lmu" title="Lmu" readonly="true"/>
+            <field name="ve" title="Ve" readonly="true"/>
+            <field name="val" title="Val" readonly="true"/>
+        </panel>
+
+    </form>
+</object-views>

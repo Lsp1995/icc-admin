@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.0.xsd">
+    <module name="leverage" package="com.vnbig.leverage.db"/>
+
+    <entity name="LendingReturnLeverage" table="LendingReturnLeverage" sequential="false" cacheable="false">
+        <string name="applyId"/>
+        <string name="lendingIds"/>
+        <string name="refundId"/>
+        <decimal name="refundAmount"/>
+        <decimal name="refundInterest"/>
+        <string name="variety"/>
+        <string name="account"/>
+        <string name="userCode" title="User"/>
+        <integer name="applyDays"/>
+        <datetime name="refundTime"/>
+        <datetime name="cd" />
+        <string name="cu"/>
+    </entity>
+
+</domain-models>

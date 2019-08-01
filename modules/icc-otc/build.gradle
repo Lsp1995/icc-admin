@@ -1,0 +1,13 @@
+apply plugin: 'com.axelor.app-module'
+
+axelor {
+    title = "icc :: otc"
+}
+
+repositories {
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+}
+
+dependencies {
+
+}

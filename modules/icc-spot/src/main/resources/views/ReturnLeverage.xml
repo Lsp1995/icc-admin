@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <grid name="ReturnLeverage-grid" title="ReturnLeverage" model="com.vnbig.leverage.db.ReturnLeverage" canNew="false"
+          canEdit="false" canDelete="false" edit-icon="false" orderBy="-cd">
+        <field name="user"/>
+        <field name="account"/>
+        <field name="currency"/>
+        <field name="variety"/>
+        <field name="amount"/>
+        <field name="interest"/>
+        <field name="time"/>
+        <field name="lendingSubjectProfit"/>
+        <field name="platformProfit"/>
+        <field name="state"/>
+        <field name="cd"/>
+        <field name="cu"/>
+    </grid>
+    <form name="ReturnLeverage-form" title="ReturnLeverage" model="com.vnbig.leverage.db.ReturnLeverage" canNew="false"
+          canEdit="false" canDelete="false" canAttach="false" width="large">
+        <panel title="ReturnLeverage" itemSpan="4" readonly="true">
+            <field name="user"/>
+            <field name="account"/>
+            <field name="currency"/>
+            <field name="variety"/>
+            <field name="amount"/>
+            <field name="interest"/>
+            <field name="time"/>
+            <field name="lendingSubjectProfit"/>
+            <field name="platformProfit"/>
+            <field name="state"/>
+            <field name="cd"/>
+            <field name="cu"/>
+        </panel>
+    </form>
+
+</object-views>

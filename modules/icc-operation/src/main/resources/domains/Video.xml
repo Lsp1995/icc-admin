@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.0.xsd">
+
+    <module name="operation" package="com.vnbig.operation.db"/>
+    <entity name="Video"  table="Video" sequential="false" cacheable="false">
+        <string name="createUserAccount" unique="false"/>
+        <boolean name="enabled" required="true" unique="false"/>
+        <string name="language" unique="false" selection="com.vnbig.operation.language.select"/>
+        <string name="lastModifyUserAccount" unique="false"/>
+        <integer name="rank" required="true" unique="false"/>
+        <string name="title" unique="false"/>
+        <string name="videoPicture" unique="false"/>
+        <string name="videoUrl" unique="false"/>
+        <datetime name="cd" unique="false"/>
+        <datetime name="lmd" unique="false"/>
+        <string name="cu" unique="false"/>
+        <string name="lmu" unique="false"/>
+        <integer name="ve" unique="false"/>
+        <string name="val" unique="false"/>
+    </entity>
+</domain-models>

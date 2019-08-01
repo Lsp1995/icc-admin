@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.0.xsd">
+    <module name="otc" package="com.vnbig.otc.db"/>
+
+    <entity name="TradeLimit" table="trade_limit" sequential="false" cacheable="true">
+        <string name="tradeMoney" required="true" unique="true"/>
+        <decimal name="singleLimit" precision="16" scale="8"/>
+        <decimal name="totalLimit" precision="16" scale="8"/>
+        <integer name="authType"/>
+        <boolean name="enabled" required="true" default="0"/>
+
+        <string name="cu"/>
+        <string name="lmu"/>
+        <datetime name="cd"/>
+        <datetime name="lmd"/>
+    </entity>
+
+
+</domain-models>

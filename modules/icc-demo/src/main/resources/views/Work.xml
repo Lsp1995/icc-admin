@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns="http://axelor.com/xml/ns/object-views"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.1.xsd">
+
+    <grid name="demo-work-grid" title="Demo Work" model="com.axelor.demo.db.DemoWork" editable="true">
+        <field name="name"/>
+        <field name="date"/>
+        <field name="hours"/>
+        <button name="btnStart" title="开工" prompt="确定?" onClick="com.axelor.demo.web.WorkController:start"/>
+    </grid>
+
+    <form name="demo-work-form" title="Demo Work" model="com.axelor.demo.db.DemoWork" width="mini">
+        <panel title="Overview">
+            <field name="name"/>
+            <field name="date"/>
+            <field name="hours"/>
+        </panel>
+    </form>
+
+</object-views>

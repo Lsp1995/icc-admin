@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.0.xsd">
+
+    <module name="user" package="com.vnbig.user.db"/>
+    <entity name="UserInfo"  table="User" sequential="false" cacheable="false">
+        <string name="code"/>
+        <string name="countryCode" required="true"/>
+        <string name="currency"/>
+        <string name="email"/>
+        <string name="firstName"/>
+        <string name="inviteCode"/>
+        <string name="language" selection="com.vnbig.operation.language.select"/>
+        <string name="lastLoginIp"/>
+        <datetime name="lastLoginTime"/>
+        <string name="lastName"/>
+        <string name="mobile" required="true"/>
+        <integer name="status" required="true" selection="com.vnbig.user.status.select" default="0"/>
+        <integer name="type" required="true" selection="com.vnbig.user.type.select"/>
+        <string name="userName" required="true"/>
+        <string name="beInvited"/>
+        <datetime name="cd" unique="false"/>
+        <datetime name="lmd" unique="false"/>
+        <string name="cu" unique="false"/>
+        <string name="lmu" unique="false"/>
+        <integer name="ve" unique="false"/>
+        <string name="val" unique="false"/>
+        <!--<one-to-many name="contractConfigBonds" ref="com.vnbig.contract.db.ContractConfigBond" mappedBy="userId"/>-->
+        <!--<one-to-many name="contractConfigFees" ref="com.vnbig.contract.db.ContractConfigFee" mappedBy="userId"/>-->
+        <!--<one-to-many name="authenticationList" ref="com.vnbig.user.db.Authentication" mappedBy="userId"/>-->
+    </entity>
+</domain-models>

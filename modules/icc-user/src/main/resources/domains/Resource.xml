@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.0.xsd">
+
+    <module name="system" package="com.vnbig.user.db"/>
+    <entity name="Resource"  table="Resource" sequential="false" cacheable="false">
+        <integer name="code" unique="false"/>
+        <string name="description" unique="false"/>
+        <boolean name="enabled" required="true" unique="false"/>
+        <string name="httpMethod" unique="false"/>
+        <string name="model" unique="false"/>
+        <string name="name" unique="false"/>
+        <integer name="open" required="true" unique="false"/>
+        <string name="pack" unique="false"/>
+        <string name="project" unique="false"/>
+        <integer name="rank" required="true" unique="false"/>
+        <integer name="type" unique="false"/>
+        <string name="url" unique="false"/>
+        <datetime name="cd" unique="false"/>
+        <datetime name="lmd" unique="false"/>
+        <string name="cu" unique="false"/>
+        <string name="lmu" unique="false"/>
+        <integer name="ve" unique="false"/>
+        <string name="val" unique="false"/>
+    </entity>
+</domain-models>

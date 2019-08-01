@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <grid name="capitalFreezeThawWater-grid" title="CapitalFreezeThawWater" model="com.vnbig.financial.db.CapitalFreezeThawWater" canDelete="false"
+          canEdit="false" canNew="false" edit-icon="false">
+        <field name="user" title="userCode"/>
+        <field name="account" title="CapitalAccount"/>
+        <field name="businessCode" title="businessCode"/>
+        <field name="cause"/>
+        <field name="currency"/>
+        <field name="type" title="capitalWaterType"/>
+        <field name="sourceId"/>
+        <field name="amount" title="capitalWaterAmount"/>
+        <field name="fee"/>
+        <field name="time" widget="date-time"/>
+    </grid>
+    <form name="capitalFreezeThawWater-form" title="CapitalFreezeThawWater" model="com.vnbig.financial.db.CapitalFreezeThawWater" width="large" canSave="false"
+          canDelete="false" canEdit="false" canNew="false" canAttach="false" canArchive="false">
+        <panel title="CapitalFreezeThawWater" itemSpan="4" readonly="true">
+            <field name="id" hidden="false"/>
+            <field name="account" title="CapitalAccount"/>
+            <field name="user" title="userCode"/>
+            <field name="businessCode" title="businessCode"/>
+            <field name="capitalDetailId" title="capitalDetailId"/>
+            <field name="type" title="type"/>
+            <field name="currency"/>
+            <field name="amount"/>
+            <field name="sourceId"/>
+            <field name="cause"/>
+            <field name="time" widget="date-time"/>
+            <field name="description"/>
+            <field name="encrypt"/>
+            <field name="cu"/>
+            <field name="val"/>
+            <field name="updateTime" widget="date-time"/>
+        </panel>
+    </form>
+</object-views>

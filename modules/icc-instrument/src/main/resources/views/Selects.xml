@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <!-- Nomenclature : * name : "interfaceName" + "fieldName" + ".select" -->
+
+    <selection name="com.vnbig.market.enabled.select">
+        <option value="true">enable</option>
+        <option value="false">disable</option>
+    </selection>
+    <selection name="com.vnbig.market.criteria.select">
+        <option value="REGEX">REGEX</option>
+        <option value="IN">IN</option>
+        <option value="NE">NE</option>
+        <option value="LT">LT</option>
+        <option value="NOTIN">NOTIN</option>
+        <option value="GTE">GTE</option>
+        <option value="LTE">LTE</option>
+        <option value="EQ">EQ</option>
+        <option value="GT">GT</option>
+    </selection>
+</object-views>

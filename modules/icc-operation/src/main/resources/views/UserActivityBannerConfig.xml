@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <grid name="userActivityBannerConfig-grid" title="UserActivityBannerConfig" model="com.vnbig.operation.db.UserActivityBannerConfig" canDelete="false" orderBy="-cd">
+        <field name="id" hidden="true"/>
+        <field name="name"/>
+        <field name="language"/>
+        <field name="status"/>
+        <field name="imgPath"/>
+        <field name="enabled"/>
+        <field name="endTime"/>
+        <field name="startTime"/>
+    </grid>
+    <form name="userActivityBannerConfig-form" title="UserActivityBannerConfig" model="com.vnbig.operation.db.UserActivityBannerConfig" canDelete="false" width="large">
+        <panel title="UserActivityBannerConfig" itemSpan="4">
+            <field name="id" hidden="true"/>
+            <field name="name"/>
+            <field name="language"/>
+            <field name="status"/>
+            <field name="imgPath"/>
+            <field name="enabled"/>
+            <field name="endTime" widget="date-time"/>
+            <field name="startTime"/>
+        </panel>
+    </form>
+
+</object-views>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <grid name="userActivityConfig-grid" title="UserActivityConfig" model="com.vnbig.operation.db.UserActivityConfig" canDelete="false" orderBy="-cd">
+        <field name="id" hidden="true"/>
+        <field name="configType"/>
+        <field name="configName"/>
+        <field name="status"/>
+        <field name="tradeType"/>
+        <field name="awardAccount"/>
+        <field name="awardCurrency"/>
+        <field name="awardAmount"/>
+        <field name="feeReturnRate"/>
+        <field name="cd"/>
+        <field name="lmd"/>
+        <field name="cu"/>
+        <field name="lmu"/>
+    </grid>
+    <form name="userActivityConfig-form" title="UserActivityConfig" model="com.vnbig.operation.db.UserActivityConfig" canDelete="false" width="large">
+        <panel title="UserActivityConfig" itemSpan="4">
+            <field name="id" hidden="true"/>
+            <field name="configType"/>
+            <field name="configName"/>
+            <field name="status"/>
+            <field name="tradeType"/>
+            <field name="awardAccount"/>
+            <field name="awardCurrency"/>
+            <field name="awardAmount"/>
+            <field name="feeReturnRate"/>
+            <field name="cd"/>
+            <field name="lmd"/>
+            <field name="cu"/>
+            <field name="lmu"/>
+        </panel>
+    </form>
+
+</object-views>

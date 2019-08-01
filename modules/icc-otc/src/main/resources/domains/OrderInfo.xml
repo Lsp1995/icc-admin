@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.0.xsd">
+    <module name="otc" package="com.vnbig.otc.db"/>
+
+    <entity name="OrderInfo" table="order_info" sequential="false" cacheable="false">
+        <string name="reqNo" unique="true"/>
+        <string name="orderNumber" column="`number`" required="true"  unique="true"/>
+        <string name="tradeType" required="true" selection="ad-trade-type-select"/>
+        <string name="tradeCurrency" required="true"/>
+        <string name="tradeMoney" required="true"/>
+        <string name="pmId" required="true"/>
+        <string name="referenceNumber" required="true"/>
+        <many-to-one name="advertisementId" ref="com.vnbig.otc.db.Advertisement" title="advertisementId"/>
+        <string name="accountCode" required="true"/>
+        <string name="userCode" required="true"/>
+        <string name="advCode" required="true"/>
+        <string name="advAccount" required="true"/>
+        <string name="cu" required="true"/>
+
+
+        <decimal name="fee"/>
+        <decimal name="quantity"/>
+        <decimal name="price"/>
+        <decimal name="amount"/>
+        <decimal name="lockQuantity"/>
+        <decimal name="rate"/>
+
+        <datetime name="canceledDate"/>
+        <datetime name="paidDate"/>
+        <datetime name="finishedDate"/>
+        <datetime name="appealedDate"/>
+        <datetime name="cd" required="true"/>
+
+        <integer name="deadline"/>
+        <integer name="status"/>
+
+        <boolean name="isAppealed" required="true"/>
+
+
+    </entity>
+
+</domain-models>

@@ -1,0 +1,18 @@
+apply plugin: 'com.axelor.app-module'
+
+axelor {
+    title = "icc :: demo"
+}
+
+repositories {
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+}
+
+dependencies {
+    compile project(":modules:icc-common")
+    compile 'com.google.inject.extensions:guice-spring:4.1.0'
+    compile('org.apache.zookeeper:zookeeper:3.4.12') {
+        exclude group: 'org.slf4j', module: 'slf4j-log4j12'
+    }
+    compile 'com.alibaba:dubbo:2.6.2'
+}

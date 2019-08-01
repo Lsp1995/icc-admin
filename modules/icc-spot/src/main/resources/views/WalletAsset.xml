@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <grid name="walletAsset-grid" title="WalletAsset" model="com.vnbig.financial.db.WalletAsset" canDelete="false" canNew="false" canEdit="false" edit-icon="false">
+        <field name="currency" title="Currency"/>
+        <field name="available" title="WalletAvailableAsset"/>
+        <field name="freeze" title="WalletFreezeAsset"/>
+        <field name="reward" title="WalletRewardAsset"/>
+    </grid>
+
+    <form name="walletAsset-form" title="WalletAsset" model="com.vnbig.financial.db.WalletAsset" width="large"  canSave="false"
+          canDelete="false" canEdit="false" canNew="false" canAttach="false">
+        <panel title="WalletAsset" itemSpan="4" readonly="true">
+            <field name="currency" title="Currency"/>
+            <field name="available" title="WalletAvailableAsset"/>
+            <field name="freeze" title="WalletFreezeAsset"/>
+            <field name="reward" title="WalletRewardAsset"/>
+        </panel>
+    </form>
+
+</object-views>

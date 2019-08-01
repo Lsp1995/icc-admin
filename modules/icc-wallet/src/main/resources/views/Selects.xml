@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+
+    <selection name="com.vnbig.wallet.cause.select">
+        <option value="0">Charge money</option>
+        <option value="1">Recharge commission</option>
+        <option value="2">Mention money</option>
+        <option value="3">Withdrawal fee</option>
+        <option value="4">buy</option>
+        <option value="5">Buying commission</option>
+        <option value="6">sell</option>
+        <option value="7">Selling commission</option>
+        <option value="8">borrowing</option>
+        <option value="9">Loan interest</option>
+        <option value="10">lending</option>
+        <option value="11">Loan proceeds</option>
+        <option value="12">transfer</option>
+        <option value="13">Transfer fee</option>
+        <option value="14">freeze</option>
+        <option value="15">thaw</option>
+        <option value="16">defrost (partial withdrawal)</option>
+        <option value="17">thaw (return of trade)</option>
+        <option value="18">defrost (full withdrawal)</option>
+        <option value="19">administrator award</option>
+        <option value="20">activity award</option>
+        <option value="21">Unfreeze (withdrawal rejected)</option>
+        <option value="22">Trading cashback</option>
+        <option value="23">Transaction cashback deduct capital pool</option>
+        <option value="24">Reward drop</option>
+        <option value="25">Using bonuses</option>
+        <option value="99">Initialize the</option>
+    </selection>
+</object-views>

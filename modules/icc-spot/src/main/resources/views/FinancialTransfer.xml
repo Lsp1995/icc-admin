@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <grid name=" financialTransfer-grid" title="Currency record" model="com.vnbig.financial.db.FinancialTransfer"
+          canDelete="false" canEdit="false" canNew="false" edit-icon="false" >
+        <field name="currency"/>
+        <field name="cd" title="Money time" widget="date-time"/>
+        <field name="amount" title="Amount of money"/>
+        <field name="minerFee"/>
+        <field name="minerFeeCurrency"/>
+        <field name="actualAmount"/>
+        <field name="actualMinerFee"/>
+        <field name="addressId"/>
+        <field name="outTradeNo"/>
+        <field name="fee"/>
+        <field name="feeScale"/>
+        <field name="outStatus"/>
+        <field name="remark"/>
+        <field name="transferUser"/>
+        <field name="type" title="Wallet Type" selection="com.vnbig.financial.walletType.select"/>
+    </grid>
+    <form name="financialTransfer-form" title="Currency record" model="com.vnbig.financial.db.FinancialTransfer"
+          canDelete="false" canNew="false" canEdit="false" width="large" canAttach="false" onLoad="action-outTradeNo-record">
+        <panel title="Currency record" itemSpan="4">
+            <field name="currency"/>
+            <field name="amount" title="Amount of money"/>
+            <field name="actualAmount"/>
+            <field name="actualMinerFee"/>
+            <field name="minerFee"/>
+            <field name="minerFeeCurrency"/>
+            <field name="addressId"/>
+            <field name="outTradeNo" widget="url" colSpan="12"/>
+            <field name="fee"/>
+            <field name="feeScale"/>
+            <field name="outStatus"/>
+            <field name="remark"/>
+            <field name="transferUser"/>
+            <field name="type" title="Wallet Type" selection="com.vnbig.financial.walletType.select"/>
+            <field name="cd" title="Cd" readonly="true" widget="date-time"/>
+            <field name="cu" title="Cu" readonly="true"/>
+            <field name="lmd" title="Lmd" readonly="true" widget="date-time"/>
+            <field name="lmu" title="Lmu" readonly="true"/>
+            <field name="ve" title="Ve" readonly="true"/>
+            <field name="val" title="Val" readonly="true"/>
+        </panel>
+        <panel-dashlet action="action-financialTransfer-details-view"/>
+    </form>
+    <action-record name="action-outTradeNo-record" model="com.vnbig.financial.db.FinancialTransfer">
+        <field name="outTradeNo" expr="eval:'https:/blockchain.info/tx/'+outTradeNo" if="outTradeNo!=null"/>
+    </action-record>
+
+    <action-view name="action-financialTransfer-details-view" title="FinancialTransferDetail" model="com.vnbig.financial.db.FinancialTransferDetail">
+        <view type="grid" name="financialTransferDetail-grid"/>
+        <view-param name="popup" value="reload"/>
+        <view-param name="show-toolbar" value="false"/>
+        <view-param name="show-confirm" value="false" />
+        <view-param name="popup-save" value="false"/>
+        <view-param name="forceEdit" value="false"/>
+        <domain>self.financialTransferId=:id</domain>
+        <context name="_tenantId" expr="financial" />
+    </action-view>
+</object-views>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.0.xsd">
+
+    <module name="trading" package="com.vnbig.trading.db"/>
+    <entity name="OrdersCancel" table="OrdersCancel" sequential="false" cacheable="false">
+        <string name="val" unique="false"/>
+        <decimal name="amount" unique="false"/>
+        <string name="asset" unique="false" required="true"/>
+        <string name="command" unique="false"/>
+        <decimal name="dealAmount" unique="false"/>
+        <decimal name="dealPrice" unique="false"/>
+        <long name="dealTime" unique="false"/>
+        <decimal name="dealVolume" unique="false"/>
+        <long name="entrustTime" unique="false"/>
+        <decimal name="price" unique="false"/>
+        <integer name="source" unique="false"/>
+        <integer name="status" unique="false" selection="com.vnbig.trading.ordersStatus.select"/>
+        <string name="thirdId" unique="false"/>
+        <string name="type" unique="false"/>
+        <string name="user" column="`user`" unique="false" required="true"/>
+        <string name="variety" unique="false" required="true"/>
+        <integer name="ve" unique="false"/>
+        <decimal name="volume" unique="false"/>
+    </entity>
+</domain-models>

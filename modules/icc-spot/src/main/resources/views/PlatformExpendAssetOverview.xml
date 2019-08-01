@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <!--平台支出资产概览-->
+    <grid name="platformExpend-grid" title="PlatformExpend" model="com.vnbig.financial.db.PlatformExpendAssetOverview" canDelete="false" canNew="false" canEdit="false" edit-icon="false">
+        <field name="currency" title="Currency"/>
+        <field name="withdrawMinerFeeExpend" title="WithdrawMinerFeeExpend"/>
+        <field name="rewardExpend" title="RewardExpend"/>
+    </grid>
+
+    <form name="platformExpend-form" title="PlatformExpend" model="com.vnbig.financial.db.PlatformExpendAssetOverview" width="large"  canSave="false"
+          canDelete="false" canEdit="false" canNew="false" canAttach="false">
+        <panel title="PlatformExpend" itemSpan="4" readonly="true">
+            <field name="currency" title="Currency"/>
+            <field name="withdrawMinerFeeExpend" title="WithdrawMinerFeeExpend"/>
+            <field name="rewardExpend" title="RewardExpend"/>
+        </panel>
+    </form>
+
+</object-views>

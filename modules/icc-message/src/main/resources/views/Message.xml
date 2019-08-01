@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <grid name="message-grid" title="Faq" model="com.vnbig.message.db.Message" canDelete="false" orderBy="-cd">
+        <field name="title"/>
+        <field name="content"/>
+        <field name="template"/>
+        <field name="type"/>
+        <field name="send"/>
+        <field name="language"/>
+        <field name="cd" widget="date-time"/>
+    </grid>
+    <form name="message-form" title="Faq" model="com.vnbig.message.db.Message" canDelete="false" width="large">
+        <panel title="Faq" itemSpan="4">
+            <field name="title"/>
+            <field name="content"/>
+            <field name="template"/>
+            <field name="type"/>
+            <field name="send"/>
+            <field name="language"/>
+            <field name="cd" title="Cd" readonly="true"/>
+            <field name="cu" title="Cu" readonly="true"/>
+            <field name="lmd" title="Lmd" readonly="true"/>
+            <field name="lmu" title="Lmu" readonly="true"/>
+            <field name="ve" title="Ve" readonly="true"/>
+            <field name="val" title="Val" readonly="true"/>
+        </panel>
+    </form>
+
+</object-views>

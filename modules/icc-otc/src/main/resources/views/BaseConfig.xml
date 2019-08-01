@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+
+    <!--基础配置-->
+    <grid name="BaseConfig-grid" title="BaseConfig" model="com.vnbig.otc.db.BaseConfig"
+          canNew="true" canDelete="true" canEdit="true" canSave="true"
+          >
+        <field name="buyerDeadline"/>
+        <field name="sellerDeadline"/>
+        <field name="appealDeadline"/>
+        <field name="adDeadline"/>
+        <field name="merchantDeposit"/>
+        <field name="depositCurrency"/>
+        <field name="enabled"/>
+    </grid>
+    <form name="BaseConfig-form" title="BaseConfig" model="com.vnbig.otc.db.BaseConfig" canDelete="false" canEdit="true"
+          canSave="true">
+        <panel title="BaseConfig" itemSpan="6">
+
+            <field name="id" readonly="true"/>
+
+
+
+            <field name="buyerDeadline" required="true" />
+            <field name="sellerDeadline" required="true" />
+            <field name="appealDeadline" required="true" />
+            <field name="adDeadline" required="true" />
+            <field name="merchantDeposit" required="true" />
+            <field name="depositCurrency" required="true" />
+            <field name="enabled" required="true" />
+
+
+            <field name="cd" title="Cd"  />
+            <field name="cu" title="Cu"  />
+            <field name="lmd" title="Lmd"  />
+            <field name="lmu" title="Lmu"  />
+
+            <!--
+            `id` varchar(32) NOT NULL,
+  `buyer_deadline` smallint(8) unsigned NOT NULL DEFAULT '0' COMMENT '买家付款期限：分钟',
+  `seller_deadline` smallint(8) unsigned NOT NULL DEFAULT '0' COMMENT '卖家确认时间：分钟',
+  `appeal_deadline` smallint(8) unsigned NOT NULL DEFAULT '0' COMMENT '申诉处理时间：分钟',
+  `ad_deadline` smallint(8) unsigned NOT NULL DEFAULT '0' COMMENT '广告时间\n单位：天',
+  `merchant_deposit` decimal(40,20) NOT NULL DEFAULT '0.00000000000000000000' COMMENT '商家保证金',
+  `deposit_currency` varchar(16) NOT NULL DEFAULT 'VNBT' COMMENT '保证金币种',
+  `enabled` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否禁用',
+  `cd` datetime DEFAULT NULL,
+  `lmd` datetime DEFAULT NULL,
+  `cu` varchar(32) DEFAULT '',
+  `lmu` varchar(32) DEFAULT '',
+
+            -->
+        </panel>
+    </form>
+
+</object-views>

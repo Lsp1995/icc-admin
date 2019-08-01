@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <grid name="commodityInfo-grid" title="CommodityInfo" model="com.vnbig.bourse.db.CommodityInfo" canDelete="false" orderBy="-rank">
+        <field name="language"/>
+        <field name="name"/>
+        <field name="code"/>
+        <field name="releaseTime"/>
+        <field name="listingDate"/>
+        <field name="circulation"/>
+        <field name="whitePaper"/>
+        <field name="officialWebsite"/>
+        <field name="enabled"/>
+        <field name="cd" widget="date-time"/>
+    </grid>
+    <form name="commodityInfo-form" title="CommodityInfo" model="com.vnbig.bourse.db.CommodityInfo" canDelete="false" width="large"
+    canAttach="false" onNew="action-record-commodityInfo">
+        <panel title="" itemSpan="4">
+            <field name="name" readonly="true"/>
+            <field name="code" readonly="true"/>
+            <field name="language"/>
+            <field name="releaseTime"/>
+            <field name="listingDate"/>
+            <field name="circulationTwo"/>
+            <field name="circulation"/>
+            <field name="officialWebsite"/>
+            <field name="blockSearch"/>
+            <field name="whitePaper"/>
+            <field name="walletDownloadAddress"/>
+            <field name="enabled" widget="boolean-switch"/>
+            <field name="digest" widget="Text" colSpan="12"/>
+            <field name="detail" colSpan="12" widget="html"/>
+        </panel>
+        <panel sidebar="true">
+            <field name="cd" title="Cd" readonly="true" widget="date-time"/>
+            <field name="cu" title="Cu" readonly="true"/>
+            <field name="lmd" title="Lmd" readonly="true" widget="date-time"/>
+            <field name="lmu" title="Lmu" readonly="true"/>
+            <field name="ve" title="Ve" readonly="true"/>
+            <field name="val" title="Val" readonly="true" widget="Text"/>
+        </panel>
+    </form>
+
+
+    <form name="commodityInfo-modify-form" title="CommodityInfo" model="com.vnbig.bourse.db.CommodityInfo" canDelete="false" width="large"
+          canAttach="false">
+        <panel title="" itemSpan="4">
+            <field name="name" readonly="true"/>
+            <field name="code" readonly="true"/>
+            <field name="language"/>
+            <field name="releaseTime"/>
+            <field name="listingDate"/>
+            <field name="circulationTwo"/>
+            <field name="circulation"/>
+            <field name="officialWebsite"/>
+            <field name="blockSearch"/>
+            <field name="whitePaper"/>
+            <field name="walletDownloadAddress"/>
+            <field name="enabled" widget="boolean-switch"/>
+            <field name="digest" widget="Text" colSpan="12"/>
+            <field name="detail" colSpan="12" widget="html"/>
+        </panel>
+        <panel sidebar="true">
+            <field name="cd" title="Cd" readonly="true" widget="date-time"/>
+            <field name="cu" title="Cu" readonly="true"/>
+            <field name="lmd" title="Lmd" readonly="true" widget="date-time"/>
+            <field name="lmu" title="Lmu" readonly="true"/>
+            <field name="ve" title="Ve" readonly="true"/>
+            <field name="val" title="Val" readonly="true" widget="Text"/>
+        </panel>
+    </form>
+
+    <action-view name="action-commodityInfo-list" title="" model="com.vnbig.bourse.db.CommodityInfo">
+        <view type="grid" name="commodityInfo-grid"/>
+        <view type="form" name="commodityInfo-modify-form"/>
+        <domain>self.code =:_code</domain>
+        <context name="_code" expr="eval:code"/>
+        <context name="_tenantId" expr="bourse" />
+    </action-view>
+
+    <action-view name="action-commodityInfo-add" title="add item" model="com.vnbig.bourse.db.CommodityInfo">
+        <view type="form" name="commodityInfo-form"/>
+        <view-param name="popup" value="reload"/>
+        <view-param name="show-toolbar" value="false"/>
+        <view-param name="show-confirm" value="false" />
+        <view-param name="popup-save" value="true"/>
+        <view-param name="forceEdit" value="true"/>
+        <context name="_code" expr="eval:code"/>
+        <context name="_name" expr="eval:name"/>
+        <context name="_tenantId" expr="bourse" />
+    </action-view>
+
+    <action-record name="action-record-commodityInfo" model="com.vnbig.bourse.db.CommodityInfo">
+        <field name="code" expr="eval:_code"/>
+        <field name="name" expr="eval:_name"/>
+    </action-record>
+</object-views>

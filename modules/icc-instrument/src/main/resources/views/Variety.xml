@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <grid  name="variety-grid" title="Variety" model="com.vnbig.bourse.db.Variety" canDelete="false" orderBy="-rank">
+        <field name="name" title="Name"/>
+        <field name="code"/>
+        <field name="exchange"/>
+        <field name="currency"/>
+        <field name="commodity"/>
+        <field name="rank"/>
+        <field name="enabled"/>
+        <field name="cd" widget="date-time"/>
+        <button name="infoBtn" title="Details" icon="fa-info-circle" onClick="action-variety-details-form"/>
+        <button name="syncBtn" title="Synchronous" icon="fa-refresh" onClick="com.vnbig.bourse.controller.BourseController:sync"/>
+    </grid>
+    <form name="variety-form" title="Variety" model="com.vnbig.bourse.db.Variety" width="large" canDelete="false" canAttach="false">
+        <panel title="Variety" itemSpan="4">
+            <field name="name" title="Name" required="true"/>
+            <field name="exchange" required="true"/>
+            <field name="currency" form-view="currency-form" grid-view="currency-grid" required="true"/>
+            <field name="commodity" canEdit="false" form-view="commodity-form" grid-view="commodity-grid" required="true"/>
+            <field name="rank"/>
+            <field name="enabled" widget="boolean-switch"/>
+            <field name="code" readonly="true" x-bind="{{exchange+'_'+currency+'_'+commodity}}"/>
+        </panel>
+    </form>
+
+    <form name="variety-details-form" title="Variety" model="com.vnbig.bourse.db.Variety" width="large" canNew="false" canEdit="false" canSave="false" canDelete="false" canAttach="false">
+        <panel title="" itemSpan="4" readonly="true">
+            <field name="name" title="Name" required="true"/>
+            <field name="exchange" required="true"/>
+            <field name="currency" form-view="currency-form" grid-view="currency-grid"/>
+            <field name="commodity" canEdit="false" form-view="commodity-form" grid-view="commodity-grid"/>
+            <field name="code" readonly="true" x-bind="{{exchange+'_'+currency+'_'+commodity}}"/>
+        </panel>
+        <panel-dashlet action="action-metaParam-list"/>
+        <panel sidebar="true" readonly="true">
+            <field name="enabled" widget="boolean-switch"/>
+            <field name="rank"/>
+            <field name="cd" title="Cd" widget="date-time"/>
+            <field name="cu" title="Cu"/>
+            <field name="lmd" title="Lmd" widget="date-time"/>
+            <field name="lmu" title="Lmu"/>
+            <field name="ve" title="Ve"/>
+            <field name="val" title="Val" widget="Text"/>
+        </panel>
+    </form>
+
+    <action-view name="action-variety-details-form" title="MetaParam" model="com.vnbig.bourse.db.Variety">
+        <view type="form" name="variety-details-form"/>
+        <view-param name="popup" value="reload"/>
+        <view-param name="show-toolbar" value="false"/>
+        <view-param name="show-confirm" value="false" />
+        <view-param name="popup-save" value="false"/>
+        <view-param name="forceEdit" value="true"/>
+        <context name="_showRecord" expr="eval:id"/>
+        <context name="_tenantId" expr="bourse" />
+    </action-view>
+</object-views>

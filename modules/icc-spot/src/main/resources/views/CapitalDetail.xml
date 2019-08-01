@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <grid name="financialCapitalDetail-grid" title="financialCapitalDetail" model="com.vnbig.financial.db.CapitalDetail"
+          canDelete="false" canNew="false" canEdit="false" edit-icon="false">
+        <field name="user" title="userCode"/>
+        <field name="account" title="CapitalAccount"/>
+        <field name="tag" title="capitalTag" selection="com.vnbig.capitalDetail.tag.select"/>
+        <field name="category" title="accountCategory" selection="com.vnbig.capitalAccount.category.select"/>
+        <field name="currency"/>
+        <field name="type" title="accountType" selection="com.vnbig.capitalAccount.type.select"/>
+        <field name="amount" title="capitalAmount"/>
+        <field name="encrypt"/>
+        <field name="enabled"/>
+        <field name="cd" title="Cd" widget="date-time"/>
+        <field name="cu" title="Cu"/>
+    </grid>
+    <!--平台收入账号列表-->
+    <grid name="platformIncomeAccount-grid" title="PlatformIncomeAccount" model="com.vnbig.financial.db.CapitalDetail"
+          canDelete="false" canNew="false" canEdit="false" edit-icon="false">
+        <field name="userCode" title="UserCode"/>
+        <field name="userType" title="UserType"/>
+    </grid>
+    <!--平台收入账号详情-->
+    <form name="platformIncomeAccount-form" title="financialCapitalDetail" model="com.vnbig.financial.db.CapitalDetail"
+          canDelete="false" canEdit="false" canNew="false" width="large" canAttach="false">
+        <panel title="AccountInformation" canSearch="true">
+            <panel-include view="accountInformation"/>
+        </panel>
+        <panel-tabs>
+            <panel-dashlet action="into-record-grid" title="IntoRecord" canSearch="true"/>
+            <panel-dashlet action="roll-out-record-grid" title="rollOutRecord" canSearch="true"/>
+        </panel-tabs>
+    </form>
+    <!--账号信息-->
+    <form name="accountInformation" title="AccountInformation" model="com.vnbig.financial.db.CapitalDetail">
+        <panel-dashlet colSpan="12" action="account-information" canSearch="true"/>
+    </form>
+    <action-view name="account-information" title="AccountInformation" model="com.vnbig.financial.db.CapitalDetail">
+        <view type="grid" name="accountInformation-grid"/>
+        <view type="form" name="capitalDetail-form"/>
+        <context name="_tenantId" expr="financial" />
+    </action-view>
+    <grid name="accountInformation-grid" title="AccountInformation" model="com.vnbig.financial.db.CapitalDetail"
+          canDelete="false" canNew="false" canEdit="false" edit-icon="false">
+        <field name="currency"/>
+        <field name="incomeTotal" title="incomeTotal"/>
+        <field name="expendTotal" title="expendTotal"/>
+        <field name="surplus" title="surplus"/>
+    </grid>
+    <!--转入记录-->
+    <action-view name="into-record-grid" title="IntoRecord" model="com.vnbig.financial.db.CapitalDetail">
+        <view type="grid" name="intoRecord-grid"/>
+        <view type="form" name="CapitalDetail-form"/>
+        <context name="_tenantId" expr="financial" />
+    </action-view>
+    <grid name="intoRecord-grid" title="IntoRecord" model="com.vnbig.financial.db.CapitalDetail"
+          canDelete="false" canNew="false" canEdit="false" edit-icon="false">
+        <field name="cd" title="InCreateTime" widget="date-time"/>
+        <field name="currency"/>
+        <field name="amount"/>
+        <field name="source" title="InSource"/>
+        <field name="remark" title="InRemark"/>
+    </grid>
+    <!--转出记录-->
+    <action-view name="roll-out-record-grid" title="rollOutRecord" model="com.vnbig.financial.db.CapitalDetail">
+        <view type="grid" name="rollOutRecord-grid"/>
+        <view type="form" name="CapitalDetail-form"/>
+        <context name="_tenantId" expr="financial" />
+    </action-view>
+    <grid name="rollOutRecord-grid" title="rollOutRecord" model="com.vnbig.financial.db.CapitalDetail"
+          canDelete="false" canNew="false" canEdit="false" edit-icon="false">
+        <field name="cd" title="OutCreateTime"/>
+        <field name="currency"/>
+        <field name="amount"/>
+        <field name="source" title="OutSource"/>
+        <field name="remark" title="OutRemark"/>
+    </grid>
+    <form name="financialCapitalDetail-form" title="financialCapitalDetail" model="com.vnbig.financial.db.CapitalDetail"
+          canDelete="false" canEdit="false" canNew="false" width="large" canAttach="false">
+        <panel title="financialCapitalDetail" itemSpan="4" readonly="true">
+            <field name="id"/>
+            <field name="user" title="userCode"/>
+            <field name="account" title="capitalAccount"/>
+            <field name="tag" title="capitalTag" selection="com.vnbig.capitalDetail.tag.select"/>
+            <field name="currency"/>
+            <field name="amount" title="CapitalAmount"/>
+            <field name="description" widget="Text" colSpan="12"/>
+            <field name="enabled"/>
+            <field name="category" title="accountCategory" selection="com.vnbig.capitalAccount.category.select"/>
+            <field name="type" title="accountType" selection="com.vnbig.capitalAccount.type.select"/>
+            <field name="encrypt"/>
+            <field name="ves"/>
+            <field name="cd" title="Cd" widget="date-time"/>
+            <field name="cu" title="Cu"/>
+            <field name="lmd" title="Lmd" widget="date-time"/>
+            <field name="lmu" title="Lmu"/>
+        </panel>
+    </form>
+    <!--<dashboard title="AssetOverview" name="financial.dashboard.assetOverview">
+        &lt;!&ndash;<dashlet colSpan="12" action="totalAsset" canSearch="true"/>
+        <dashlet colSpan="12" action="walletAsset" canSearch="true"/>
+        <dashlet colSpan="12" action="coinAsset" canSearch="true"/>
+        <dashlet colSpan="12" action="leverageAsset" canSearch="true"/>
+        <dashlet colSpan="12" action="otcAsset" canSearch="true"/>
+        <dashlet colSpan="12" action="contractAsset" canSearch="true"/>&ndash;&gt;
+        <dashlet colSpan="12" action="platformAssets" canSearch="true"/>
+        <dashlet colSpan="12" action="platformIncome" canSearch="true"/>
+        <dashlet colSpan="12" action="platformExpend" canSearch="true"/>
+    </dashboard>-->
+    <!--<action-view name="totalAsset" title="TotalAsset" model="com.vnbig.financial.db.CapitalDetail">
+        <view type="grid" name="totalAsset-grid"/>
+        <view type="form" name="assetDetail-grid"/>
+    </action-view>
+    <action-view name="coinAsset" title="CoinAsset" model="com.vnbig.financial.db.CapitalDetail">
+        <view type="grid" name="coinAsset-grid"/>
+        <view type="form" name="assetDetail-grid"/>
+    </action-view>
+    <action-view name="walletAsset" title="WalletAsset" model="com.vnbig.financial.db.CapitalDetail">
+        <view type="grid" name="walletAsset-grid"/>
+        <view type="form" name="assetDetail-grid"/>
+    </action-view>
+    <action-view name="leverageAsset" title="LeverageAsset" model="com.vnbig.financial.db.CapitalDetail">
+        <view type="grid" name="leverageAsset-grid"/>
+        <view type="form" name="assetDetail-grid"/>
+    </action-view>
+    <action-view name="otcAsset" title="OtcAsset" model="com.vnbig.financial.db.CapitalDetail">
+        <view type="grid" name="otcAsset-grid"/>
+        <view type="form" name="assetDetail-grid"/>
+    </action-view>
+    <action-view name="contractAsset" title="ContractAsset" model="com.vnbig.financial.db.CapitalDetail">
+        <view type="grid" name="contractAsset-grid"/>
+        <view type="form" name="assetDetail-grid"/>
+    </action-view>-->
+    <!--<action-view name="platformAssets" title="PlatformAssets" model="com.vnbig.financial.db.CapitalDetail">
+        <view type="grid" name="platformAssets-grid"/>
+        <view type="form" name="assetDetail-grid"/>
+    </action-view>
+    <action-view name="platformIncome" title="PlatformIncome" model="com.vnbig.financial.db.CapitalDetail">
+        <view type="grid" name="platformIncome-grid"/>
+        <view type="form" name="assetDetail-grid"/>
+    </action-view>
+    <action-view name="platformExpend" title="PlatformExpend" model="com.vnbig.financial.db.CapitalDetail">
+        <view type="grid" name="platformExpend-grid"/>
+        <view type="form" name="assetDetail-grid"/>
+    </action-view>-->
+
+</object-views>

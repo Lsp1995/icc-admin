@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.0.xsd">
+
+    <module name="trading" package="com.vnbig.trading.db"/>
+    <entity name="CoinWater" table="CoinWater" sequential="false" cacheable="false">
+        <long name="userCode" unique="false"/>
+        <string name="accountId" unique="false"/>
+        <string name="currency" unique="false"/>
+        <string name="feeCurrency" unique="false"/>
+        <decimal name="amount" unique="false"/>
+        <decimal name="fee" unique="false"/>
+        <decimal name="beforeAmount" unique="false"/>
+        <decimal name="afterAmount" unique="false"/>
+        <integer name="tag" unique="false" selection="com.vnbig.trading.coinAccount.tag.select"/>
+        <integer name="cause" unique="false" selection="com.vnbig.AssetWater.cause.select"/>
+        <string name="sourceId" unique="false"/>
+        <string name="encrypt" unique="false"/>
+        <string name="remark" unique="false"/>
+        <long name="cd" unique="false"/>
+        <string name="cu" unique="false"/>
+        <long name="lmd" unique="false"/>
+        <string name="lmu" unique="false"/>
+    </entity>
+</domain-models>

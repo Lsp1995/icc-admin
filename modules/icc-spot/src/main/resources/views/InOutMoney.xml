@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <grid name="inOutMoney-grid" title="InOutMoney" model="com.vnbig.financial.db.InOutMoney" canArchive="true" canEdit="false" canNew="false" canSave="false" canDelete="false">
+        <field name="cd" widget="date-time"/>
+        <field name="user"/>
+        <field name="currency"/>
+        <field name="amount" title="OutAmount"/>
+        <field name="fee"/>
+        <field name="actualAmount" title="ActualAmount"/>
+        <field name="assetAccount"/>
+        <field name="inOut"/>
+        <field name="status"/>
+        <field name="val"/>
+        <field name="val.confirmations" title="Confirmations"/>
+        <field name="outRemark" title="OutRemark"/>
+    </grid>
+    <!--第三方资产划转记录-->
+    <grid name="thirdTransferRecord-grid" title="ThirdTransferRecord" model="com.vnbig.financial.db.InOutMoney" canEdit="false" canNew="false" canSave="false" canDelete="false">
+        <field name="postscript" title="ThirdSource"/>
+        <field name="user" title="userCode"/>
+        <field name="assetAccount" title="UserAccount"/>
+        <field name="inOut" title="InOutType"/>
+        <field name="currency"/>
+        <field name="amount" title="ThirdAmount"/>
+        <field name="cd" title="OperationTime" widget="date-time"/>
+    </grid>
+
+    <!--入币审核Grid-->
+    <!--<grid name="inOutMoney-audit-in-grid" title="InAudit" model="com.vnbig.financial.db.InOutMoney" canEdit="true" canNew="false" canSave="false" canDelete="false">
+        <field name="cd" widget="date-time"/>
+        <field name="user"/>
+        <field name="currency"/>
+        <field name="amount" title="OutAmount"/>
+        <field name="inAddress" title="InAddress"/>
+        <field name="outAddress" title="OutAddress"/>
+        <field name="TXID"/>
+        <field name="status"/>
+        <button name="inOutMoneyAuditBtn" icon="fa-check" onClick="action-inOutMoney-in-audit" title="ButtonAudit"/>
+    </grid>-->
+    <!--出币初审Grid-->
+    <!--<grid name="inOutMoney-audit-out-grid" title="OutAudit" model="com.vnbig.financial.db.InOutMoney" canEdit="true" canNew="false" canSave="false" canDelete="false">
+        <field name="cd" widget="date-time"/>
+        <field name="user"/>
+        <field name="currency"/>
+        <field name="amount" title="OutAmount"/>
+        <field name="fee"/>
+        <field name="actualAmount" title="ActualAmount"/>
+        <field name="assetAccount"/>
+        <field name="inAddress" title="InAddress"/>
+        <field name="outAddress" title="OutAddress"/>
+        <field name="TXID"/>
+        <field name="status"/>
+        <button name="inOutMoneyAuditBtn" icon="fa-check" onClick="action-inOutMoney-out-audit" title="ButtonAudit"/>
+        <button name="inOutMoneyFrozenBtn" icon="fa-lock" onClick="action-inOutMoney-frozen-audit" title="freeze"/>
+    </grid>-->
+    <!--出币终审Grid-->
+    <!--<grid name="inOutMoney-audit-out-third-grid" title="OutLastAudit" model="com.vnbig.financial.db.InOutMoney" canEdit="true" canNew="false" canSave="false" canDelete="false">
+        <field name="cd" widget="date-time"/>
+        <field name="user"/>
+        <field name="currency"/>
+        <field name="amount" title="OutAmount"/>
+        <field name="fee"/>
+        <field name="actualAmount" title="ActualAmount"/>
+        <field name="assetAccount"/>
+        <field name="inAddress" title="InAddress"/>
+        <field name="outAddress" title="OutAddress"/>
+        <field name="TXID"/>
+        <field name="assetAccount"/>
+        <field name="status"/>
+        <button name="inOutMoneyAuditBtn" icon="fa-check" onClick="action-inOutMoney-out-third-audit" title="ButtonAudit"/>
+        <button name="inOutMoneyFrozenBtn" icon="fa-lock" onClick="action-inOutMoney-frozen-audit" title="freeze"/>
+        <button name="inOutMoneyHandOutBtn" icon="fa-sign-out" onClick="action-inOutMoney-handOut-audit" title="Hand out money"/>
+    </grid>-->
+
+    <form name="inOutMoney-form" title="InOutMoney" model="com.vnbig.financial.db.InOutMoney" canEdit="false" canNew="false" canSave="false" canDelete="false" canAttach="false"
+          width="large" onLoad="com.vnbig.user.axelor.controller.UserQueryController:getUserIdByCode,
+          com.vnbig.financial.controller.InOutMoneyController:getAssetAccountIdByCode">
+        <panel title="InOutMoney" itemSpan="4">
+            <field name="user"/>
+            <field name="assetAccount"/>
+            <field name="currency" canEdit="false"  form-view="currency-form" grid-view="currency-grid"/>
+            <field name="fee"/>
+            <field name="inOut"/>
+            <field name="address" title="Address"/>
+            <field name="status"/>
+            <field name="postscript" title="Postscript"/>
+            <field name="cd" title="Cd" readonly="true" widget="date-time"/>
+            <field name="cu" title="Cu" readonly="true"/>
+            <field name="lmd" title="Lmd" readonly="true" widget="date-time"/>
+            <field name="lmu" title="Lmu" readonly="true"/>
+            <field name="ve" title="Ve" readonly="true"/>
+            <field name="val" title="Val" readonly="true" widget="Text" colSpan="12"/>
+        </panel>
+        <panel sidebar="true">
+            <field name="userId" hidden="true"/>
+            <field name="capitalAccountId" hidden="true"/>
+            <button name="" onClick="inOutMoney_userInfo" title="UserInfo" icon="fa-user"/>
+            <button name="" onClick="inOutMoney_capitalAccount" title="AssetAccount" icon="fa-money"/>
+        </panel>
+    </form>
+    <!--入币审核Form-->
+    <form name="inOutMoney-audit-in-form" title="InAudit" model="com.vnbig.financial.db.InOutMoney" canAttach="false" canEdit="true" canNew="false" canSave="false" canDelete="false" width="large">
+        <panel title="InAuditDetails" itemSpan="4">
+            <field name="user" readonly="true"/>
+            <field name="assetAccount" readonly="true"/>
+            <field name="currency" canEdit="false"  form-view="currency-form" grid-view="currency-grid" readonly="true"/>
+            <field name="fee" readonly="true"/>
+            <field name="address" title="Address" readonly="true"/>
+            <field name="status" readonly="true"/>
+            <field name="postscript" title="Postscript" readonly="true"/>
+            <field name="cd" title="Cd" readonly="true" widget="date-time"/>
+            <field name="cu" title="Cu" readonly="true"/>
+            <field name="lmd" title="Lmd" readonly="true" widget="date-time"/>
+            <field name="lmu" title="Lmu" readonly="true"/>
+            <field name="ve" title="Ve" readonly="true"/>
+            <field name="val" title="Val" readonly="true" widget="Text" colSpan="12"/>
+        </panel>
+        <panel sidebar="true">
+            <field name="remark" title="Remark" widget="Text" canEdit="true"/>
+        </panel>
+        <!--入金审核-->
+        <panel sidebar="true">
+            <button name="inAuditPass" title="Audit pass" onClick="com.vnbig.financial.controller.InOutMoneyController:inMoneyAuditPass" />
+            <button name="inAuditFailed" title="Audit failed" onClick="com.vnbig.financial.controller.InOutMoneyController:inMoneyAuditFail" />
+        </panel>
+    </form>
+    <!--出币初审Form-->
+    <form name="inOutMoney-audit-out-form" title="OutAudit" model="com.vnbig.financial.db.InOutMoney" canAttach="false" canEdit="true" canNew="false" canSave="false" canDelete="false" width="large">
+        <panel title="OutAuditDetails" itemSpan="4">
+            <field name="user" readonly="true"/>
+            <field name="assetAccount" readonly="true"/>
+            <field name="currency" canEdit="false"  form-view="currency-form" grid-view="currency-grid" readonly="true"/>
+            <field name="fee" readonly="true"/>
+            <field name="address" title="Address" readonly="true"/>
+            <field name="status" readonly="true"/>
+            <field name="postscript" title="Postscript" readonly="true"/>
+            <field name="cd" title="Cd" readonly="true" widget="date-time"/>
+            <field name="cu" title="Cu" readonly="true"/>
+            <field name="lmd" title="Lmd" readonly="true" widget="date-time"/>
+            <field name="lmu" title="Lmu" readonly="true"/>
+            <field name="ve" title="Ve" readonly="true"/>
+            <field name="val" title="Val" readonly="true" widget="Text" colSpan="12"/>
+        </panel>
+        <panel sidebar="true">
+            <field name="remark" title="Remark" widget="Text" canEdit="true"/>
+        </panel>
+        <!--出金初审-->
+        <panel sidebar="true">
+            <button name="outAuditPass" title="Audit pass" onClick="com.vnbig.financial.controller.InOutMoneyController:withdrawFirstAuditPass" />
+            <button name="outAuditFailed" title="Audit failed" onClick="com.vnbig.financial.controller.InOutMoneyController:withdrawFirstAuditFail" />
+        </panel>
+    </form>
+    <!--出币复审Form-->
+    <form name="inOutMoney-audit-out-third-form" title="OutLastAudit" model="com.vnbig.financial.db.InOutMoney" canAttach="false" canEdit="true" canNew="false" canSave="false" canDelete="false" width="large">
+        <panel title="OutAuditDetails" itemSpan="4">
+            <field name="user" readonly="true"/>
+            <field name="assetAccount" readonly="true"/>
+            <field name="currency" canEdit="false"  form-view="currency-form" grid-view="currency-grid" readonly="true"/>
+            <field name="fee" readonly="true"/>
+            <field name="address" title="Address" readonly="true"/>
+            <field name="status" readonly="true"/>
+            <field name="postscript" title="Postscript" readonly="true"/>
+            <field name="cd" title="Cd" readonly="true" widget="date-time"/>
+            <field name="cu" title="Cu" readonly="true"/>
+            <field name="lmd" title="Lmd" readonly="true" widget="date-time"/>
+            <field name="lmu" title="Lmu" readonly="true"/>
+            <field name="ve" title="Ve" readonly="true"/>
+            <field name="val" title="Val" readonly="true" widget="Text" colSpan="12"/>
+        </panel>
+        <panel sidebar="true">
+            <field name="remark" title="Remark" widget="Text" canEdit="true"/>
+        </panel>
+        <!--出金终审-->
+        <panel sidebar="true">
+            <button name="OutRecheckPass" title="Audit pass" onClick="com.vnbig.financial.controller.InOutMoneyController:withdrawFinalAuditPass" />
+            <button name="OutRecheckFailed" title="Audit failed" onClick="com.vnbig.financial.controller.InOutMoneyController:withdrawFinalAuditFail" />
+        </panel>
+    </form>
+
+    <form title="Freeze Items" name="freeze-view" model="com.vnbig.financial.db.InOutMoney"
+          onLoad="com.vnbig.user.axelor.controller.UserQueryController:getFreeItemsByUserAndCurrency">
+        <panel colSpan="4">
+            <field name="freezeAccount" widget="inline-checkbox" title="Freeze Account" colSpan="4"/>
+            <field name="freezeTrade" widget="inline-checkbox" title="Freeze Trade" colSpan="4"/>
+            <field name="freezeHandOutCoin" widget="inline-checkbox" title="Freeze Hand Out Coin" colSpan="4"/>
+        </panel>
+        <panel>
+            <button name="freezeBtn" colSpan="12" title="freeze" onClick="com.vnbig.user.axelor.controller.UserController:freezeByUserTypesCurrency" readonly="true"/>
+        </panel>
+    </form>
+
+    <!--手工出币Form-->
+    <form name="inOutMoney-handOut-view" title="Hand out money" model="com.vnbig.financial.db.InOutMoney" canAttach="false" canEdit="true" canNew="false" canSave="false" canDelete="false" width="large">
+        <panel title="OutAuditDetails" itemSpan="4">
+            <field name="user" readonly="true"/>
+            <field name="assetAccount" readonly="true"/>
+            <field name="currency" canEdit="false"  form-view="currency-form" grid-view="currency-grid" readonly="true"/>
+            <field name="fee" readonly="true"/>
+            <field name="address" title="Address" readonly="true"/>
+            <field name="status" readonly="true"/>
+            <field name="postscript" title="Postscript" readonly="true"/>
+            <field name="cd" title="Cd" readonly="true" widget="date-time"/>
+            <field name="cu" title="Cu" readonly="true"/>
+            <field name="lmd" title="Lmd" readonly="true" widget="date-time"/>
+            <field name="lmu" title="Lmu" readonly="true"/>
+            <field name="ve" title="Ve" readonly="true"/>
+            <field name="val" title="Val" readonly="true" widget="Text" colSpan="12"/>
+        </panel>
+        <panel sidebar="true" colSpan="6">
+            <field name="TXID" title="TXID" canEdit="true" required="true"/>
+            <field name="handOutFee" title="Fee"  canEdit="true" required="true"/>
+            <field name="remark" title="Remark" widget="Text" canEdit="true"/>
+        </panel>
+        <panel sidebar="true">
+            <button name="handOutBtn" title="Hand out money" prompt="Are you sure you want to perform this operation?"
+                    onClick="com.vnbig.financial.controller.InOutMoneyController:handOutCoin"/>
+        </panel>
+    </form>
+
+    <!--<form title="Freeze Items" name="freeze-view" model="com.vnbig.financial.db.InOutMoney">-->
+        <!--<panel>-->
+            <!--<field name="freezeAccount" widget="inline-checkbox" title="Freeze Account"/>-->
+            <!--<field name="freezeTrade" widget="inline-checkbox" title="Freeze Trade"/>-->
+            <!--<field name="freezeHandOutCoin" widget="inline-checkbox" title="Freeze Hand Out Coin"/>-->
+        <!--</panel>-->
+        <!--<panel>-->
+            <!--<button name="freezeBtn" colSpan="12" title="freeze" onClick="com.vnbig.financial.controller.InOutMoneyController:freeze" />-->
+        <!--</panel>-->
+    <!--</form>-->
+
+    <action-view name="inOutMoney_userInfo" title="UserInfo" model="com.vnbig.user.axelor.db.UserInfo">
+        <view type="form" name="users-detail-form"/>
+        <view-param name="popup" value="reload"/>
+        <view-param name="show-toolbar" value="false"/>
+        <view-param name="show-confirm" value="false" />
+        <view-param name="popup-save" value="false"/>
+        <view-param name="forceEdit" value="true"/>
+        <context name="_showRecord" expr="eval:userId"/>
+        <context name="_tenantId" expr="financial" />
+    </action-view>
+
+    <action-view name="inOutMoney_capitalAccount" title="CapitalAccount" model="com.vnbig.financial.db.CapitalAccount">
+        <view type="form" name="capitalAccount-form"/>
+        <view-param name="popup" value="reload"/>
+        <view-param name="show-toolbar" value="false"/>
+        <view-param name="show-confirm" value="false" />
+        <view-param name="popup-save" value="false"/>
+        <view-param name="forceEdit" value="true"/>
+        <context name="_showRecord" expr="eval:capitalAccountId"/>
+        <context name="_tenantId" expr="financial" />
+    </action-view>
+
+    <action-view name="action-inOutMoney-in-audit" title="InAudit" model="com.vnbig.financial.db.InOutMoney">
+        <view type="form" name="inOutMoney-audit-in-form"/>
+        <view-param name="popup" value="reload"/>
+        <view-param name="show-toolbar" value="false"/>
+        <view-param name="show-confirm" value="false" />
+        <view-param name="popup-save" value="false"/>
+        <view-param name="forceEdit" value="true"/>
+        <context name="_showRecord" expr="eval:id"/>
+        <context name="_tenantId" expr="financial" />
+    </action-view>
+    <action-view name="action-inOutMoney-out-audit" title="OutAudit" model="com.vnbig.financial.db.InOutMoney">
+        <view type="form" name="inOutMoney-audit-out-form"/>
+        <view-param name="popup" value="reload"/>
+        <view-param name="show-toolbar" value="false"/>
+        <view-param name="show-confirm" value="false" />
+        <view-param name="popup-save" value="false"/>
+        <view-param name="forceEdit" value="true"/>
+        <context name="_showRecord" expr="eval:id"/>
+        <context name="_tenantId" expr="financial" />
+    </action-view>
+    <action-view name="action-inOutMoney-out-third-audit" title="OutLastAudit" model="com.vnbig.financial.db.InOutMoney">
+        <view type="form" name="inOutMoney-audit-out-third-form"/>
+        <view-param name="popup" value="reload"/>
+        <view-param name="show-toolbar" value="false"/>
+        <view-param name="show-confirm" value="false" />
+        <view-param name="popup-save" value="false"/>
+        <view-param name="forceEdit" value="true"/>
+        <context name="_showRecord" expr="eval:id"/>
+        <context name="_tenantId" expr="financial" />
+    </action-view>
+
+    <!--出币冻结-->
+    <action-view name="action-inOutMoney-frozen-audit" title="freeze" model="com.vnbig.financial.db.InOutMoney">
+        <view type="form" name="freeze-view"/>
+        <view-param name="popup" value="reload"/>
+        <view-param name="show-toolbar" value="false"/>
+        <view-param name="show-confirm" value="false" />
+        <view-param name="popup-save" value="false"/>
+        <view-param name="forceEdit" value="true"/>
+        <context name="_showRecord" expr="eval:id"/>
+        <context name="_tenantId" expr="financial" />
+    </action-view>
+    <!--手工出币-->
+    <action-view name="action-inOutMoney-handOut-audit" title="Hand out money" model="com.vnbig.financial.db.InOutMoney">
+        <view type="form" name="inOutMoney-handOut-view"/>
+        <view-param name="popup" value="reload"/>
+        <view-param name="show-toolbar" value="false"/>
+        <view-param name="show-confirm" value="false" />
+        <view-param name="popup-save" value="false"/>
+        <view-param name="forceEdit" value="true"/>
+        <context name="_showRecord" expr="eval:id"/>
+        <context name="_tenantId" expr="financial" />
+    </action-view>
+</object-views>

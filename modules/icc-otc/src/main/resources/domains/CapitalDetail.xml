@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.0.xsd">
+    <module name="otc" package="com.vnbig.otc.db"/>
+
+    <entity name="OtcCapitalDetail" table="otc_capital_detail" sequential="false" cacheable="false">
+        <string name="type" required="true" selection="capitaldetail-type-select"/>
+        <string name="detail" required="true" selection="capitaldetail-detail-select"/>
+        <string name="currency" required="true"/>
+        <string name="userCode" required="true"/>
+        <string name="accountCode" required="true"/>
+        <string name="sourceId" required="true"/>
+
+
+        <decimal name="amount"/>
+        <decimal name="fee"/>
+
+        <boolean name="enable" required="true"/>
+
+        <datetime name="tradeDate"/>
+    </entity>
+
+
+</domain-models>

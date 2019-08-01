@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <grid name="managerRules-grid" title="ManagerRules" model="com.vnbig.operation.db.ManagerRules" canDelete="false" orderBy="-cd">
+        <field name="language"/>
+        <field name="context"/>
+        <field name="enabled"/>
+        <field name="cd"/>
+    </grid>
+    <form name="managerRules-form" title="ManagerRules" model="com.vnbig.operation.db.ManagerRules" canDelete="false" width="large">
+        <panel title="ManagerRules" itemSpan="4">
+            <field name="cd" title="Cd" readonly="true"/>
+            <field name="cu" title="Cu" readonly="true"/>
+            <field name="lmd" title="Lmd" readonly="true"/>
+            <field name="lmu" title="Lmu" readonly="true"/>
+            <field name="ve" title="Ve" readonly="true"/>
+            <field name="val" title="Val" readonly="true"/>
+            <field name="context"/>
+            <field name="language"/>
+            <field name="enabled"/>
+        </panel>
+    </form>
+</object-views>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <grid name="resource-grid" title="Resource" model="com.vnbig.user.db.Resource" canDelete="false" orderBy="-cd">
+        <toolbar>
+            <button name="showMap" title="刷新缓存" icon="fa-refresh" onClick="action-show-opportunities-on-map-page"/>
+        </toolbar>
+        <field name="project"/>
+        <field name="model"/>
+        <field name="url"/>
+        <field name="name"/>
+        <field name="open"/>
+        <field name="rank"/>
+        <field name="enabled" title="Enabled"/>
+        <field name="cd" widget="date-time"/>
+    </grid>
+    <form name="resource-form" title="Resource" model="com.vnbig.user.db.Resource" canDelete="false" width="large">
+        <panel title="Resource" itemSpan="4">
+            <field name="cd" title="Cd" readonly="true" widget="date-time"/>
+            <field name="cu" title="Cu" readonly="true"/>
+            <field name="lmd" title="Lmd" readonly="true" widget="date-time"/>
+            <field name="lmu" title="Lmu" readonly="true"/>
+            <field name="ve" title="Ve" readonly="true"/>
+            <field name="val" title="Val" readonly="true"/>
+            <field name="project"/>
+            <field name="model"/>
+            <field name="url"/>
+            <field name="name"/>
+            <field name="pack"/>
+            <field name="code"/>
+            <field name="type"/>
+            <field name="httpMethod"/>
+            <field name="open"/>
+            <field name="description"/>
+        </panel>
+    </form>
+
+</object-views>

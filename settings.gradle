@@ -1,0 +1,13 @@
+rootProject.name = 'icc-admin'
+
+include 'modules:icc-common'
+include 'modules:icc-demo'
+include 'modules:icc-instrument'
+include 'modules:icc-user'
+include 'modules:icc-wallet'
+include 'modules:icc-otc'
+include 'modules:icc-spot'
+include 'modules:icc-contract'
+include 'modules:icc-message'
+include 'modules:icc-operation'
+include 'modules:icc-community'

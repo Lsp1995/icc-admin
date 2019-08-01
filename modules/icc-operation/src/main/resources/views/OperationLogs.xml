@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <grid name=" operationLogs-grid" title="OperationLog" model="com.vnbig.operation.db.OperationLogs" canNew="false"
+          canEdit="false" canDelete="false" edit-icon="false" orderBy="-operatorTime">
+        <field name="user"/>
+        <field name="ip"/>
+        <field name="moduleName"/>
+        <field name="moduleDesc"/>
+        <field name="clazzName"/>
+        <field name="methodDesc"/>
+        <field name="operatorTime"/>
+    </grid>
+
+</object-views>

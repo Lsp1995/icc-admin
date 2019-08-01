@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.0.xsd">
+
+    <module name="bourse" package="com.vnbig.bourse.db"/>
+    <entity name="CommodityInfo" table="CommodityInfo" sequential="false" cacheable="false">
+        <string name="blockSearch" unique="false"/>
+        <string name="circulation" unique="false"/>
+        <string name="code" unique="false"/>
+        <string name="digest" unique="false"/>
+        <string name="language" unique="false" selection="com.vnbig.operation.language.select"/>
+        <string name="name" unique="false"/>
+        <string name="officialWebsite" unique="false"/>
+        <datetime name="releaseTime" unique="false"/>
+        <string name="whitePaper" unique="false"/>
+        <boolean name="enabled" unique="false" selection="com.vnbig.market.enabled.select" default="true"/>
+        <datetime name="listingDate" unique="false"/>
+        <integer name="rank" unique="false" default="0"/>
+        <string name="walletDownloadAddress" unique="false"/>
+        <string name="circulationTwo" unique="false"/>
+        <string name="detail" unique="false" />
+        <datetime name="cd" unique="false"/>
+        <datetime name="lmd" unique="false"/>
+        <string name="cu" unique="false"/>
+        <string name="lmu" unique="false"/>
+        <string name="val" unique="false"/>
+    </entity>
+</domain-models>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+
+    <grid name="TradeLimit-grid" title="TradeLimit" model="com.vnbig.otc.db.TradeLimit">
+        <field name="tradeMoney"/>
+        <field name="singleLimit"/>
+        <field name="totalLimit"/>
+        <field name="authType"/>
+        <field name="enabled"/>
+    </grid>
+    <form name="TradeLimit-form" title="TradeLimit" model="com.vnbig.otc.db.TradeLimit"
+          canNew="true" canDelete="true" canEdit="true" canSave="true">
+        <panel title="TradeLimit" itemSpan="12">
+            <field name="tradeMoney" required="true"/>
+            <field name="singleLimit" required="true"/>
+            <field name="totalLimit" required="true"/>
+            <field name="authType" required="true" selection="merchantauthenticate-type-select"/>
+            <field name="enabled" required="true"/>
+
+            <field name="cd"/>
+            <field name="lmd"/>
+            <field name="cu"/>
+            <field name="lmu"/>
+        </panel>
+    </form>
+
+</object-views>

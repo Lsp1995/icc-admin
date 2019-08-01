@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.0.xsd">
+    <module name="otc" package="com.vnbig.otc.db"/>
+
+    <entity name="Appeal" table="appeal" sequential="false" cacheable="false">
+        <string name="appealType" required="true" selection="appeal-identityType-select"/>
+        <string name="userCode" required="true"/>
+        <string name="userAccount" required="true"/>
+        <string name="advUserCode" required="true"/>
+        <string name="advUserAccount" required="true"/>
+        <string name="manager"/>
+
+        <string name="remark"/>
+        <string name="content"/>
+
+        <!---->
+        <!--<one-to-one name="orderId" ref="com.vnbig.otc.db.OrderInfo" title="orderId"/>-->
+        <string name="orderId" required="true"/>
+        <many-to-one name="advertisementId" ref="com.vnbig.otc.db.Advertisement" title="advertisementId"/>
+        <string name="imgUrl" required="true"/>
+
+
+        <integer name="status" required="true" selection="appeal-status-select"/>
+        <integer name="result"   required="true" selection="appeal-result-select"/>
+        <integer name="type" required="true" selection="appeal-type-select"/>
+        <datetime name="handledTime"/>
+
+        <string name="cu" required="true"/>
+        <datetime name="cd"/>
+    </entity>
+
+
+</domain-models>

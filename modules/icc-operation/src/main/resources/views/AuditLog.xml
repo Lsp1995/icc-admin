@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <grid name="auditLog-grid" title="AuditLog" model="com.vnbig.operation.db.AuditLog" canDelete="false" edit-icon="false" canNew="false" canEdit="false">
+        <field name="cd"/>
+        <field name="cu"/>
+        <field name="lmd"/>
+        <field name="lmd"/>
+        <field name="attachment"/>
+        <field name="objId"/>
+        <field name="remark"/>
+        <field name="status"/>
+        <field name="type"/>
+    </grid>
+    <form name="auditLog-form" title="AuditLog" model="com.vnbig.operation.db.AuditLog" canDelete="false" canNew="false" canEdit="false" width="large">
+        <panel title="AuditLog" itemSpan="4">
+            <field name="cd"/>
+            <field name="cu"/>
+            <field name="lmd"/>
+            <field name="lmd"/>
+            <field name="attachment"/>
+            <field name="remark"/>
+            <field name="status"/>
+            <field name="type"/>
+        </panel>
+    </form>
+
+</object-views>

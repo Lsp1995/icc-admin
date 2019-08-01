@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <grid name="dailyRechargeWithdrawCoin-grid" title="DailyRechargeWithdrawCoin" model="com.vnbig.financial.db.DailyRechargeWithdrawCoin" canDelete="false" canNew="false" canEdit="false" edit-icon="false">
+        <field name="currency" title="Currency"/>
+        <field name="statDate" title="StatDate"/>
+        <field name="rechargePeople" title="RechargePeople"/>
+        <field name="rechargeTimes" title="RechargeTimes"/>
+        <field name="rechargeTotal" title="RechargeTotal"/>
+        <field name="withdrawTimes" title="WithdrawTimes"/>
+        <field name="withdrawPeople" title="WithdrawPeople"/>
+        <field name="withdrawTotal" title="WithdrawTotal"/>
+    </grid>
+
+    <form name="dailyRechargeWithdrawCoin-form" title="DailyRechargeWithdrawCoin" model="com.vnbig.financial.db.DailyRechargeWithdrawCoin" width="large"  canSave="false"
+          canDelete="false" canEdit="false" canNew="false" canAttach="false">
+        <panel title="DailyRechargeWithdrawCoin" itemSpan="4" readonly="true">
+            <field name="currency" title="Currency"/>
+            <field name="statDate" title="StatDate"/>
+            <field name="rechargePeople" title="RechargePeople"/>
+            <field name="rechargeTimes" title="RechargeTimes"/>
+            <field name="rechargeTotal" title="RechargeTotal"/>
+            <field name="withdrawTimes" title="WithdrawTimes"/>
+            <field name="withdrawPeople" title="WithdrawPeople"/>
+            <field name="withdrawTotal" title="WithdrawTotal"/>
+        </panel>
+    </form>
+
+</object-views>

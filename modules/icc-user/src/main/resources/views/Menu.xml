@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <menuitem name="user" order="2" title="UserManager" icon="fa-user" icon-background="purple"/>
+    <menuitem name="menu-user" parent="user" title="UserList" action="user"/>
+
+    <action-view name="user" title="UserList" model="com.vnbig.user.db.UserInfo">
+        <view type="grid" name="users-grid"/>
+        <view type="form" name="users-form"/>
+        <domain>self.type=0</domain>
+        <context name="_tenantId" expr="user" />
+    </action-view>
+
+    <menuitem name="menu-user-system" parent="user" title="UserSystem" action="userSystem"/>
+    <action-view name="userSystem" title="UserSystem" model="com.vnbig.user.db.UserInfo">
+        <view type="grid" name="users-system-grid"/>
+        <view type="form" name="users-form"/>
+        <domain>self.type=3</domain>
+        <context name="_tenantId" expr="user" />
+    </action-view>
+
+    <menuitem name="menu-all-user" parent="user" title="AllUser" action="allUser"/>
+    <action-view name="allUser" title="AllUser" model="com.vnbig.user.db.UserInfo">
+        <view type="grid" name="users-all-grid"/>
+        <view type="form" name="users-form"/>
+        <context name="_tenantId" expr="user" />
+    </action-view>
+
+    <menuitem name="menu-market-maker" parent="user" title="MarketMaker" action="marketMaker"/>
+    <action-view name="marketMaker" title="MarketMaker" model="com.vnbig.user.db.UserInfo">
+        <view type="grid" name="users-market-grid"/>
+        <view type="form" name="users-form"/>
+        <domain>self.type=2</domain>
+        <context name="_tenantId" expr="user" />
+    </action-view>
+
+    <menuitem name="menu-operation-user" parent="user" title="OperationUser" action="operationUser"/>
+    <action-view name="operationUser" title="OperationUser" model="com.vnbig.user.db.UserInfo">
+        <view type="grid" name="users-operation-grid"/>
+        <view type="form" name="users-form"/>
+        <domain>self.type=1</domain>
+        <context name="_tenantId" expr="user" />
+    </action-view>
+
+    <menuitem name="menu-authentication" parent="user" title="Authentication"/>
+    <menuitem name="menu-basicAuth" parent="menu-authentication" title="BasicAuth" action="basicAuth"/>
+    <action-view name="basicAuth" title="BasicAuth" model="com.vnbig.user.db.Authentication">
+        <view type="grid" name="basicAuth-grid"/>
+        <view type="form" name="authRecord-form"/>
+        <domain>self.authStatus=0</domain>
+        <context name="_tenantId" expr="user" />
+    </action-view>
+
+    <menuitem name="menu-authRecord" parent="menu-authentication" title="AuthRecord" action="authRecord"/>
+    <action-view name="authRecord" title="AuthRecord" model="com.vnbig.user.db.Authentication">
+        <view type="grid" name="authRecord-grid"/>
+        <view type="form" name="authRecord-form"/>
+        <domain>self.authStatus in(1,2) and self.authTypeId = 'AUTH_CARD'</domain>
+        <context name="_tenantId" expr="user" />
+    </action-view>
+
+
+
+
+
+
+    <!--推广模块======================================================================================-->
+    <menuitem name="menu-spread" order="5" title="Spread" icon="fa-battery-full" icon-background="teal"/>
+    <menuitem name="menu-managers" parent="menu-spread" title="Managers"/>
+    <menuitem name="menu-inviteImage" parent="menu-managers" title="InviteImage" action="inviteImage"/>
+    <action-view name="inviteImage" title="InviteImage" model="com.vnbig.operation.db.InviteImage">
+        <view type="grid" name="inviteImage-grid"/>
+        <view type="form" name="inviteImage-form"/>
+        <context name="_tenantId" expr="user" />
+    </action-view>
+
+    <menuitem name="menu-managerRules" parent="menu-managers" title="ManagerRules" action="managerRules"/>
+    <action-view name="managerRules" title="ManagerRules" model="com.vnbig.operation.db.ManagerRules">
+        <view type="grid" name="managerRules-grid"/>
+        <view type="form" name="managerRules-form"/>
+        <context name="_tenantId" expr="user" />
+    </action-view>
+
+    <menuitem name="menu-manager" parent="menu-managers" title="Manager" action="manager"/>
+    <action-view name="manager" title="Manager" model="com.vnbig.user.db.Manager">
+        <view type="grid" name="manager-grid"/>
+        <view type="form" name="manager-form"/>
+        <context name="_tenantId" expr="user" />
+    </action-view>
+
+    <menuitem name="menu-incomeExtract" parent="menu-managers" title="IncomeExtract" action="incomeExtract"/>
+    <action-view name="incomeExtract" title="IncomeExtract" model="com.vnbig.operation.db.IncomeExtract">
+        <view type="grid" name="incomeExtract-grid"/>
+        <view type="form" name="incomeExtract-form"/>
+        <context name="_tenantId" expr="user" />
+    </action-view>
+
+
+
+    <!--系统模块===========================================================-->
+    <menuitem name="menu-system" order="999" title="System" icon="fa-star" icon-background="yellow"/>
+    <menuitem name="menu-version" parent="menu-system" title="Version" action="version"/>
+    <action-view name="version" title="Version" model="com.vnbig.operation.db.Version">
+        <view type="grid" name="version-grid"/>
+        <view type="form" name="version-form"/>
+        <context name="_tenantId" expr="user" />
+    </action-view>
+
+    <menuitem name="menu-resource" parent="menu-system" title="Resource" action="resource"/>
+    <action-view name="resource" title="Resource" model="com.vnbig.user.db.Resource">
+        <view type="grid" name="resource-grid"/>
+        <view type="form" name="resource-form"/>
+        <context name="_tenantId" expr="user" />
+    </action-view>
+
+    <menuitem name="menu-apiResource" parent="menu-system" title="ApiResource" action="apiResource"/>
+    <action-view name="apiResource" title="ApiResource" model="com.vnbig.user.db.Apiresource">
+        <view type="grid" name="apiResource-grid"/>
+        <view type="form" name="apiResource-form"/>
+        <context name="_tenantId" expr="user" />
+    </action-view>
+
+    <menuitem name="menu-operationLogs" parent="menu-system" title="OperationLogs" action="operationLogs"/>
+    <action-view name="operationLogs" title="OperationLogs" model="com.vnbig.operation.db.OperationLogs">
+        <view type="grid" name="operationLogs-grid"/>
+        <context name="_tenantId" expr="user" />
+    </action-view>
+
+    <menuitem name="menu-dictData" parent="menu-system" title="DictData" action="dictData"/>
+    <action-view name="dictData" title="DictData" model="com.vnbig.bourse.db.MetaTemplate">
+        <view type="grid" name="dictData-grid"/>
+        <domain>self.type = 40</domain>
+        <context name="_tenantId" expr="user" />
+    </action-view>
+
+</object-views>

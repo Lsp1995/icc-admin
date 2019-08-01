@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.0.xsd">
+
+    <module name="message" package="com.vnbig.message.db"/>
+    <entity name="MessageSender"  table="MessageSender" sequential="false" cacheable="false">
+        <datetime name="senderTime" unique="false"/>
+        <integer name="status" unique="false"/>
+        <string name="value" unique="false"/>
+    </entity>
+</domain-models>

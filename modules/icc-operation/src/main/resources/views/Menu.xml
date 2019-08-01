@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <menuitem name="operation" order="6" title="Operation" icon="fa-battery-full" icon-background="green"/>
+    <menuitem name="menu-address" parent="operation" title="Addresses" action="address"/>
+    <action-view name="address" title="Address" model="com.vnbig.operation.db.Address">
+        <view type="grid" name="address-grid"/>
+        <view type="form" name="address-form"/>
+        <context name="_tenantId" expr="operation" />
+    </action-view>
+
+    <menuitem name="menu-faq" parent="operation" title="Faqs" action="faq"/>
+    <action-view name="faq" title="Faq" model="com.vnbig.operation.db.Faq">
+        <view type="grid" name="faq-grid"/>
+        <view type="form" name="faq-form"/>
+        <context name="_tenantId" expr="operation" />
+    </action-view>
+
+    <menuitem name="menu-notice" parent="operation" title="Notices" action="notice"/>
+    <action-view name="notice" title="Notice" model="com.vnbig.operation.db.Notice">
+        <view type="grid" name="notice-grid"/>
+        <view type="form" name="notice-form"/>
+        <context name="_tenantId" expr="operation" />
+    </action-view>
+
+    <menuitem name="menu-banner" parent="operation" title="Banners" action="banner"/>
+    <action-view name="banner" title="Banner" model="com.vnbig.operation.db.Banner">
+        <view type="grid" name="banner-grid"/>
+        <view type="form" name="banner-form"/>
+        <context name="_tenantId" expr="operation" />
+    </action-view>
+
+    <menuitem name="menu-information" parent="operation" title="Info"/>
+    <menuitem name="menu-info" parent="menu-information" title="Info" action="info"/>
+    <action-view name="info" title="Info" model="com.vnbig.operation.db.Information">
+        <view type="grid" name="info-grid"/>
+        <view type="form" name="info-form"/>
+        <context name="_tenantId" expr="operation" />
+    </action-view>
+
+    <menuitem name="menu-category" parent="menu-information" title="Categories" action="category"/>
+    <action-view name="category" title="Category" model="com.vnbig.operation.db.Category">
+        <view type="grid" name="category-grid"/>
+        <view type="form" name="category-form"/>
+        <context name="_tenantId" expr="operation" />
+    </action-view>
+
+    <menuitem name="menu-video" parent="menu-information" title="Video" action="video"/>
+    <action-view name="video" title="Video" model="com.vnbig.operation.db.Video">
+        <view type="grid" name="video-grid"/>
+        <view type="form" name="video-form"/>
+        <context name="_tenantId" expr="operation" />
+    </action-view>
+
+    <menuitem name="menu-recommend" parent="menu-information" title="Recommend" action="recommend"/>
+    <action-view name="recommend" title="Recommend" model="com.vnbig.operation.db.Recommend">
+        <view type="grid" name="recommend-grid"/>
+        <view type="form" name="recommend-form"/>
+        <context name="_tenantId" expr="operation" />
+    </action-view>
+
+    <menuitem name="menu-operating" parent="operation" title="Operating"/>
+    <!--<menuitem name="menu-grantAward" parent="menu-operating" title="GrantAward" action="grantAward"/>-->
+    <!--<action-view name="grantAward" title="GrantAward" model="com.vnbig.operation.db.GrantAward">-->
+        <!--<view type="grid" name="grantAward-grid"/>-->
+        <!--<view type="form" name="grantAward-form"/>-->
+    <!--</action-view>-->
+
+    <!--<menuitem name="menu-activity" parent="menu-operating" title="Activity" action="activity"/>-->
+    <!--<action-view name="activity" title="Activity" model="com.vnbig.operation.db.Activity">-->
+        <!--<view type="grid" name="activity-grid"/>-->
+        <!--<view type="form" name="activity-form"/>-->
+    <!--</action-view>-->
+    <menuitem name="menu-award" parent="menu-operating" title="Award" action="award"/>
+    <action-view name="award" title="award" model="com.vnbig.operation.db.Award">
+        <view type="grid" name="award-grid"/>
+        <view type="form" name="award-form"/>
+        <context name="_tenantId" expr="operation" />
+    </action-view>
+
+    <menuitem name="menu-dailyDividend" parent="operation" title="DailyDividend"/>
+    <menuitem name="menu-dailyBalance" parent="menu-dailyDividend" title="DailyBalance" action="dailyBalance"/>
+    <action-view name="dailyBalance" title="DailyBalance" model="com.vnbig.statistics.db.DailyBalance">
+        <view type="grid" name="dailyBalance-grid"/>
+        <view type="form" name="dailyBalance-form"/>
+        <context name="_tenantId" expr="operation" />
+    </action-view>
+
+    <menuitem name="menu-statisticsProfit" parent="menu-dailyDividend" title="StatisticsProfit" action="statisticsProfit"/>
+    <action-view name="statisticsProfit" title="StatisticsProfit" model="com.vnbig.trading.db.StatisticsProfit">
+        <view type="grid" name="statisticsProfit-grid"/>
+        <view type="form" name="statisticsProfit-form"/>
+        <context name="_tenantId" expr="operation" />
+    </action-view>
+
+    <menuitem name="menu-dividendRule" parent="menu-dailyDividend" title="DividendRule" action="dividendRule"/>
+    <action-view name="dividendRule" title="DividendRule" model="com.vnbig.operation.db.DividendRule">
+        <view type="grid" name="dividendRule-grid"/>
+        <view type="form" name="dividendRule-form"/>
+        <context name="_tenantId" expr="operation" />
+    </action-view>
+
+    <menuitem name="menu-bonusSetting" parent="menu-dailyDividend" title="BonusSetting" action="bonusSetting"/>
+    <action-view name="bonusSetting" title="BonusSetting" model="com.vnbig.trading.db.BonusSetting">
+        <view type="grid" name="bonusSetting-grid"/>
+        <view type="form" name="bonusSetting-form"/>
+        <context name="_tenantId" expr="operation" />
+    </action-view>
+
+    <menuitem name="menu-others" parent="operation" title="Others"/>
+    <!--<menuitem name="menu-activity" parent="menu-others" title="Activity" action="activity"/>-->
+    <!--<action-view name="activity" title="Activity" model="com.vnbig.operation.db.Activity">-->
+        <!--<view type="grid" name="activity-grid"/>-->
+        <!--<view type="form" name="activity-form"/>-->
+    <!--</action-view>-->
+    <menuitem name="menu-activityAwardWater" parent="menu-others" title="ActivityAwardWater"
+              action="activityAwardWater"/>
+    <action-view name="activityAwardWater" title="ActivityAwardWater" model="com.vnbig.operation.db.ActivityAwardWater">
+        <view type="grid" name="activityAwardWater-grid"/>
+        <view type="form" name="activityAwardWater-form"/>
+        <context name="_tenantId" expr="operation" />
+    </action-view>
+    <menuitem name="menu-awardOperate" parent="menu-others" title="AwardOperate" action="awardOperate"/>
+    <action-view name="awardOperate" title="AwardOperate" model="com.vnbig.operation.db.AwardOperate">
+        <view type="grid" name="awardOperate-grid"/>
+        <view type="form" name="awardOperate-form"/>
+        <context name="_tenantId" expr="operation" />
+    </action-view>
+    <menuitem name="menu-income" parent="menu-others" title="Income" action="income"/>
+    <action-view name="income" title="Income" model="com.vnbig.operation.db.Income">
+        <view type="grid" name="income-grid"/>
+        <view type="form" name="income-form"/>
+        <context name="_tenantId" expr="operation" />
+    </action-view>
+    <action-view name="message" title="Message" model="com.vnbig.message.db.Message">
+        <view type="grid" name="message-grid"/>
+        <view type="form" name="message-form"/>
+        <context name="_tenantId" expr="operation" />
+    </action-view>
+
+</object-views>

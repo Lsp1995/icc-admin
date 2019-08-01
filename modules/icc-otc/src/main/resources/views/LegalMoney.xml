@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+
+    <!--法定货币界面-->
+    <grid name="LegalMoney-grid" title="LegalMoney" model="com.vnbig.otc.db.LegalMoney"
+          >
+        <field name="code" title="Lecode"/>
+        <field name="enabled"/>
+
+
+    </grid>
+    <form name="LegalMoney-form" title="LegalMoney" model="com.vnbig.otc.db.LegalMoney"
+          canNew="true" canDelete="true" canEdit="true" canSave="true"
+    >
+        <panel title="LegalMoney" itemSpan="12">
+
+            <field name="id" readonly="true"/>
+
+            <field name="code" title="Lecode" required="true" unique="true"/>
+            <field name="enabled" required="true"/>
+
+
+            <field name="cd" title="Cd"/>
+            <field name="cu" title="Cu"/>
+            <field name="lmd" title="Lmd"/>
+            <field name="lmu" title="Lmu"/>
+        </panel>
+    </form>
+
+
+    <action-method name="action-legal-getlm">
+        <call class="com.vnbig.otc.controller.TestController" method="hello"/>
+    </action-method>
+
+
+</object-views>

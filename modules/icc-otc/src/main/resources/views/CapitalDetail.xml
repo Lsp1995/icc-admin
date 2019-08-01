@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <grid name="OtcCapitalDetail-grid" title="CapitalDetail" model="com.vnbig.otc.db.OtcCapitalDetail" canNew="false" canDelete="false">
+        <field name="id" hidden="false"/>
+        <field name="type" required="true" />
+        <field name="detail" required="true" />
+        <field name="currency" required="true"/>
+        <field name="userCode" required="true"/>
+        <field name="accountCode" required="true"/>
+        <field name="sourceId" required="true"/>
+        <field name="amount" x-scale="8"/>
+        <field name="fee" x-scale="8"/>
+        <field name="enable" required="true" widget="boolean-switch"/>
+        <field name="tradeDate"/>
+
+    </grid>
+    <form name="OtcCapitalDetail-form" title="CapitalDetail" model="com.vnbig.otc.db.OtcCapitalDetail" width="large"
+          canNew="false" canDelete="false" canEdit="false" canSave="false">
+        <panel title="CapitalDetail" itemSpan="4">
+            <field name="id" hidden="false"/>
+
+            <field name="type" required="true" />
+            <field name="detail" required="true" />
+            <field name="currency" required="true"/>
+            <field name="userCode" required="true"/>
+            <field name="accountCode" required="true"/>
+            <field name="sourceId" required="true"/>
+            <field name="amount" x-scale="8"/>
+            <field name="fee" x-scale="8"/>
+            <field name="enable" required="true" widget="boolean-switch"/>
+            <field name="tradeDate"/>
+        </panel>
+    </form>
+
+
+
+</object-views>

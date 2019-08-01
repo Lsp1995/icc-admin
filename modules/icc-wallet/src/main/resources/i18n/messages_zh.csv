@@ -1,0 +1,10 @@
+"key","message","comment","context"
+"MyWallet","用户钱包业务模块",,
+"WalletAccount","资产列表",,
+"userCode","用户编号",,
+"walletBalance","本金可用",,
+"walletFreeze","本金冻结",,
+"awardBalance","奖励可用",,
+"awardFreeze","奖励冻结",,
+"causeType","类型",,
+"walletCapitalWater","资产流水",,

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.0.xsd">
+    <module name="leverage" package="com.vnbig.leverage.db"/>
+
+    <entity name="LeverageInfor" table="LeverageInfor" sequential="false" cacheable="false">
+        <string name="account"/>
+        <string name="user" column="`user`"/>
+        <string name="code"/>
+        <string name="score"/>
+        <string name="variety"/>
+        <string name="cu" />
+        <datetime name="lmd" />
+        <string name="lmu"/>
+        <integer name="level" column="`level`"/>
+    </entity>
+
+</domain-models>

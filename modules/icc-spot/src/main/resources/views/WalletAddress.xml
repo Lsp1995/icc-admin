@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <grid name="walletAddress-grid" title="WalletAddress" model="com.vnbig.financial.db.WalletAddress"
+          canDelete="false" orderBy="-cd">
+        <field name="currency"/>
+        <field name="address" title="Currency address"/>
+        <field name="memo"/>
+        <field name="remark"/>
+        <field name="cd" widget="date-time"/>
+      <!--  <button name="default" title="Default" icon="fa-check" onClick="com.vnbig.financial.controller.WalletAddressController:toDefault(id)" />-->
+    </grid>
+    <form name="walletAddress-form" title="WalletAddress" model="com.vnbig.financial.db.WalletAddress"
+          canDelete="false" canAttach="false" width="large">
+        <panel title="WalletAddress" itemSpan="4">
+            <field name="id" hidden="false"/>
+            <field name="currency"/>
+            <field name="address"/>
+            <field name="memo"/>
+            <field name="def"/>
+            <field name="enabled"/>
+            <field name="remark" widget="Text" colSpan="12"/>
+            <field name="cd" title="Cd" readonly="true" widget="date-time"/>
+            <field name="cu" title="Cu" readonly="true"/>
+            <field name="lmd" title="Lmd" readonly="true" widget="date-time"/>
+            <field name="lmu" title="Lmu" readonly="true"/>
+            <field name="ve" title="Ve" readonly="true"/>
+            <field name="val" title="Val" readonly="true"/>
+        </panel>
+    </form>
+
+</object-views>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <grid name="income-grid" title="Income" model="com.vnbig.operation.db.Income" canDelete="false" canNew="false" canEdit="false" edit-icon="false" orderBy="-time">
+        <field name="val"/>
+        <field name="amount"/>
+        <field name="currency"/>
+        <field name="fee"/>
+        <field name="incomeMoney"/>
+        <field name="orderId"/>
+        <field name="time"/>
+        <field name="type" title="Types"/>
+        <field name="userId" title="UserId"/>
+        <field name="incomeUserCode"/>
+        <field name="user"/>
+    </grid>
+    <form name="income-form" title="Income" model="com.vnbig.operation.db.Income" canDelete="false" canEdit="false" canNew="false" width="large">
+        <panel title="Income" itemSpan="4">
+            <field name="cd" title="Cd"/>
+            <field name="cu" title="Cu"/>
+            <field name="lmd" title="Lmd"/>
+            <field name="lmu" title="Lmu"/>
+            <field name="ve" title="Ve"/>
+            <field name="val" title="Val"/>
+            <field name="amount"/>
+            <field name="currency"/>
+            <field name="fee"/>
+            <field name="incomeMoney"/>
+            <field name="orderId"/>
+            <field name="time"/>
+            <field name="type" title="Types"/>
+            <field name="userId" title="UserId"/>
+            <field name="incomeUserCode"/>
+            <field name="user"/>
+        </panel>
+    </form>
+
+</object-views>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+
+    <!--订单列表界面-->
+    <grid name="OrderInfo-grid" title="OrderInfo" model="com.vnbig.otc.db.OrderInfo">
+        <field name="id" hidden="false"/>
+        <field name="advertisementId"/>
+        <field name="reqNo" title="orderinfo-reqno"/>
+        <field name="orderNumber" title="Order number"/>
+        <field name="tradeType"/>
+        <field name="tradeCurrency"/>
+        <field name="tradeMoney"/>
+        <field name="pmId"/>
+        <field name="referenceNumber"/>
+        <field name="accountCode"/>
+        <field name="userCode"/>
+        <field name="advCode"/>
+        <field name="advAccount"/>
+        <field name="cu"/>
+        <field name="fee"/>
+        <field name="quantity"/>
+        <field name="price"/>
+        <field name="amount"/>
+        <field name="lockQuantity"/>
+        <field name="rate"/>
+        <field name="canceledDate"/>
+        <field name="paidDate"/>
+        <field name="finishedDate"/>
+        <field name="appealedDate"/>
+        <field name="deadline"/>
+        <field name="cd"/>
+        <field name="isAppealed"/>
+        <field name="status"/>
+    </grid>
+
+    <form name="OrderInfo-form" title="OrderInfo" model="com.vnbig.otc.db.OrderInfo" width="large"
+          canNew="false" canDelete="false" canEdit="false" canSave="false">
+        <panel title="OrderInfo" itemSpan="4">
+            <field name="id" hidden="false"/>
+            <field name="advertisementId" colSpan="4" form-view="advertisement-order-form"
+                   grid-view="advertisement-order-grid"/>
+            <field name="reqNo" readonly="true" title="orderinfo-reqno"/>
+            <field name="orderNumber" title="Order number"/>
+            <field name="tradeType"/>
+            <field name="tradeCurrency"/>
+            <field name="tradeMoney"/>
+            <field name="pmId"/>
+            <field name="referenceNumber"/>
+            <field name="accountCode"/>
+            <field name="userCode"/>
+            <field name="advCode"/>
+            <field name="advAccount"/>
+            <field name="cu"/>
+            <field name="fee" x-scale="8"/>
+            <field name="quantity" x-scale="16"/>
+            <field name="price" x-scale="8"/>
+            <field name="amount" x-scale="8"/>
+            <field name="lockQuantity" x-scale="8"/>
+            <field name="rate" x-scale="8"/>
+            <field name="canceledDate"/>
+            <field name="paidDate"/>
+            <field name="finishedDate"/>
+            <field name="appealedDate"/>
+            <field name="deadline"/>
+            <field name="cd"/>
+            <field name="isAppealed"/>
+            <field name="status"/>
+        </panel>
+
+        <!--<panel name="settings" sidebar="true" title="Settings">-->
+        <!--<field name="partnerSeq"/>-->
+        <!--<field name="language" canEdit="false"/>-->
+        <!--<panel title="Assigned to" canCollapse="true" colSpan="12">-->
+        <!--<field name="user" colSpan="6" form-view="user-form" grid-view="user-grid" canNew="false"-->
+        <!--canEdit="false" canView="false"/>-->
+        <!--<field name="team" canEdit="false" colSpan="6" form-view="team-form" grid-view="team-grid"-->
+        <!--/>-->
+        <!--<field name="companySet" colSpan="12" widget="TagSelect" canNew="false" form-view="company-form"-->
+        <!--grid-view="company-grid"/>-->
+        <!--</panel>-->
+        <!--</panel>-->
+
+        <!--<panel name="notes" title="Notes" colSpan="12" sidebar="true">-->
+        <!--<field name="description" showTitle="false" colSpan="12" height="6" widget="Html"/>-->
+        <!--</panel>-->
+        <!--<panel-mail>-->
+        <!--<mail-messages limit="4"/>-->
+        <!--<mail-followers/>-->
+        <!--</panel-mail>-->
+    </form>
+
+
+    <form name="order-details-form" title="order-details-form" model="com.vnbig.otc.db.OrderInfo">
+        <panel name="main">
+            <!--<field name="orderNumber" x-bind="{{orderNumber|uppercase}}"/>-->
+            <!--<field name="tradeType" x-bind="{{tradeType|uppercase}}"/>-->
+            <!--<field name="tradeCurrency"/>-->
+            <!--<field name="tradeMoney"/>-->
+        </panel>
+        <panel title="Attributes">
+            <field name="price"/>
+            <field name="amount"/>
+        </panel>
+        <panel title="Standards">
+            <field name="isAppealed"/>
+        </panel>
+    </form>
+
+</object-views>

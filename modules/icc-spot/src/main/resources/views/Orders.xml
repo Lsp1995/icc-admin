@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <grid name="orders-grid" title="Orders" model="com.vnbig.trading.db.Orders" orderBy="-entrustTime" canNew="false" canEdit="false" canDelete="false"
+          edit-icon="false">
+        <field name="asset"/>
+        <field name="id"/>
+        <field name="user" title="userCode"/>
+        <field name="entrustTime" widget="date-time"/>
+        <field name="variety"/>
+        <field name="type" title="entrustType"/>
+        <field name="command"/>
+        <field name="price"/>
+        <field name="volume"/>
+        <field name="amount"/>
+        <field name="dealTime" widget="date-time"/>
+        <field name="dealPrice"/>
+        <field name="dealVolume"/>
+        <field name="dealAmount"/>
+        <field name="status"/>
+    </grid>
+
+
+    <form name="orders-form" title="Orders" model="com.vnbig.trading.db.Orders" canDelete="false" canNew="false" canEdit="false" width="large">
+        <panel title="Orders" itemSpan="4" readonly="true">
+            <field name="asset"/>
+            <field name="id"/>
+            <field name="val"/>
+            <field name="entrustTime">
+                <viewer>{{record.entrustTime | date:'yyyy-MM-dd HH:mm:ss'}}</viewer>
+            </field>
+            <field name="variety"/>
+            <field name="type" title="entrustType"/>
+            <field name="command"/>
+            <field name="price"/>
+            <field name="volume"/>
+            <field name="amount"/>
+            <field name="dealTime">
+                <viewer>{{record.dealTime | date:'yyyy-MM-dd HH:mm:ss'}}</viewer>
+            </field>
+            <field name="dealPrice"/>
+            <field name="dealVolume"/>
+            <field name="dealAmount"/>
+            <field name="status"/>
+        </panel>
+        <panel-dashlet action="action-order-orders-grid" canSearch="true" height="500"/>
+    </form>
+    <action-view name="action-order-orders-grid" title="OrdersDetail" model="com.vnbig.trading.db.OrdersDetail">
+        <view type="grid" name="ordersDetail-grid"/>
+        <view-param name="popup" value="reload"/>
+        <view-param name="show-toolbar" value="false"/>
+        <view-param name="show-confirm" value="false" />
+        <view-param name="popup-save" value="false"/>
+        <view-param name="forceEdit" value="false"/>
+        <domain>self.orders=:id</domain>
+        <context name="_tenantId" expr="trading" />
+    </action-view>
+
+
+    <grid name="assetList-grid" title="assetList" model="com.vnbig.financial.db.CapitalDetail" canDelete="false" canNew="false" canEdit="false" edit-icon="false">
+        <field name="user" title="userCode"/>
+        <field name="currency"/>
+        <field name="usable" title="Usable"/>
+        <field name="frozen" title="Frozen"/>
+        <field name="reward" title="Reward"/>
+        <field name="drop" title="Drop"/>
+    </grid>
+</object-views>

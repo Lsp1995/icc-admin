@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <grid name="rate-grid" title="Rates" model="com.vnbig.financial.db.Rate" canDelete="false">
+        <field name="foreignCurrency"/>
+        <field name="localCurrency"/>
+        <field name="rate" title="Exchange rate"/>
+    </grid>
+    <form name="rate-form" title="Exchange rate" model="com.vnbig.financial.db.Rate" canDelete="false" width="large" canAttach="false">
+        <panel title="Exchange rate" itemSpan="4">
+            <field name="foreignCurrency"/>
+            <field name="localCurrency"/>
+            <field name="rate" title="Exchange rate"/>
+            <field name="cd" title="Cd" readonly="true"/>
+            <field name="cu" title="Cu" readonly="true"/>
+            <field name="lmd" title="Lmd" readonly="true"/>
+            <field name="lmu" title="Lmu" readonly="true"/>
+            <field name="ve" title="Ve" readonly="true"/>
+            <field name="val" title="Val" readonly="true"/>
+        </panel>
+    </form>
+
+</object-views>

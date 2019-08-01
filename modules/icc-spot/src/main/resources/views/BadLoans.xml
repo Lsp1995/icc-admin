@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <grid name="BadLoans-grid" title="BadLoans" model="com.vnbig.leverage.db.BadLoans" canNew="false" canEdit="false"
+          canDelete="false" edit-icon="false" orderBy="-cd">
+        <field name="currency"/>
+        <field name="account"/>
+        <field name="user"/>
+        <field name="amount"/>
+        <field name="cd"/>
+        <field name="lmd"/>
+        <field name="status"/>
+    </grid>
+    <form name="BadLoans-form" title="BadLoans" model="com.vnbig.leverage.db.BadLoans" canNew="false" canEdit="false"
+          canDelete="false" width="large" canAttach="false">
+        <panel title="BadLoans" itemSpan="4" readonly="true">
+            <field name="currency"/>
+            <field name="account"/>
+            <field name="user"/>
+            <field name="amount"/>
+            <field name="status"/>
+            <field name="cd" title="Cd"/>
+            <field name="lmd" title="Lmd"/>
+        </panel>
+    </form>
+
+</object-views>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <grid name="authRecord-grid" title="AuthRecord" model="com.vnbig.user.db.Authentication" canNew="false"
+          canEdit="false" canDelete="false" edit-icon="false" orderBy="-authTime">
+        <field name="userId.code" title="Code"/>
+        <field name="userId.mobile" title="User account"/>
+        <field name="userId.email" title="Email"/>
+        <field name="userId.firstName" title="First name"/>
+        <field name="userId.lastName" title="Last name"/>
+        <field name="authTypeId"/>
+        <field name="authStatus"/>
+        <field name="authTime" widget="date-time"/>
+    </grid>
+
+    <form name="authRecord-form" title="Certification details" model="com.vnbig.user.db.Authentication" canNew="false"
+          canEdit="false" canDelete="false" width="large" canAttach="false" onLoad="com.vnbig.user.axelor.controller.UserQueryController:getAuthInfo">
+        <panel title="" itemSpan="4" readonly="true">
+            <field name="userId.userName" title="UserName"/>
+            <field name="userId.firstName" title="First name"/>
+            <field name="userId.lastName" title="Last name"/>
+            <field name="userId.mobile" title="Mobile"/>
+            <field name="userId.email" title="Email"/>
+            <field name="userId.type" title="User type" selection="com.vnbig.user.type.select"/>
+            <field name="userId.status" title="User status" selection="com.vnbig.user.status.select"/>
+            <field name="userId.countryCode" title="Country code"/>
+            <field name="userId.enabled" title="Enabled"/>
+            <field name="authTypeId"/>
+            <field name="cardNo"/>
+        </panel>
+        <panel title="" itemSpan="4" readonly="true">
+            <field name="cd" title="Cd" widget="date-time"/>
+            <field name="cu" title="Cu"/>
+            <field name="lmd" title="Lmd" widget="date-time"/>
+            <field name="lmu" title="Lmu"/>
+            <field name="ve" title="Ve"/>
+        </panel>
+        <panel title="" itemSpan="4" readonly="true">
+            <field name="front" widget="ImageLink" title="image front"/>
+            <field name="back" widget="ImageLink" title="image back"/>
+            <field name="hold" widget="ImageLink" title="image hold"/>
+
+            <field name="userId.id" hidden="true"/>
+        </panel>
+    </form>
+
+</object-views>

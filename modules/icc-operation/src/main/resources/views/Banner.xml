@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <grid name="banner-grid" title="Banner" model="com.vnbig.operation.db.Banner" canDelete="false" orderBy="-cd">
+        <field name="name"/>
+        <field name="language"/>
+        <field name="linkPath"/>
+        <field name="startTime"/>
+        <field name="endTime"/>
+        <field name="enabled"/>
+        <field name="status"/>
+        <field name="rank"/>
+        <field name="cd"/>
+    </grid>
+    <form name="banner-form" title="Banner" model="com.vnbig.operation.db.Banner" canDelete="false" width="large">
+        <panel title="Banner" itemSpan="4">
+            <field name="cd" title="Cd" readonly="true"/>
+            <field name="cu" title="Cu" readonly="true"/>
+            <field name="lmd" title="Lmd" readonly="true"/>
+            <field name="lmu" title="Lmu" readonly="true"/>
+            <field name="ve" title="Ve" readonly="true"/>
+            <field name="val" title="Val" readonly="true"/>
+            <field name="name"/>
+            <field name="linkPath"/>
+            <field name="language"/>
+            <field name="status"/>
+            <field name="startTime"/>
+            <field name="endTime"/>
+            <field name="rank"/>
+            <field name="enabled"/>
+            <field name="imgPath"/>
+        </panel>
+    </form>
+
+</object-views>

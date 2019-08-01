@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <grid name="users-grid" title="UserList" model="com.vnbig.user.db.UserInfo" canDelete="false" canEdit="false" edit-icon="false" canNew="false">
+        <field name="id" title="Id"/>
+        <field name="mobile"/>
+        <field name="email"/>
+        <field name="code"/>
+        <field name="status"/>
+        <field name="type" title="Types"/>
+        <field name="cd" title="CreateDate" widget="date-time"/>
+        <button name="FreezingThawAccountButton" icon="fa-user" onClick="com.vnbig.user.axelor.controller.UserController:freezingThawAccount"
+                title="Freezing thaw account button" prompt="Are you sure you want to perform this operation?"/>
+        <button name="FreezingThawTradingButton" icon="fa-exchange" onClick="com.vnbig.user.axelor.controller.UserQueryController:selectCurrencyMetaSelect" title="Freezing thaw trading button"/>
+        <button name="FreezingThawCoinButton" icon="fa-money" onClick="com.vnbig.user.axelor.controller.UserQueryController:getWithdrawCoinCurrency"
+                title="Freezing thaw coin button"/>
+    </grid>
+    <grid name="users-all-grid" title="AllUser" model="com.vnbig.user.db.UserInfo" canDelete="false" canEdit="false" edit-icon="false" canNew="false">
+        <field name="id" title="Id"/>
+        <field name="userName" title="User name"/>
+        <field name="mobile"/>
+        <field name="email"/>
+        <field name="code"/>
+        <field name="status"/>
+        <field name="type" title="Types"/>
+        <field name="cd" title="CreateDate" widget="date-time"/>
+        <button name="modifyUserTypeButton" icon="fa-pencil-square" onClick="action-modifyUserType-popup" title="modify user type"/>
+        <button name="FreezingThawAccountButton" icon="fa-user" onClick="com.vnbig.user.axelor.controller.UserController:freezingThawAccount"
+                title="Freezing thaw account button" prompt="Are you sure you want to perform this operation?"/>
+        <button name="FreezingThawTradingButton" icon="fa-exchange" onClick="com.vnbig.user.axelor.controller.UserQueryController:selectCurrencyMetaSelect" title="Freezing thaw trading button"/>
+        <button name="FreezingThawCoinButton" icon="fa-money" onClick="com.vnbig.user.axelor.controller.UserQueryController:getWithdrawCoinCurrency"
+                title="Freezing thaw coin button"/>
+        <button name="RolesButton" icon="fa-server" onClick="com.vnbig.user.axelor.controller.UserQueryController:getRoles"
+                title="Distribution role"/>
+    </grid>
+    <grid name="users-market-grid" title="MarketMaker" model="com.vnbig.user.db.UserInfo" canDelete="false" canEdit="false" edit-icon="false" canNew="false">
+        <field name="id" title="Id"/>
+        <field name="userName" title="User name"/>
+        <field name="mobile"/>
+        <field name="email"/>
+        <field name="code"/>
+        <field name="status"/>
+        <field name="type" title="Types"/>
+        <field name="cd" title="CreateDate" widget="date-time"/>
+    </grid>
+
+    <grid name="users-operation-grid" title="OperationUser" model="com.vnbig.user.db.UserInfo" canDelete="false" canEdit="false" edit-icon="false" canNew="false">
+        <field name="id" title="Id"/>
+        <field name="userName" title="User name"/>
+        <field name="mobile"/>
+        <field name="email"/>
+        <field name="code"/>
+        <field name="status"/>
+        <field name="type" title="Types"/>
+        <field name="cd" title="CreateDate" widget="date-time"/>
+        <button name="modifyUserTypeButton" icon="fa-pencil-square" onClick="action-modifyUserType-popup" title="modify user type"/>
+        <button name="EnableOrDisableUserButton" icon="fa-lock" onClick="com.vnbig.user.axelor.controller.UserController:enableOrDisableUser" title="Enable or disable user" prompt="Are you sure you want to perform this operation?"/>
+        <button name="RolesButton" icon="fa-server" onClick="com.vnbig.user.axelor.controller.UserQueryController:getRoles"
+                title="Distribution role"/>
+    </grid>
+
+    <grid name="users-system-grid" title="UserSystem" model="com.vnbig.user.db.UserInfo" canDelete="false" canEdit="false" edit-icon="false" canNew="false">
+        <toolbar>
+            <button name="addUser" title="Add User" onClick="com.vnbig.user.axelor.controller.UserQueryController:getCountrySelect" icon="fa-plus" css="btn-success"/>
+        </toolbar>
+        <field name="id" title="Id"/>
+        <field name="userName" title="UserName"/>
+        <field name="mobile"/>
+        <field name="email"/>
+        <field name="code"/>
+        <field name="status"/>
+        <field name="type" title="Types"/>
+        <field name="cd" title="CreateDate" widget="date-time"/>
+        <button name="modifySystemUserInfoButton" icon="fa-pencil-square-o" onClick="action-modifySystemUserInfo-popup" title="modify user info"/>
+        <button name="EnableOrDisableUserButton" icon="fa-lock" onClick="com.vnbig.user.axelor.controller.UserController:enableOrDisableUser" title="Enable or disable user"
+                prompt="Are you sure you want to perform this operation?"/>
+        <button name="RolesButton" icon="fa-server" onClick="com.vnbig.user.axelor.controller.UserQueryController:getRoles"
+                title="Distribution role"/>
+    </grid>
+
+    <!--冻结解冻交易-->
+    <form name="userInfo-FreezingThawTrading-form" title="Freezing thaw trading" model="com.vnbig.user.db.UserInfo"  canEdit="true" canDelete="false" canNew="false"
+          canAttach="false" onLoad="com.vnbig.user.axelor.controller.UserQueryController:getFreezingThawTradingCurrency">
+        <panel>
+            <field name="digitalCurrency" title="Digital currency" selection="com.vnbig.user.digitalCurrency.select" widget="MultiSelect" colSpan="12"/>
+            <field name="denominatedCurrency" title="Denominated currency" selection="com.vnbig.user.denominatedCurrency.select" widget="MultiSelect" colSpan="12"/>
+        </panel>
+        <panel>
+            <button name="freezingThawButton" icon="fa-exchange" onClick="com.vnbig.user.axelor.controller.UserController:freezingThawTrading" title="Freezing thaw trading button" colSpan="12" readonly="true"/>
+        </panel>
+    </form>
+    <!--冻结解冻提币-->
+    <form name="userInfo-FreezingThawWithdrawCoin-form" title="Freezing thaw coin" model="com.vnbig.user.db.UserInfo"  canEdit="true" canDelete="false" canNew="false"
+          canAttach="false" onLoad="com.vnbig.user.axelor.controller.UserQueryController:getUserWithdrawCoinCurrency">
+        <panel>
+            <field name="currencysN" title="Withdraw money range" selection="com.vnbig.user.withdrawCoinRange.select" widget="MultiSelect" colSpan="12"/>
+        </panel>
+        <panel>
+            <button name="freezingThawButton" icon="fa-money" onClick="com.vnbig.user.axelor.controller.UserController:freezeUserCoin" title="Freezing thaw coin button" colSpan="12" readonly="true"/>
+        </panel>
+    </form>
+    <!--分配角色-->
+    <form name="userInfo-distributionRole-form" title="Distribution role" model="com.vnbig.user.db.UserInfo"  canEdit="true" canDelete="false" canNew="false"
+          canAttach="false" onLoad="com.vnbig.user.axelor.controller.UserQueryController:getUserRoles">
+        <panel>
+            <field name="roleIds" title="Role" selection="com.vnbig.user.withdrawCoinRange.select" widget="CheckboxSelect" colSpan="12"/>
+        </panel>
+        <panel>
+            <button name="roleIdsButton" icon="fa-server" onClick="com.vnbig.user.axelor.controller.UserController:distributionRole" title="Distribution role" colSpan="12" readonly="true"/>
+        </panel>
+    </form>
+    <!--修改用户类型-->
+    <form name="userInfo-modifyUserType-form" title="modify user type" model="com.vnbig.user.db.UserInfo"  canEdit="true" canDelete="false" canNew="false" canAttach="false">
+        <panel>
+            <field name="type" title="Types" selection="com.vnbig.user.type.select" widget="RadioSelect" colSpan="12"/>
+        </panel>
+        <panel>
+            <button name="SureButton" icon="fa-check-square-o" onClick="com.vnbig.user.axelor.controller.UserController:modifyUserType" title="Sure" colSpan="12"/>
+        </panel>
+    </form>
+    <!--修改系统用户信息-->
+    <form name="userInfo-modifySystemUserInfo-form" title="modify user info" model="com.vnbig.user.db.UserInfo"  canEdit="true" canDelete="false" canNew="false" canAttach="false">
+        <panel>
+            <field name="userName" title="UserName" required="true"/>
+            <field name="mobile" required="true"/>
+            <field name="email" required="true"/>
+            <field name="type" title="Types" selection="com.vnbig.user.type.select" widget="RadioSelect" colSpan="12"/>
+        </panel>
+        <panel>
+            <button name="SureButton" icon="fa-check-square-o" onClick="com.vnbig.user.axelor.controller.UserController:modifySystemUserInfo" title="Sure" colSpan="12"/>
+        </panel>
+    </form>
+    <!--新增用户-->
+    <form name="userInfo-addUserInfo-form" title="Add User" model="com.vnbig.user.db.UserInfo"  canEdit="true" canDelete="false" canNew="false" canAttach="false">
+        <panel>
+            <field name="countryCode" required="true" selection="com.vnbig.user.country.select"/>
+            <field name="userName" title="UserName" required="true"/>
+            <field name="mobile" required="true" widget="phone"/>
+            <field name="email" required="true" widget="email"/>
+            <field name="language"  selection="com.vnbig.operation.language.select" required="true"/>
+            <field name="password"  widget="password" required="true"/>
+            <field name="type" title="Types" colSpan="12" widget="RadioSelect" required="true" selection="com.vnbig.user.type.select"/>
+            <field name="status" widget="RadioSelect" required="true" selection="com.vnbig.user.status.select"/>
+        </panel>
+        <panel>
+            <button name="SureButton" icon="fa-check-square-o" onClick="action-addUser-validate,com.vnbig.user.axelor.controller.UserController:addUserInfo" title="Sure" colSpan="12"/>
+        </panel>
+    </form>
+
+    <form name="users-form" title="UserDetail" model="com.vnbig.user.db.UserInfo" width="large" canEdit="true" canSave="false"
+          canDelete="false" canNew="false" canAttach="false" onLoad="com.vnbig.user.axelor.controller.UserContractConfigController:getContractConfig">
+        <panel title="BasicInfo" readonly="true" itemSpan="3">
+            <field name="id" title="Id"/>
+            <field name="userName" title="UserName"/>
+            <field name="firstName"/>
+            <field name="mobile"/>
+            <field name="email"/>
+            <field name="code"/>
+            <field name="type" title="Types"/>
+            <field name="status"/>
+            <field name="lastLoginIp"/>
+            <field name="loginSucceedCount" title="loginSucceedCount"/>
+            <field name="loginFailureCount" title="loginFailureCount"/>
+            <field name="pwdModifyTimesToday" title="pwdModifyTimesToday"/>
+            <field name="orin" title="orin"/>
+            <field name="countryCode"/>
+            <field name="language"/>
+            <field name="ve"/>
+            <field name="cd" title="CreateDate" widget="date-time"/>
+        </panel>
+        <panel-tabs>
+            <panel title="Contract margin allocation">
+                <panel>
+                    <field name="bondContract" title="BondContract"/>
+                    <field name="firstMax" title="First max" widget="Integer"/>
+                    <field name="upperLimit" title="Upper limit" widget="Integer"/>
+                    <field name="rise" title="Bond config rise" widget="Integer"/>
+                    <field name="firstRate" title="First rate" x-scale="2" x-precision="2"/>
+                    <field name="keepRiseRate" title="Keep rise rate" x-scale="2" x-precision="2"/>
+                    <field name="initRiseRate" title="Init rise rate" x-scale="2" x-precision="2"/>
+                    <field name="maxInComplete" title="MaxInComplete" widget="Integer"/>
+                </panel>
+                <panel sizebar="true">
+                    <button name="saveContractBond" title="Save" readonly="true" css="btn-danger"
+                    onClick="com.vnbig.user.axelor.controller.UserContractConfigController:saveContractBond"/>
+                    <field name="bondId" hidden="true"/>
+                </panel>
+            </panel>
+            <panel title="Contract fee configuration">
+                <panel>
+                    <panel title="General fee configuration">
+                        <field name="feeContract" title="FeeContract"/>
+                        <field name="gmMakerRate" title="Multi-maker fee (%)" x-scale="2" x-precision="2"/>
+                        <field name="gmTakerRate" title="Multiple taker fee (%)" x-scale="2" x-precision="2"/>
+                        <field name="geMakerRate" title="Short maker handling charge (%)" x-scale="2" x-precision="2"/>
+                        <field name="geTakerRate" title="Empty taker charge (%)" x-scale="2" x-precision="2"/>
+                    </panel>
+                    <panel title="Strong flat single handling charge configuration">
+                        <field name="fmMakerRate" title="Multi-maker fee (%)" x-scale="2" x-precision="2"/>
+                        <field name="fmTakerRate" title="Multiple taker fee (%)" x-scale="2" x-precision="2" />
+                        <field name="feMakerRate" title="Short maker handling charge (%)" x-scale="2" x-precision="2"/>
+                        <field name="feTakerRate" title="Empty taker charge (%)" x-scale="2" x-precision="2"/>
+                    </panel>
+                </panel>
+                <panel sizebar="true">
+                    <button name="saveContractFee" title="Save" readonly="true" css="btn-danger"
+                            onClick="com.vnbig.user.axelor.controller.UserContractConfigController:saveContractFee"/>
+                    <field name="feeId" hidden="true"/>
+                </panel>
+            </panel>
+            <panel-dashlet action="action-message-grid" title="MessageList" canSearch="true"/>
+            <panel-dashlet action="operationLogs" title="OperationRecord" canSearch="true"/>
+            <panel title="assetOverview" canSearch="true">
+                <panel-dashlet showTitle="false" action="all.json.UserWalletAsset"  colSpan="12" canSearch="true"/>
+                <panel-dashlet showTitle="false" action="all.json.UserCoinAsset" colSpan="12" canSearch="true"/>
+                <panel-dashlet showTitle="false" action="all.json.UserContractAsset" colSpan="12" canSearch="true"/>
+            </panel>
+            <panel title="TradingRecord" canSearch="true">
+                <panel-dashlet showTitle="false" action="all.json.UserCoinTradeOrders" colSpan="12" canSearch="true"/>
+                <panel-dashlet showTitle="false" action="all.json.UserCoinTradeCancel" colSpan="12" canSearch="true"/>
+                <panel-dashlet showTitle="false" action="all.json.UserCoinTradeDone" colSpan="12" canSearch="true"/>
+            </panel>
+            <panel title="InOutMoney" canSearch="true">
+                <panel-include view="financial-inOutMoney"/>
+            </panel>
+            <panel title="CapitalWater" canSearch="true">
+                <panel-dashlet showTitle="false" action="all.json.UserCoinWater" colSpan="12" canSearch="true"/>
+            </panel>
+            <panel title="InOutCoinAccount" canSearch="true">
+                <panel-include view="financial-inOutCoinAccount"/>
+            </panel>
+            <panel title="Contract" canSearch="true">
+                <panel-dashlet showTitle="false" action="all.json.UserContractTradeOrders" colSpan="12" canSearch="true"/>
+                <panel-dashlet showTitle="false" action="all.json.UserContractTradePosition" colSpan="12" canSearch="true"/>
+                <panel-dashlet showTitle="false" action="all.json.UserContractTradeDeal" colSpan="12" canSearch="true"/>
+            </panel>
+            <panel title="Leverage" canSearch="true">
+                <panel-include view="leverage-leverage"/>
+            </panel>
+        </panel-tabs>
+    </form>
+    <form name="users-detail-form" title="UserDetail" model="com.vnbig.user.db.UserInfo" width="large" canEdit="false"
+          canDelete="false" canNew="false">
+        <panel title="BasicInfo" readonly="true" itemSpan="4">
+            <field name="id" title="Id"/>
+            <field name="userName" title="UserName"/>
+            <field name="firstName"/>
+            <field name="mobile"/>
+            <field name="email"/>
+            <field name="type" title="Types"/>
+            <field name="status"/>
+            <field name="lastLoginIp"/>
+            <field name="loginSucceedCount" title="loginSucceedCount"/>
+            <field name="loginFailureCount" title="loginFailureCount"/>
+            <field name="pwdModifyTimesToday" title="pwdModifyTimesToday"/>
+            <field name="orin" title="orin"/>
+            <field name="countryCode"/>
+            <field name="language"/>
+            <field name="enabled" title="Enabled"/>
+            <field name="ve"/>
+            <field name="cd" title="CreateDate" widget="date-time"/>
+        </panel>
+    </form>
+
+    <form name="financial-inOutMoney" title="InOutMoney" model="com.vnbig.financial.db.InOutMoney">
+        <panel-dashlet colSpan="12" action="inCoinList" canSearch="true"/>
+        <panel-dashlet colSpan="12" action="outCoinList" canSearch="true"/>
+    </form>
+    <form name="leverage-leverage" title="Leverage" model="com.vnbig.leverage.db.ApplyLeverage">
+        <panel-dashlet colSpan="12" action="user-applyLeverage" canSearch="true"/>
+        <panel-dashlet colSpan="12" action="user-returnLeverage" canSearch="true"/>
+    </form>
+    <!--<form name="user-contractAccount" title="List of assets" model="com.vnbig.contract.db.ContractAccount">
+        <panel-dashlet colSpan="12" action="userOrderEntrust" canSearch="true"/>
+        <panel-dashlet colSpan="12" action="userOrderPosition" canSearch="true"/>
+        <panel-dashlet colSpan="12" action="userOrderDeal" canSearch="true"/>
+    </form>-->
+    <!--合约委托-->
+    <action-view name="userOrderEntrust" title="userOrderEntrust" model="com.vnbig.contract.db.OrderEntrust">
+        <view type="grid" name="orderEntrust-grid"/>
+        <view type="form" name="orderEntrust-form"/>
+        <context name="_tenantId" expr="user" />
+    </action-view>
+    <!--合约持仓-->
+    <action-view name="userOrderPosition" title="userOrderPosition" model="com.vnbig.contract.db.OrderPosition">
+        <view type="grid" name="orderPosition-grid"/>
+        <view type="form" name="orderPosition-form"/>
+        <context name="_tenantId" expr="user" />
+        <!--<domain>self.userId=:_id</domain>-->
+        <!--<context name="_showRecord" expr="eval:id"/>-->
+    </action-view>
+    <!--合约成交详情-->
+    <action-view name="userOrderDeal" title="userOrderDeal" model="com.vnbig.contract.db.OrderDeal">
+        <view type="grid" name="orderDeal-grid"/>
+        <view type="form" name="orderDeal-form"/>
+        <context name="_tenantId" expr="user" />
+        <!--<domain>self.userId=:_id</domain>-->
+        <!--<context name="_showRecord" expr="eval:id"/>-->
+    </action-view>
+
+    <action-view name="user-orders" title="Orders" model="com.vnbig.trading.db.Orders">
+        <view type="grid" name="orders-grid"/>
+        <view type="form" name="orders-form"/>
+        <context name="_tenantId" expr="user" />
+        <!--<domain>self.user = :_code</domain>-->
+        <!--<context name="_code" expr="eval:code"></context>-->
+    </action-view>
+    <action-view name="user-orders-cancel" title="OrdersCancel" model="com.vnbig.trading.db.OrdersCancel">
+        <view type="grid" name="orders-grid"/>
+        <view type="form" name="orders-form"/>
+        <domain>self.user = :_code</domain>
+        <context name="_code" expr="eval:code"></context>
+        <context name="_tenantId" expr="user" />
+    </action-view>
+    <action-view name="user-orders-done" title="OrdersDone" model="com.vnbig.trading.db.OrdersDone">
+        <view type="grid" name="orders-grid"/>
+        <view type="form" name="orders-form"/>
+        <domain>self.user = :_code</domain>
+        <context name="_code" expr="eval:code"></context>
+        <context name="_tenantId" expr="user" />
+    </action-view>
+    <action-view name="user-orders-detail" title="OrdersDetail" model="com.vnbig.trading.db.OrdersDetail">
+        <view type="grid" name="orders-grid"/>
+        <view type="form" name="orders-form"/>
+        <domain>self.user = :_code</domain>
+        <context name="_code" expr="eval:code"></context>
+        <context name="_tenantId" expr="user" />
+    </action-view>
+    <action-view name="inCoinList" title="InCoinList" model="com.vnbig.financial.db.InOutMoney">
+        <view type="grid" name="inOutMoney-grid"/>
+        <view type="form" name="inOutMoney-form"/>
+        <domain>self.inOut = true AND self.user = :_code</domain>
+        <context name="_code" expr="eval:code"></context>
+        <context name="_tenantId" expr="user" />
+    </action-view>
+    <action-view name="outCoinList" title="OutCoinList" model="com.vnbig.financial.db.InOutMoney">
+        <view type="grid" name="inOutMoney-grid"/>
+        <view type="form" name="inOutMoney-form"/>
+        <domain>self.inOut = false AND self.user = :_code</domain>
+        <context name="_code" expr="eval:code"></context>
+        <context name="_tenantId" expr="user" />
+    </action-view>
+    <action-view name="user-applyLeverage" title="ApplyLeverage" model="com.vnbig.leverage.db.ApplyLeverage">
+        <view type="grid" name="applyLeverage-grid"/>
+        <view type="form" name="applyLeverage-form"/>
+        <domain>self.user = :_code</domain>
+        <context name="_code" expr="eval:code"></context>
+        <context name="_tenantId" expr="user" />
+    </action-view>
+    <action-view name="user-returnLeverage" title="ReturnLeverage" model="com.vnbig.leverage.db.ReturnLeverage">
+        <view type="grid" name="returnLeverage-grid"/>
+        <view type="form" name="returnLeverage-form"/>
+        <domain>self.user = :_code</domain>
+        <context name="_code" expr="eval:code"></context>
+        <context name="_tenantId" expr="user" />
+    </action-view>
+
+    <action-view name="user-wallet" title="userWallet" model="com.vnbig.financial.db.WalletAsset">
+        <view type="grid" name="walletAsset-grid"/>
+        <view type="form" name="walletAsset-form"/>
+        <context name="_tenantId" expr="user" />
+        <!--<domain>self.user = :_code</domain>-->
+        <!--<context name="_code" expr="eval:code"></context>-->
+    </action-view>
+
+    <action-view name="user-coin" title="userCoin" model="com.vnbig.financial.db.CoinTradeAsset">
+        <view type="grid" name="coinTradeAsset-grid"/>
+        <view type="form" name="coinTradeAsset-form"/>
+        <context name="_tenantId" expr="user" />
+        <!--<domain>self.user = :_code</domain>
+        <context name="_code" expr="eval:code"></context>-->
+    </action-view>
+
+    <action-view name="user-contract" title="userContract" model="com.vnbig.financial.db.ContractTradeAsset">
+        <view type="grid" name="contractTradeAsset-grid"/>
+        <view type="form" name="contractTradeAsset-form"/>
+        <context name="_tenantId" expr="user" />
+        <!--<domain>self.user = :_code</domain>
+        <context name="_code" expr="eval:code"></context>-->
+    </action-view>
+
+    <!--<action-view name="user-money" title="userMoney" model="com.vnbig.financial.db.CapitalDetail">
+        <view type="grid" name="moneyAsset-grid"/>
+        <view type="form" name="capitalDetail-form"/>
+        <domain>self.user = :_code</domain>
+        <context name="_code" expr="eval:code"></context>
+    </action-view>
+
+    <action-view name="user-leverage" title="userLeverage" model="com.vnbig.financial.db.CapitalDetail">
+        <view type="grid" name="leverageAsset-grid"/>
+        <view type="form" name="capitalDetail-form"/>
+        <domain>self.user = :_code</domain>
+        <context name="_code" expr="eval:code"></context>
+    </action-view>-->
+    <action-view name="usersDetailForm" title="userLeverage" model="com.vnbig.user.db.UserInfo">
+        <view type="form" name="capitalDetail-form"/>
+        <domain>self.user = :_code</domain>
+        <context name="_code" expr="eval:code"></context>
+        <context name="_tenantId" expr="user" />
+    </action-view>
+    <action-view name="userCapitalWater" title="userCapitalWater" model="com.vnbig.financial.db.CapitalWater">
+        <view type="grid" name="capitalWater-grid"/>
+        <view type="form" name="capitalWater-form"/>
+        <domain>self.user = :_code</domain>
+        <context name="_code" expr="eval:code"></context>
+        <context name="_tenantId" expr="user" />
+    </action-view>
+
+    <action-view name="action-modifyUserType-popup" title="modify user type" model="com.vnbig.user.db.UserInfo">
+        <view type="form" name="userInfo-modifyUserType-form"/>
+        <view-param name="popup" value="reload"/>
+        <view-param name="show-toolbar" value="false"/>
+        <view-param name="show-confirm" value="false" />
+        <view-param name="popup-save" value="false"/>
+        <view-param name="forceEdit" value="true"/>
+        <context name="_showRecord" expr="eval:id"/>
+        <context name="_tenantId" expr="user" />
+    </action-view>
+    <action-view name="action-modifySystemUserInfo-popup" title="modify user info" model="com.vnbig.user.db.UserInfo">
+        <view type="form" name="userInfo-modifySystemUserInfo-form"/>
+        <view-param name="popup" value="reload"/>
+        <view-param name="show-toolbar" value="false"/>
+        <view-param name="show-confirm" value="false" />
+        <view-param name="popup-save" value="false"/>
+        <view-param name="forceEdit" value="true"/>
+        <context name="_showRecord" expr="eval:id"/>
+        <context name="_tenantId" expr="user" />
+    </action-view>
+
+    <action-validate name="action-addUser-validate">
+        <error message="Missing parameters, please fill in the whole!" if="countryCode==null||userName==null||mobile==null||email==null||password==null||type==null||status==null"/>
+    </action-validate>
+    <action-view name="action-message-grid" title="MessageList" model="com.vnbig.message.db.Message">
+        <view type="grid" name="message-grid"/>
+        <view type="form" name="message-form"/>
+        <view-param name="popup" value="reload"/>
+        <view-param name="show-toolbar" value="false"/>
+        <view-param name="show-confirm" value="false" />
+        <view-param name="popup-save" value="false"/>
+        <view-param name="forceEdit" value="false"/>
+        <context name="_showRecord" expr="eval:id"/>
+        <context name="senderId" expr="eval:id"/>
+        <context name="_tenantId" expr="user" />
+    </action-view>
+
+
+    <action-view name="action-userWallet-recharge" model="com.vnbig.user.db.UserInfo" title="userWalletRecharge">
+        <view name="userWallet-recharge-form" type="form"/>
+        <view-param name="popup" value="reload"/>
+        <view-param name="show-toolbar" value="false"/>
+        <view-param name="show-confirm" value="false" />
+        <view-param name="popup-save" value="false"/>
+        <view-param name="forceEdit" value="true" />
+        <context name="_tenantId" expr="user" />
+    </action-view>
+
+    <action-view name="action-userWallet-deposit" model="com.vnbig.user.db.UserInfo" title="userWalletDeposit">
+        <view name="userWallet-deposit-form" type="form"/>
+        <view-param name="popup" value="reload"/>
+        <view-param name="show-toolbar" value="false"/>
+        <view-param name="show-confirm" value="false" />
+        <view-param name="popup-save" value="false"/>
+        <view-param name="forceEdit" value="true" />
+        <context name="_tenantId" expr="user" />
+    </action-view>
+
+
+</object-views>

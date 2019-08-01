@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.0.xsd">
+
+    <module name="operation" package="com.vnbig.operation.db"/>
+    <entity name="UserActivityBannerConfig" table="UserActivityBannerConfig" sequential="false" cacheable="false">
+        <boolean name="enabled" unique="false"/>
+        <binary name="imgPath" title="Banner" help="Max size 500KB." image="true"/>
+        <string name="imgUrl" unique="false"/>
+        <binary name="poster" title="Boster" help="Max size 500KB." image="true"/>
+        <string name="posterUrl" unique="false"/>
+        <string name="language" unique="false"/>
+        <string name="name" unique="false"/>
+        <integer name="status" unique="false"/>
+        <string name="endTime" unique="false"/>
+        <string name="startTime" unique="false"/>
+        <datetime name="cd" unique="false"/>
+        <datetime name="lmd" unique="false"/>
+        <string name="cu" unique="false"/>
+        <string name="lmu" unique="false"/>
+        <string name="val" unique="false"/>
+    </entity>
+</domain-models>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <grid name="Appeal-grid" title="Appeal" model="com.vnbig.otc.db.Appeal" canNew="false" canDelete="false">
+        <field name="id" hidden="false"/>
+
+        <field name="advertisementId" colSpan="4" form-view="advertisement-order-form"
+               grid-view="advertisement-order-grid"/>
+        <field name="orderId" title="AppealOrderid"/>
+        <!--<field name="orderId" title="AppealOrderid" colSpan="4"-->
+               <!--form-view="OrderInfo-form"-->
+               <!--grid-view="OrderInfo-grid"/>-->
+        <field name="appealType" title="IdentityType" />
+        <field name="status" title="Appealstatus"/>
+        <field name="manager"/>
+        <field name="advUserAccount"/>
+        <field name="userAccount"/>
+        <field name="handledTime"/>
+        <field name="result"/>
+        <field name="type" title="ApStatusType"/>
+
+        <field name="imgUrl"/>
+        <field name="remark"/>
+        <!--<button name="appeal-solve-bt" title="appeal-solve-bt" icon="fa-check"-->
+        <!--onClick="action-appeal-solve"-->
+        <!--/>-->
+
+    </grid>
+    <form name="Appeal-form" title="Appeal" model="com.vnbig.otc.db.Appeal" width="large"
+          canNew="false" canDelete="false" canEdit="true" canSave="true">
+        <panel title="Appeal" itemSpan="3">
+            <field name="id" hidden="false" colSpan="12"/>
+
+            <field name="appealType" title="IdentityType" readonly="true"/>
+            <field name="advertisementId" form-view="advertisement-order-form"
+                   grid-view="advertisement-order-grid"/>
+            <field name="orderId" readonly="true" title="AppealOrderid"/>
+            <field name="content" readonly="true"/>
+
+            <field name="userCode" readonly="true"/>
+            <field name="userAccount" readonly="true"/>
+            <field name="advUserAccount" readonly="true"/>
+            <field name="advUserCode" readonly="true"/>
+
+            <field name="cd" readonly="true" />
+            <field name="lmd" />
+            <field name="cu" />
+            <field name="lmu"  readonly="true"/>
+
+            <field name="imgUrl" readonly="true" widget="ImageLink" colSpan="12"/>
+
+            <field name="status" title="Appealstatus" readonly="true" colSpan="6"/>
+            <field name="type" title="ApStatusType" readonly="true" colSpan="6"/>
+            <field name="result" readonly="true" colSpan="6"/>
+            <field name="handledTime" readonly="true" colSpan="6"/>
+
+
+            <field name="manager" colSpan="6"/>
+            <field name="remark" colSpan="6" widget="html"/>
+
+            <button name="appeal-bt-buyer" title="appeal-bt-buyer" icon="fa-play" colSpan="6"
+                    showIf="status == 0"
+                    onClick="com.vnbig.otc.controller.OtcController:appealBuyerWon"
+            />
+            <button name="appeal-bt-seller" title="appeal-bt-seller" icon="fa-times" css="btn-danger" colSpan="6"
+                    showIf="status == 0"
+                    onClick="com.vnbig.otc.controller.OtcController:appealSellerWon"
+            />
+        </panel>
+    </form>
+
+    <!--申诉处理-->
+    <action-view name="action-appeal-solve" title="actionappealsolve" model="com.vnbig.otc.db.Appeal">
+        <view type="form" name="appeal-solve-form"/>
+        <context name="_tenantId" expr="otc" />
+    </action-view>
+
+
+</object-views>

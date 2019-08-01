@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <menuitem name="bourse" order="1" title="Bourse" icon="fa-lock" icon-background="black"/>
+    <menuitem name="menu-metaTemplate" parent="bourse" title="MetaTemplate" action="metaTemplate"/>
+    <action-view name="metaTemplate" title="MetaTemplate" model="com.vnbig.bourse.db.MetaTemplate">
+        <view type="grid" name="metaTemplate-grid"/>
+        <view type="form" name="metaTemplate-form"/>
+        <context name="_tenantId" expr="bourse" />
+    </action-view>
+
+    <menuitem name="menu-metaParam" parent="bourse" title="MetaParam" action="metaParam"/>
+    <action-view name="metaParam" title="MetaParam" model="com.vnbig.bourse.db.MetaParam">
+        <view type="grid" name="metaParam-grid"/>
+        <view type="form" name="metaParam-form"/>
+        <context name="_tenantId" expr="bourse" />
+    </action-view>
+
+    <menuitem name="menu-exchange" parent="bourse" title="Exchanges" action="exchange"/>
+    <action-view name="exchange" title="Exchanges" model="com.vnbig.bourse.db.Exchange">
+        <view type="grid" name="exchange-grid"/>
+        <view type="form" name="exchange-form"/>
+        <context name="_tenantId" expr="bourse" />
+    </action-view>
+
+    <menuitem name="menu-currency" parent="bourse" title="Currency" action="currency"/>
+    <action-view name="currency" title="Currency" model="com.vnbig.bourse.db.Currency">
+        <view type="grid" name="currency-grid"/>
+        <view type="form" name="currency-form"/>
+        <domain>self.enabled = true</domain>
+        <context name="_tenantId" expr="bourse" />
+    </action-view>
+
+    <menuitem name="menu-commodity" parent="bourse" title="Commodity" action="commodity"/>
+    <action-view name="commodity" title="Commodity" model="com.vnbig.bourse.db.Commodity">
+        <view type="grid" name="commodity-grid"/>
+        <view type="form" name="commodity-form"/>
+        <context name="_tenantId" expr="bourse" />
+    </action-view>
+
+    <menuitem name="menu-variety" parent="bourse" title="Variety" action="variety"/>
+    <action-view name="variety" title="Variety" model="com.vnbig.bourse.db.Variety">
+        <view type="grid" name="variety-grid"/>
+        <view type="form" name="variety-form"/>
+        <context name="_tenantId" expr="bourse" />
+    </action-view>
+
+<!--    <menuitem name="menu-commodityInfo" parent="bourse" title="CommodityInfo" action="commodityInfo"/>
+    <action-view name="commodityInfo" title="CommodityInfo" model="com.vnbig.bourse.db.CommodityInfo">
+        <view type="grid" name="commodityInfo-grid"/>
+        <view type="form" name="commodityInfo-form"/>
+    </action-view>-->
+
+    <menuitem name="menu-metaLanguage" parent="bourse" title="MetaLanguage" action="metaLanguage"/>
+    <action-view name="metaLanguage" title="MetaLanguage" model="com.vnbig.bourse.db.MetaLanguage">
+        <view type="grid" name="metaLanguage-grid"/>
+        <view type="form" name="metaLanguage-form"/>
+        <context name="_tenantId" expr="bourse" />
+    </action-view>
+
+</object-views>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns="http://axelor.com/xml/ns/domain-models"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.1.xsd">
+
+    <module name="demo" package="com.axelor.demo.db"/>
+
+    <entity name="DemoWork" table="demo_work" sequential="false" cacheable="true">
+        <string name="name" required="true"/>
+        <date name="date" required="true" column="work_date"/>
+        <time name="hours" title="Time Spent" column="work_hours"/>
+    </entity>
+
+</domain-models>

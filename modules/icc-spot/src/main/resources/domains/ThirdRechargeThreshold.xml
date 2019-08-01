@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.0.xsd">
+
+    <module name="financial" package="com.vnbig.financial.db"/>
+    <entity name="ThirdRechargeThreshold"  table="ThirdRechargeThreshold" sequential="false" cacheable="false">
+        <string name="thirdSource" unique="false" required="true" title="ThirdSource"/>
+        <string name="currency" unique="false" large="true" title="Currency"/>
+        <string name="sumCeil" unique="false" required="true" title="Currency"/>
+        <string name="transferred" unique="false" required="true" title="Transferred"/>
+        <string name="threshold" unique="false" required="true" title="Threshold"/>
+        <string name="remark" unique="false" required="true" title="Remark"/>
+    </entity>
+</domain-models>

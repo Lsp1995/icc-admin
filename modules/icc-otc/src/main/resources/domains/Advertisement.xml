@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.0.xsd">
+    <module name="otc" package="com.vnbig.otc.db"/>
+
+    <entity name="Advertisement" table="advertisement" sequential="false"  cacheable="false">
+        <string name="reqNo" required="true" unique="true"/>
+        <string name="tradeType" required="true" selection="ad-trade-type-select"/>
+        <!--<many-to-one name="tradeCurrency" ref="com.vnbig.otc.db.DigitalCurrency"-->
+        <!--title="tradeCurrency"  />-->
+        <!--&lt;!&ndash; column="tradeCurrency"  column="tradeMoney" &ndash;&gt;-->
+        <!--<many-to-one name="tradeMoney"     ref="com.vnbig.otc.db.LegalMoney"-->
+        <!--title="tradeMoney" />-->
+
+        <string name="tradeCurrency" required="true"/>
+        <string name="tradeMoney" required="true"/>
+        <string name="exchange" required="true"/>
+        <string name="pmIds" required="true"/>
+        <string name="accountCode" required="true"/>
+        <string name="userCode" required="true"/>
+        <string name="remark" required="true" max="1024"/>
+        <string name="instruction" max="1024" />
+        <string name="greetings" required="true"/>
+        <string name="ending" required="true"/>
+        <string name="cu" required="true"/>
+
+        <decimal name="quantity" required="true"/>
+        <decimal name="price" required="true" precision="16" scale="2"/>
+        <decimal name="premiumRate" required="true"/>
+        <decimal name="acceptPrice"  />
+        <decimal name="minVolume" required="true"/>
+        <decimal name="maxVolume" required="true"/>
+        <decimal name="availableQuantity" required="true"/>
+        <decimal name="rate" required="true"  />
+        <decimal name="fee" required="true"  />
+        <decimal name="lockQuantity" required="true"/>
+
+        <boolean name="priceFixed" required="true" selection="ad-price-fixed-select"/>
+        <boolean name="isRecommend" required="true"/>
+
+        <integer name="processingNumber" required="true"/>
+        <integer name="transactionsNumber" required="true"/>
+        <integer name="status" required="true" selection="ad-status-select"/>
+        <integer name="buyerDeadline" required="true"/>
+        <integer name="sellerDeadline" required="true"/>
+        <integer name="appealDeadline"/>
+        <integer name="adDeadline" required="true"/>
+        <integer name="orderCount" required="true"/>
+        <integer name="authType" required="true"/>
+
+
+        <time name="startSt"/>
+        <time name="endSt"/>
+        <datetime name="endDate"/>
+        <datetime name="lmd" required="true"/>
+        <datetime name="cd" required="true"/>
+    </entity>
+
+
+</domain-models>

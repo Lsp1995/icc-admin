@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.0.xsd">
+
+    <module name="operation" package="com.vnbig.operation.db"/>
+    <entity name="OperationLogs" table="OperationLogs" sequential="false" cacheable="false">
+        <integer name="ve" unique="false" required="true"/>
+        <string name="clazzName" required="true" unique="false"/>
+        <string name="ip" unique="false"/>
+        <string name="methodDesc" unique="false"/>
+        <string name="methodName" unique="false"/>
+        <string name="methodType" unique="false"/>
+        <string name="moduleDesc" unique="false"/>
+        <string name="moduleName" unique="false"/>
+        <long name="operatorTime" unique="false"/>
+        <string name="params" unique="false" large="true"/>
+        <string name="user" column="`user`" unique="false"/>
+        <string name="userId" unique="false"/>
+        <string name="userName" unique="false"/>
+    </entity>
+</domain-models>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.0.xsd">
+
+    <module name="financial" package="com.vnbig.financial.db"/>
+    <entity name="InOutMoney"  table="InOutMoney" sequential="false" cacheable="false">
+        <decimal name="actualAmount" unique="false"/>
+        <decimal name="amount" required="true" unique="false"/>
+        <string name="assetAccount" required="true" unique="false"/>
+        <string name="currency" required="true" unique="false"/>
+        <boolean name="enabled" required="true" unique="false"/>
+        <decimal name="fee" unique="false"/>
+        <boolean name="inOut" required="true" unique="false" selection="com.vnbig.inOutMoney.inOut.select"/>
+        <string name="outTradeNo" unique="false"/>
+        <string name="payAccount"  unique="false"/>
+        <string name="postscript" unique="false"/>
+        <string name="remark" unique="false"/>
+        <integer name="status" unique="false" selection="com.vnbig.inOutMoney.status.select"/>
+        <string name="user" column="`user`" required="true" unique="false"/>
+        <decimal name="minerFee" unique="false"/>
+        <string name="minerFeeCurrency" unique="false"/>
+        <string name="outRemark" unique="false"/>
+        <integer name="outStatus" unique="false"/>
+        <decimal name="actualMinerFee" unique="false"/>
+        <datetime name="cd" unique="false"/>
+        <datetime name="lmd" unique="false"/>
+        <string name="cu" unique="false"/>
+        <string name="lmu" unique="false"/>
+        <string name="val" unique="false"/>
+    </entity>
+</domain-models>

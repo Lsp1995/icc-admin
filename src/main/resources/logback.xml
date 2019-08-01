@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="3 seconds">
+
+    <property name="LOG_PATH" value="./logs"/>
+    <property name="ROLLING_FILE_NAME" value="icc-admin"/>
+
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>
+                log:%d{yyyy-MM-dd HH:mm:ss.SSS} [%X] [%thread] %-5level %C [%M:%L] - %msg%n
+            </Pattern>
+        </layout>
+    </appender>
+
+    <appender name="ROLLING_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <FileNamePattern>${LOG_PATH}/${ROLLING_FILE_NAME}.%d{yyyy-MM-dd}-%i.log</FileNamePattern>
+            <MaxHistory>30</MaxHistory>
+            <MaxFileSize>512MB</MaxFileSize>
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>
+                log:%d{yyyy-MM-dd HH:mm:ss.SSS} [%X] [%thread] %-5level %C [%M:%L] - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+
+
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="ROLLING_FILE"/>
+    </root>
+
+</configuration>

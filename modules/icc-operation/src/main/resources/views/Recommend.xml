@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <grid name="recommend-grid" title="Recommend" model="com.vnbig.operation.db.Recommend" canDelete="false" canNew="false" orderBy="-cd">
+        <field name="cd"/>
+        <field name="createUserAccount"/>
+        <field name="title"/>
+        <field name="picture"/>
+        <field name="name"/>
+        <field name="rank"/>
+        <field name="language"/>
+        <field name="lastModifyUserAccount"/>
+        <field name="lmd"/>
+        <field name="enabled"/>
+    </grid>
+    <form title="Recommend" name="recommend-form" model="com.vnbig.operation.db.Recommend" canNew="false">
+        <field name="cd" title="Cd" readonly="true"/>
+        <field name="cu" title="Cu" readonly="true"/>
+        <field name="lmd" title="Lmd" readonly="true"/>
+        <field name="lmu" title="Lmu" readonly="true"/>
+        <field name="ve" title="Ve" readonly="true"/>
+        <field name="val" title="Val" readonly="true"/>
+        <field name="createUserAccount"/>
+        <field name="title"/>
+        <field name="picture"/>
+        <field name="name"/>
+        <field name="rank"/>
+        <field name="language"/>
+        <field name="lastModifyUserAccount"/>
+        <field name="enabled"/>
+        <field name="categoryId"/>
+        <field name="informationId"/>
+    </form>
+</object-views>

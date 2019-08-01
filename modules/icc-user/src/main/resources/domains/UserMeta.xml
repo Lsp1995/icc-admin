@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.0.xsd">
+
+    <module name="user" package="com.vnbig.user.db"/>
+    <entity name="UserMeta"  table="UserMeta" sequential="false" >
+        <integer name="type" unique="false"/>
+        <string name="userId" unique="false" required="true"/>
+        <string name="back" unique="false"/>
+        <string name="cardNo" unique="false"/>
+        <string name="front" unique="false"/>
+        <string name="hold" unique="false"/>
+        <string name="name" unique="false"/>
+        <integer name="level" column="`level`" unique="false"/>
+        <string name="url" unique="false"/>
+        <string name="address" unique="false"/>
+        <datetime name="cd" unique="false"/>
+        <datetime name="lmd" unique="false"/>
+        <string name="cu" unique="false"/>
+        <string name="lmu" unique="false"/>
+        <integer name="ve" unique="false"/>
+        <string name="val" unique="false"/>
+
+    </entity>
+</domain-models>

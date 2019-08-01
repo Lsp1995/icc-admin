@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.0.xsd">
+    <module name="otc" package="com.vnbig.otc.db"/>
+
+    <entity name="BaseConfig" table="base_config" sequential="false" cacheable="true">
+        <integer name="buyerDeadline"/>
+        <integer name="sellerDeadline"/>
+        <integer name="appealDeadline"/>
+        <integer name="adDeadline"/>
+        <decimal name="merchantDeposit"/>
+        <string name="depositCurrency"/>
+
+        <string name="cu"/>
+        <string name="lmu"/>
+        <boolean name="enabled" required="true" default="0"/>
+
+        <datetime name="cd"/>
+        <datetime name="lmd"/>
+    </entity>
+
+</domain-models>

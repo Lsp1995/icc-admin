@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+
+    <!--<search name="legalmoney-search" title="legalmoneySearch" limit="100">-->
+    <!--<search-fields>-->
+    <!--<field name="enabled" type="string" title="enabled-11" target="com.vnbig.otc.db.LegalMoney"/>-->
+    <!--<field name="code" type="string" title="code-11"/>-->
+    <!--</search-fields>-->
+    <!--<result-fields>-->
+    <!--<field name="enabled" type="string" title="enabled-22"/>-->
+    <!--<field name="code" type="string" title="code-22"/>-->
+    <!--</result-fields>-->
+    <!--<select model="com.vnbig.otc.db.LegalMoney" orderBy="id">-->
+    <!--<field name="code" as="code" />-->
+    <!--<field name="enabled" as="enabled"/>-->
+    <!--<where>-->
+    <!--<input name="input_code" field="code" />-->
+    <!--<input name="input_enabled" field="enabled"/>-->
+    <!--</where>-->
+    <!--</select>-->
+    <!--</search>-->
+
+
+    <!--虚拟货币界面-->
+    <grid name="DigitalCurrency-grid" title="DigitalCurrency" model="com.vnbig.otc.db.DigitalCurrency"
+          canDelete="false" canEdit="true"
+          canSave="true">
+        <field name="code" title="Dicode"/>
+        <field name="enabled"/>
+
+    </grid>
+    <form name="DigitalCurrency-form" title="DigitalCurrency" model="com.vnbig.otc.db.DigitalCurrency"
+          canNew="true" canDelete="true" canEdit="true" canSave="true"
+          >
+        <panel title="DigitalCurrency" itemSpan="12">
+
+            <field name="id" readonly="true"/>
+
+            <field name="code" title="Dicode" required="true" unique="true"/>
+            <field name="enabled" required="true"/>
+
+
+            <field name="cd" title="Cd"/>
+            <field name="cu" title="Cu"/>
+            <field name="lmd" title="Lmd"/>
+            <field name="lmu" title="Lmu"/>
+        </panel>
+    </form>
+
+
+</object-views>

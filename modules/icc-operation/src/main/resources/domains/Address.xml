@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.0.xsd">
+
+    <module name="operation" package="com.vnbig.operation.db"/>
+    <entity name="Address"  table="Address" sequential="false" cacheable="false">
+        <boolean name="enabled" required="true" unique="false"/>
+        <integer name="rank" required="true" unique="false"/>
+        <string name="areaCode" unique="false"/>
+        <string name="code" unique="false"/>
+        <string name="description" unique="false" large="true"/>
+        <string name="language" unique="false" selection="com.vnbig.operation.language.select"/>
+        <string name="name" unique="false"/>
+        <string name="shortName" unique="false"/>
+        <string name="fatherId" unique="false"/>
+        <datetime name="cd" unique="false"/>
+        <datetime name="lmd" unique="false"/>
+        <string name="cu" unique="false"/>
+        <string name="lmu" unique="false"/>
+        <integer name="ve" unique="false"/>
+        <string name="val" unique="false"/>
+    </entity>
+</domain-models>

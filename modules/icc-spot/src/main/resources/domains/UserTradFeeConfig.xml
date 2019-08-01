@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.0.xsd">
+
+    <module name="financial" package="com.vnbig.financial.db"/>
+    <entity name="UserTradFeeConfig"  table="UserTradFeeConfig" sequential="false" cacheable="false">
+        <boolean name="enabled" required="true" unique="false"/>
+        <string name="exchange" unique="false"/>
+        <integer name="feeType" unique="false"/>
+        <decimal name="rate" unique="false"/>
+        <string name="userId" unique="false" required="true"/>
+        <string name="varietyCode" unique="false" required="true"/>
+        <datetime name="cd" unique="false"/>
+        <datetime name="lmd" unique="false"/>
+        <string name="cu" unique="false"/>
+        <string name="lmu" unique="false"/>
+        <integer name="ve" unique="false"/>
+        <string name="val" unique="false"/>
+    </entity>
+</domain-models>

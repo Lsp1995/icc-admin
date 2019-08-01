@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <menuitem name="otc" order="8" title="OTCProject" icon="fa-shopping-cart" icon-background="orange"/>
+    <menuitem name="menu-parameter-config" parent="otc" title="ParameterConfig"/>
+
+
+    <!---##########################################基础配置部分##########################################################-->
+    <menuitem name="menu-digital-currency" parent="menu-parameter-config" title="DigitalCurrency"
+              action="digital.currency"/>
+    <action-view name="digital.currency" title="DigitalCurrency" model="com.vnbig.otc.db.DigitalCurrency">
+        <view type="grid" name="DigitalCurrency-grid"/>
+        <view type="form" name="DigitalCurrency-form"/>
+        <context name="_tenantId" expr="otc" />
+    </action-view>
+
+
+    <menuitem name="menu-legal-money" parent="menu-parameter-config" title="LegalMoney"
+              action="legal.money"/>
+    <action-view name="legal.money" title="LegalMoney" model="com.vnbig.otc.db.LegalMoney">
+        <view type="grid" name="LegalMoney-grid"/>
+        <view type="form" name="LegalMoney-form"/>
+        <context name="_tenantId" expr="otc" />
+    </action-view>
+
+
+    <menuitem name="menu-base-config" parent="menu-parameter-config" title="BaseConfig"
+              action="base.config"/>
+    <action-view name="base.config" title="BaseConfig" model="com.vnbig.otc.db.BaseConfig">
+        <view type="grid" name="BaseConfig-grid"/>
+        <view type="form" name="BaseConfig-form"/>
+        <context name="_tenantId" expr="otc" />
+    </action-view>
+
+    <menuitem name="menu-payment-method" parent="menu-parameter-config" title="PaymentMethod"
+              action="payment.method"/>
+    <action-view name="payment.method" title="PaymentMethod" model="com.vnbig.otc.db.PaymentMethod">
+        <view type="grid" name="PaymentMethod-grid"/>
+        <view type="form" name="PaymentMethod-form"/>
+        <context name="_tenantId" expr="otc" />
+    </action-view>
+
+    <menuitem name="menu-poundage" parent="menu-parameter-config" title="Poundage"
+              action="poundage"/>
+    <action-view name="poundage" title="Poundage" model="com.vnbig.otc.db.Poundage">
+        <view type="grid" name="Poundage-grid"/>
+        <view type="form" name="Poundage-form"/>
+        <context name="_tenantId" expr="otc" />
+    </action-view>
+
+    <menuitem name="menu-trade-limit" parent="menu-parameter-config" title="TradeLimit"
+              action="trade.limit"/>
+    <action-view name="trade.limit" title="TradeLimit" model="com.vnbig.otc.db.TradeLimit">
+        <view type="grid" name="TradeLimit-grid"/>
+        <view type="form" name="TradeLimit-form"/>
+        <context name="_tenantId" expr="otc" />
+    </action-view>
+
+
+    <!---########################################## 商家认证 部分##########################################################-->
+
+    <menuitem name="menu-merchant-authenticate" parent="otc" title="MerchantAuthenticate"
+              action="merchant.authenticate"/>
+    <action-view name="merchant.authenticate" title="MerchantAuthenticate"
+                 model="com.vnbig.otc.db.MerchantAuthenticate">
+        <view type="grid" name="merchantauthenticate-grid"/>
+        <view type="form" name="merchantauthenticate-form"/>
+        <context name="_tenantId" expr="otc" />
+    </action-view>
+
+
+    <!---##########################################投诉 部分##########################################################-->
+
+
+    <menuitem name="menu-appeal" parent="otc" title="Appeal"
+              action="appeal"/>
+    <action-view name="appeal" title="Appeal" model="com.vnbig.otc.db.Appeal">
+        <view type="grid" name="Appeal-grid"/>
+        <view type="form" name="Appeal-form"/>
+        <context name="_tenantId" expr="otc" />
+    </action-view>
+
+    <!--<menuitem name="menu-advertisement" parent="otc" title="Advertisement"-->
+    <!--action="advertisement"/>-->
+    <!--<action-view name="advertisement" title="Advertisement" model="com.vnbig.otc.db.Advertisement">-->
+    <!--<view type="grid" name="Advertisement-grid"/>-->
+    <!--<view type="form" name="Advertisement-form"/>-->
+    <!--</action-view>-->
+
+
+    <!---##########################################广告 ##########################################################-->
+
+
+    <menuitem name="menu-advertisement" parent="otc" title="Advertisement"
+              action="top.menu.advertisement.quotations"/>
+    <action-view name="top.menu.advertisement.quotations" title="advertisement quotations"
+                 model="com.vnbig.otc.db.Advertisement">
+        <view type="cards" name="advertisement-order-cards"/>
+        <view type="grid" name="advertisement-order-grid"/>
+        <view type="form" name="advertisement-order-form"/>
+        <view type="calendar" name="advertisement-order-calendar"/>
+        <context name="_tenantId" expr="otc" />
+    </action-view>
+    <!---##########################################订单部分##########################################################-->
+
+    <menuitem name="menu-order-info" parent="otc" title="OrderInfo"
+              action="order.info"/>
+    <action-view name="order.info" title="orderinfo" model="com.vnbig.otc.db.OrderInfo">
+        <view type="grid" name="OrderInfo-grid"/>
+        <view type="form" name="OrderInfo-form"/>
+        <context name="_tenantId" expr="otc" />
+    </action-view>
+
+
+    <!---##########################################资金明细 部分##########################################################-->
+
+    <menuitem name="menu-capitaldetail-info" parent="otc" title="CapitalDetail"
+              action="capitaldetail.info"/>
+    <action-view name="capitaldetail.info" title="CapitalDetail" model="com.vnbig.otc.db.OtcCapitalDetail">
+        <view type="grid" name="OtcCapitalDetail-grid"/>
+        <view type="form" name="OtcCapitalDetail-form"/>
+        <context name="_tenantId" expr="otc" />
+    </action-view>
+
+</object-views>

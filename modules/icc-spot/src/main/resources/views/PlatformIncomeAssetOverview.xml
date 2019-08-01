@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <!--平台收入资产概览-->
+    <grid name="platformIncome-grid" title="PlatformIncome" model="com.vnbig.financial.db.PlatformIncomeAssetOverview" canDelete="false" canNew="false" canEdit="false" edit-icon="false">
+        <field name="currency" title="Currency"/>
+        <field name="asiaPacificFee" title="AsiaPacificFee"/>
+        <field name="globalFee" title="GlobalFee"/>
+        <field name="otcFee" title="OtcFee"/>
+        <field name="leverFee" title="LeverFee"/>
+        <field name="borrowCoinInterest" title="BorrowCoinInterest"/>
+        <field name="contractFee" title="ContractFee"/>
+        <field name="withdrawFee" title="WithdrawFee"/>
+    </grid>
+
+    <form name="platformIncome-form" title="PlatformIncome" model="com.vnbig.financial.db.PlatformIncomeAssetOverview" width="large"  canSave="false"
+          canDelete="false" canEdit="false" canNew="false" canAttach="false">
+        <panel title="PlatformIncome" itemSpan="4" readonly="true">
+            <field name="currency" title="Currency"/>
+            <field name="asiaPacificFee" title="AsiaPacificFee"/>
+            <field name="globalFee" title="GlobalFee"/>
+            <field name="otcFee" title="OtcFee"/>
+            <field name="leverFee" title="LeverFee"/>
+            <field name="borrowCoinInterest" title="BorrowCoinInterest"/>
+            <field name="contractFee" title="ContractFee"/>
+            <field name="withdrawFee" title="WithdrawFee"/>
+        </panel>
+    </form>
+
+</object-views>

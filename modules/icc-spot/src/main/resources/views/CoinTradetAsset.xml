@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <grid name="coinTradeAsset-grid" title="CoinTradeAsset" model="com.vnbig.financial.db.CoinTradeAsset" canDelete="false" canNew="false" canEdit="false" edit-icon="false">
+        <field name="currency" title="Currency"/>
+        <field name="available" title="CoinAvailableAsset"/>
+        <field name="freeze" title="CoinFreezeAsset"/>
+    </grid>
+
+    <form name="coinTradeAsset-form" title="CoinTradeAsset" model="com.vnbig.financial.db.CoinTradeAsset" width="large"  canSave="false"
+          canDelete="false" canEdit="false" canNew="false" canAttach="false">
+        <panel title="CoinTradeAsset" itemSpan="4" readonly="true">
+            <field name="currency" title="Currency"/>
+            <field name="available" title="CoinAvailableAsset"/>
+            <field name="freeze" title="CoinFreezeAsset"/>
+        </panel>
+    </form>
+
+</object-views>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.0.xsd">
+
+    <module name="financial" package="com.vnbig.financial.db"/>
+    <entity name="CapitalAccount" table="CapitalAccount" sequential="false" cacheable="false">
+        <date name="cd" unique="false"/>
+        <date name="lmd" unique="false"/>
+        <string name="cu" unique="false"/>
+        <string name="lmu" unique="false"/>
+        <string name="val" unique="false"/>
+        <string name="code" required="true" unique="false"/>
+        <string name="user" column="`user`" unique="false" required="true"/>
+        <string name="currency" unique="false"/>
+        <string name="category" required="true" unique="false" selection="com.vnbig.capitalAccount.category.select"/>
+        <string name="type" unique="false" selection="com.vnbig.capitalAccount.type.select"/>
+        <boolean name="enabled" required="true" unique="false"/>
+        <string name="exchange" unique="false"/>
+        <string name="thirdParty" unique="false" title="Third party"/>
+        <string name="fatherId" unique="false"/>
+        <integer name="rank" unique="false"/>
+    </entity>
+</domain-models>

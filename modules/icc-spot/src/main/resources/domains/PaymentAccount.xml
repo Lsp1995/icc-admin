@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.0.xsd">
+
+    <module name="financial" package="com.vnbig.financial.db"/>
+    <entity name="PaymentAccount"  table="PaymentAccount" sequential="false" cacheable="false">
+        <string name="account" required="true" unique="false" title="AccountAddress"/>
+        <string name="assetAccount" required="true" unique="false" title="Asset account"/>
+        <string name="channel" required="true" unique="false"/>
+        <string name="description" unique="false"/>
+        <boolean name="enabled" required="true" unique="false"/>
+        <string name="name" unique="false"/>
+        <boolean name="rank" required="true" unique="false"/>
+        <datetime name="cd" unique="false"/>
+        <datetime name="lmd" unique="false"/>
+        <string name="cu" unique="false"/>
+        <string name="lmu" unique="false"/>
+    </entity>
+</domain-models>

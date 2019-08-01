@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <grid name="info-grid" title="Information" model="com.vnbig.operation.db.Information" canDelete="false" canNew="false" canEdit="false" edit-icon="false" orderBy="-cd">
+        <field name="cd"/>
+        <field name="createUserAccount"/>
+        <field name="title"/>
+        <field name="thumbnail"/>
+        <field name="digest"/>
+        <field name="hot"/>
+        <field name="name"/>
+        <field name="rank"/>
+        <field name="language"/>
+        <field name="enabled"/>
+        <field name="enableHot"/>
+        <field name="lastModifyUserAccount"/>
+        <field name="lmd"/>
+        <field name="client"/>
+    </grid>
+    <form name="info-form" title="Information" model="com.vnbig.operation.db.Information" canDelete="false" canEdit="false" canNew="false" width="large">
+        <panel title="Information" itemSpan="4">
+            <field name="cd" title="Cd"/>
+            <field name="cu" title="Cu"/>
+            <field name="lmd" title="Lmd"/>
+            <field name="lmu" title="Lmu"/>
+            <field name="ve" title="Ve"/>
+            <field name="val" title="Val"/>
+            <field name="language"/>
+            <field name="title"/>
+            <field name="digest"/>
+            <field name="releaseTime"/>
+            <field name="author"/>
+            <field name="source"/>
+            <field name="thumbnail"/>
+            <field name="enabled"/>
+            <field name="hot"/>
+            <field name="tags"/>
+            <field name="content" widget="html"/>
+            <field name="projectPartyIcon"/>
+        </panel>
+    </form>
+
+</object-views>

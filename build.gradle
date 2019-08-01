@@ -1,0 +1,58 @@
+buildscript {
+    ext.repos = {
+        jcenter()
+        mavenCentral()
+        mavenLocal()
+        maven { url 'https://plugins.gradle.org/m2/' }
+       // maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'https://repository.axelor.com/nexus/public/' }
+
+    }
+    ext.adkVersion = '5.1.0'
+    ext.appVersion = '5.1.0'
+    repositories repos
+    dependencies {
+        classpath "com.axelor:axelor-gradle:${adkVersion}"
+    }
+}
+
+allprojects {
+    repositories repos
+}
+
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+apply plugin: "com.axelor.app"
+
+apply from: './gradle/style.gradle'
+
+axelor {
+    title = "icc :: admin"
+}
+
+allprojects {
+    apply plugin: 'idea'
+    apply plugin: 'eclipse'
+
+    group = "com.axelor"
+    version = "${appVersion}"
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+}
+
+dependencies {
+
+    compile project(":modules:icc-demo")
+    compile project(":modules:icc-instrument")
+    compile project(":modules:icc-instrument")
+    compile project(":modules:icc-user")
+    compile project(":modules:icc-wallet")
+    compile project(":modules:icc-otc")
+    compile project(":modules:icc-spot")
+    compile project(":modules:icc-contract")
+    compile project(":modules:icc-message")
+    compile project(":modules:icc-operation")
+    compile project(":modules:icc-community")
+
+}

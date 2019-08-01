@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <grid name="ordersDetail-grid" title="OrdersDetailList" model="com.vnbig.trading.db.OrdersDetail" canDelete="false" canNew="false"
+          canEdit="false" edit-icon="false" orderBy="-dealTime">
+        <field name="orders" title="ordersNumber"/>
+        <field name="vareity"/>
+        <!--<field name="user"/>-->
+        <field name="dealTime" widget="date-time"/>
+        <field name="command" title="command"/>
+        <field name="price" title="dealPrice"/>
+        <field name="volume" title="dealVolume"/>
+        <field name="feeType" title="Fee type" selection="com.vnbig.trading.feeType.select"/>
+        <field name="tradingFee"/>
+        <field name="status" title="status"/>
+    </grid>
+    <form name="ordersDetail-form" title="OrdersDetailList" model="com.vnbig.trading.db.OrdersDetail" canDelete="false" canEdit="false" canNew="false" width="large">
+        <panel title="OrdersDetailList" itemSpan="4" readonly="true">
+            <field name="orders"/>
+            <field name="vareity"/>
+            <!--<field name="user"/>-->
+            <field name="dealTime" widget="date-time"/>
+            <field name="command"/>
+            <field name="price"/>
+            <field name="volume"/>
+            <field name="feeType" selection="com.vnbig.trading.feeType.select"/>
+            <field name="tradingFee"/>
+            <field name="status"/>
+        </panel>
+
+    </form>
+</object-views>

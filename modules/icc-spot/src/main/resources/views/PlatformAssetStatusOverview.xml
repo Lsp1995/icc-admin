@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <!--平台资产状况概览-->
+    <grid name="platformAssets-grid" title="PlatformAssets" model="com.vnbig.financial.db.PlatformAssetStatusOverview" canDelete="false" canNew="false" canEdit="false" edit-icon="false">
+        <field name="currency" title="Currency"/>
+        <field name="rechargeTotalAsset" title="RechargeTotalAsset"/>
+        <field name="virtualRecharge" title="VirtualRecharge"/>
+        <field name="userAssetBalance" title="UserAssetsBalance"/>
+        <field name="paradropFreeze" title="ParadropFreeze"/>
+        <field name="withdrawTotalAsset" title="WithdrawTotalAsset"/>
+        <field name="virtualWithdraw" title="VirtualWithdraw"/>
+    </grid>
+
+    <form name="platformAssets-form" title="PlatformAssets" model="com.vnbig.financial.db.PlatformAssetStatusOverview" width="large"  canSave="false"
+          canDelete="false" canEdit="false" canNew="false" canAttach="false">
+        <panel title="PlatformAssets" itemSpan="4" readonly="true">
+            <field name="currency" title="Currency"/>
+            <field name="rechargeTotalAsset" title="RechargeTotalAsset"/>
+            <field name="virtualRecharge" title="VirtualRecharge"/>
+            <field name="userAssetBalance" title="UserAssetBalance"/>
+            <field name="paradropFreeze" title="ParadropFreeze"/>
+            <field name="withdrawTotalAsset" title="WithdrawTotalAsset"/>
+            <field name="virtualWithdraw" title="VirtualWithdraw"/>
+        </panel>
+    </form>
+
+</object-views>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+
+    <!--支付方式-->
+    <grid name="PaymentMethod-grid" title="PaymentMethod" model="com.vnbig.otc.db.PaymentMethod">
+        <field name="code" title="Paycode"/>
+        <field name="name"/>
+        <field name="icon"/>
+        <field name="enabled"/>
+    </grid>
+    <form name="PaymentMethod-form" title="PaymentMethod" model="com.vnbig.otc.db.PaymentMethod"
+          canNew="true" canDelete="true" canEdit="true" canSave="true"
+
+    >
+        <panel title="PaymentMethod" itemSpan="12">
+            <field name="id" readonly="true"/>
+
+
+            <field name="code" title="Paycode" required="true"  unique="true"/>
+            <field name="name" required="true"  unique="true"/>
+
+            <field name="en_name" required="true"/>
+            <field name="hk_name" required="true"/>
+            <field name="vn_name" required="true"/>
+            <field name="icon" required="true"  unique="true"/>
+            <field name="enabled" required="true"  />
+
+            <field name="cd" />
+            <field name="lmd"  />
+            <field name="cu"   />
+            <field name="lmu"   />
+
+
+        </panel>
+    </form>
+
+</object-views>

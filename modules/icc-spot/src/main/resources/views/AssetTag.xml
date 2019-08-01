@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <grid name="assetTag-grid" title="AssetTag" model="com.vnbig.financial.db.AssetTag" canDelete="false" canNew="false" canEdit="false" edit-icon="false">
+        <field name="name"/>
+        <field name="code"/>
+        <field name="description"/>
+    </grid>
+
+    <form name="assetTag-form" title="AssetTag" model="com.vnbig.financial.db.AssetTag" width="large"  canSave="false"
+    canDelete="false" canEdit="false" canNew="false" canAttach="false">
+        <field name="name"/>
+        <field name="code"/>
+        <field name="description" widget="Text" colSpan="12"/>
+    </form>
+
+</object-views>

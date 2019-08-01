@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <grid name="capitalWater-grid" title="CapitalWater" model="com.vnbig.financial.db.CapitalWater" canDelete="false"
+          canEdit="false" canNew="false" edit-icon="false">
+        <field name="user" title="userCode"/>
+        <field name="account" title="CapitalAccount"/>
+        <field name="businessCode" title="businessCode"/>
+        <field name="cause" title="Cause" selection="com.vnbig.AssetWater.cause.select"/>
+        <field name="checking" title="Asset Water Checking"/>
+        <field name="checkingTime" title="Checking time"/>
+        <field name="currency"/>
+        <field name="tag"/>
+        <field name="sourceId"/>
+        <field name="amount" title="Amount of funds"/>
+        <field name="fee" title="Fee"/>
+        <field name="time" widget="date-time"/>
+    </grid>
+    <form name="capitalWater-form" title="CapitalWater" model="com.vnbig.financial.db.CapitalWater" width="large" canSave="false"
+          canDelete="false" canEdit="false" canNew="false" canAttach="false" canArchive="false">
+        <panel title="CapitalWater" itemSpan="4" readonly="true">
+            <field name="id" hidden="false"/>
+            <field name="user" title="userCode"/>
+            <field name="account" title="CapitalAccount"/>
+            <field name="businessCode" title="businessCode"/>
+            <field name="capitalDetailId" title="capitalDetailId"/>
+            <field name="inAccountType" title="inAccountType"/>
+            <field name="outAccountType" title="outAccountType"/>
+            <field name="inAccountCategory" title="inAccountCategory"/>
+            <field name="outAccountCategory" title="outAccountCategory"/>
+            <field name="inCapitalDetailId" title="inCapitalDetailId"/>
+            <field name="inAccountCode" title="inAccountCode"/>
+            <field name="outAccountCode" title="outAccountCode"/>
+            <field name="currency"/>
+            <field name="outBeforeBalance" title="outBeforeBalance"/>
+            <field name="outAfterBalance" title="outAfterBalance"/>
+            <field name="inBeforeBalance" title="inBeforeBalance"/>
+            <field name="inAfterBalance" title="inAfterBalance"/>
+            <field name="inTag" title="inTag"/>
+            <field name="outTag" title="outTag"/>
+            <field name="rewardType" title="rewardType"/>
+            <field name="amount" title="Amount of funds"/>
+            <field name="fee" title="Fee"/>
+            <field name="feeCurrency" title="Fee Currency"/>
+            <field name="sourceId" title="sourceId"/>
+            <field name="encrypt" title="Encrypt"/>
+            <field name="cause" title="Cause" selection="com.vnbig.AssetWater.cause.select"/>
+            <field name="cu" title="cu"/>
+            <field name="description" title="Remark"/>
+            <field name="time" widget="date-time"/>
+            <field name="checking" title="Asset Water Checking"/>
+            <field name="checkingTime" title="Checking Time" widget="date-time"/>
+            <field name="val" title="val"/>
+            <field name="updateTime" title="updateTime" widget="date-time"/>
+        </panel>
+    </form>
+</object-views>

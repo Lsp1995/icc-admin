@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.0.xsd">
+
+    <module name="financial" package="com.vnbig.financial.db"/>
+    <entity name="DailyPlatformExpend" table="DailyPlatformExpend" sequential="false" cacheable="false">
+        <string name="currency" unique="false"/>
+        <integer name="statDate" unique="false"/>
+        <decimal name="withdrawMinerFeeExpend" unique="false"/>
+        <decimal name="rewardExpend" unique="false"/>
+    </entity>
+</domain-models>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.0.xsd">
+
+    <module name="financial" package="com.vnbig.financial.db"/>
+    <entity name="CapitalFreezeThawWater" table="CapitalFreezeThawWater" sequential="false" cacheable="false">
+        <long name="businessCode" unique="false"/>
+        <string name="account" unique="false" required="true"/>
+        <string name="user" column="`user`" unique="false"/>
+        <string name="capitalDetailId" unique="false"/>
+        <string name="type" unique="false"/>
+        <string name="currency" unique="false"/>
+        <decimal name="amount" unique="false"/>
+        <string name="sourceId" unique="false"/>
+        <integer name="cause" unique="false" selection="com.vnbig.AssetWater.cause.select"/>
+        <long name="time" unique="false"/>
+        <string name="description" unique="false" large="true"/>
+        <string name="encrypt" unique="false"/>
+        <string name="cu" unique="false"/>
+        <string name="val" unique="false"/>
+        <long name="updateTime" unique="false"/>
+    </entity>
+</domain-models>

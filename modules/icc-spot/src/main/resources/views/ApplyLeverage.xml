@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <grid name="ApplyLeverage-grid" title="ApplyLeverage" model="com.vnbig.leverage.db.ApplyLeverage" canNew="false"
+          canEdit="false" canDelete="false" edit-icon="false" orderBy="-applyTime">
+        <field name="account"/>
+        <field name="user"/>
+        <field name="capitalDetailId"/>
+        <field name="code"/>
+        <field name="variety"/>
+        <field name="currency"/>
+        <field name="type">
+            <hilite background="primary" if="type == 1"/>
+            <hilite background="warning" if="type == 0"/>
+        </field>
+        <field name="amount" title="ApplyAmount"/>
+        <field name="returnAmount"/>
+        <field name="paidInterest"/>
+        <field name="interestRate"/>
+        <field name="applyTime"/>
+        <field name="returnStatus"/>
+        <field name="cd"/>
+        <field name="badId"/>
+    </grid>
+    <form name="ApplyLeverage-form" title="ApplyLeverage" model="com.vnbig.leverage.db.ApplyLeverage" canNew="false"
+          canEdit="false" canDelete="false" width="large" canAttach="false">
+        <panel title="ApplyLeverage" itemSpan="3" readonly="true">
+            <field name="account"/>
+            <field name="user"/>
+            <field name="capitalDetailId"/>
+            <field name="code"/>
+            <field name="variety"/>
+            <field name="currency"/>
+            <field name="type" selection="com.vnbig.leverage.type.select"/>
+            <field name="amount" title="ApplyAmount"/>
+            <field name="returnAmount"/>
+            <field name="paidInterest"/>
+            <field name="interestRate"/>
+            <field name="applyTime"/>
+            <field name="returnStatus"/>
+            <field name="badId"/>
+        </panel>
+        <panel>
+            <field name="cd" title="Cd"/>
+            <field name="cu" title="Cu"/>
+            <field name="lmd" title="Lmd"/>
+            <field name="lmu" title="Lmu"/>
+        </panel>
+    </form>
+</object-views>

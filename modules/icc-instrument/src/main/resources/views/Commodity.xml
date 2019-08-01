@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.0.xsd">
+
+    <grid name="commodity-grid" title="Commodity" model="com.vnbig.bourse.db.Commodity" canDelete="false" orderBy="-rank">
+        <field name="name"/>
+        <field name="code"/>
+        <field name="rank"/>
+        <field name="enabled" widget="boolean-switch"/>
+        <field name="cd" widget="date-time"/>
+        <button name="infoBtn" title="Details" icon="fa-info-circle" onClick="action-commodity-form"/>
+        <button name="syncBtn" title="Synchronous" icon="fa-refresh" onClick="com.vnbig.bourse.controller.BourseController:syncCommodity"/>
+    </grid>
+    <form name="commodity-form" title="Commodity" model="com.vnbig.bourse.db.Commodity"
+          width="large" canDelete="false" canAttach="false">
+        <panel title="Commodity" itemSpan="4">
+            <field name="name"/>
+            <field name="code"/>
+            <field name="rank"/>
+            <field name="enabled" widget="boolean-switch"/>
+            <field name="icon"/>
+            <field name="description" widget="Text"/>
+        </panel>
+        <panel sidebar="true">
+            <field name="cd" title="Cd" widget="date-time"/>
+            <field name="cu" title="Cu"/>
+            <field name="lmd" title="Lmd" widget="date-time"/>
+            <field name="lmu" title="Lmu"/>
+            <field name="ve" title="Ve" readonly="true"/>
+            <field name="val" title="Val" widget="Text" readonly="true"/>
+        </panel>
+    </form>
+
+    <form name="commodity-details-form" title="Details" model="com.vnbig.bourse.db.Commodity" width="large"
+          canNew="false" canEdit="false" canSave="false" canDelete="false" canAttach="false">
+        <panel-tabs>
+            <panel title="Essential information">
+                <panel  readonly="true">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="rank"/>
+                    <field name="enabled"/>
+                    <field name="icon"/>
+                    <field name="description" widget="Text"/>
+                </panel>
+                <panel sidebar="true" readonly="true">
+                    <field name="cd" title="Cd" widget="date-time"/>
+                    <field name="cu" title="Cu"/>
+                    <field name="lmd" title="Lmd" widget="date-time"/>
+                    <field name="lmu" title="Lmu"/>
+                    <field name="ve" title="Ve"/>
+                    <field name="val" title="Val" widget="Text"/>
+                </panel>
+            </panel>
+            <panel-dashlet title="MetaParam" action="action-metaParam-list"/>
+            <panel title="Commodity details">
+                <button name="addBtn" title="add item"  css="btn-success" icon="fa-plus" onClick="action-commodityInfo-add"/>
+                <panel-dashlet action="action-commodityInfo-list" colSpan="12" title="Commodity details"/>
+            </panel>
+        </panel-tabs>
+    </form>
+
+
+    <action-view name="action-commodity-form" title="Currency" model="com.vnbig.bourse.db.Commodity">
+        <view type="form" name="commodity-details-form"/>
+        <view-param name="popup" value="reload"/>
+        <view-param name="show-toolbar" value="false"/>
+        <view-param name="show-confirm" value="false" />
+        <view-param name="popup-save" value="false"/>
+        <view-param name="forceEdit" value="true"/>
+        <context name="_showRecord" expr="eval:id"/>
+        <context name="_tenantId" expr="bourse" />
+    </action-view>
+</object-views>

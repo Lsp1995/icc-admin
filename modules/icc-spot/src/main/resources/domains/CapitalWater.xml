@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.0.xsd">
+
+    <module name="financial" package="com.vnbig.financial.db"/>
+    <entity name="CapitalWater" table="CapitalWater" sequential="false" cacheable="false">
+        <string name="user" column="`user`" unique="false"/>
+        <string name="account" unique="false" required="true"/>
+        <long name="businessCode" unique="false"/>
+        <string name="capitalDetailId" unique="false"/>
+        <string name="inAccountType" unique="false"/>
+        <string name="outAccountType" unique="false"/>
+        <string name="inAccountCategory" unique="false"/>
+        <string name="outAccountCategory" unique="false"/>
+        <string name="inCapitalDetailId" unique="false"/>
+        <string name="outCapitalDetailId" unique="false"/>
+        <string name="inAccountCode" unique="false"/>
+        <string name="outAccountCode" unique="false"/>
+        <string name="currency" unique="false"/>
+        <decimal name="outBeforeBalance" unique="false"/>
+        <decimal name="outAfterBalance" unique="false"/>
+        <decimal name="inBeforeBalance" unique="false"/>
+        <decimal name="inAfterBalance" unique="false"/>
+        <string name="inTag" unique="false"/>
+        <string name="outTag" unique="false"/>
+        <string name="rewardType" unique="false"/>
+        <decimal name="amount" unique="false" title="Amount of funds"/>
+        <decimal name="fee" unique="false" title="Fee"/>
+        <string name="feeCurrency" unique="false" title="Fee Currency"/>
+        <string name="sourceId" unique="false"/>
+        <string name="encrypt" unique="false"/>
+        <string name="cause" unique="false" title="Cause" selection="com.vnbig.AssetWater.cause.select"/>
+        <string name="cu" unique="false"/>
+        <string name="description" unique="false" large="true"/>
+        <long name="time" unique="false"/>
+        <boolean name="checking" unique="false" title="Asset Water Checking"/>
+        <date name="checkingTime" unique="false"/>
+        <string name="val" unique="false"/>
+        <long name="updateTime" unique="false"/>
+    </entity>
+</domain-models>
