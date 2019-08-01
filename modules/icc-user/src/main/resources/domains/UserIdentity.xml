@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.0.xsd">
+
+    <module name="user" package="com.vnbig.user.db"/>
+    <entity name="UserIdentity"  table="user_identity" sequential="false"  cacheable="true">
+        <many-to-one name="userId" required="true" ref="UserInfo" column="user_id"/>
+        <string name="certName" column="cert_name" required="true" max="100" />
+        <integer name="certType" column="cert_type" required="true" />
+        <string name="certNo" column="cert_no" required="true" max="50"/>
+        <string name="front" column="front" required="true" max="200" />
+        <string name="back" column="back" required="true" max="200" />
+        <string name="hold" column="hold" required="true" max="200" />
+        <integer name="status" column="status" required="true" />
+        <string name="opinion" column="opinion" required="true" max="200" />
+        <long name="auditor" column="auditor" required="true" />
+    </entity>
+</domain-models>

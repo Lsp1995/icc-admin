@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.0.xsd">
+
+    <module name="user" package="com.vnbig.user.db"/>
+    <entity name="UserParam"  table="user_param" sequential="false"  cacheable="true">
+        <string name="val" column="val" required="true" max="200" />
+        <string name="code" column="code" required="true" max="50"/>
+        <long name="objId" column="obj_id" required="true" />
+        <integer name="type" column="type" required="true" />
+        <long name="def_id" column="def_id" required="true" />
+    </entity>
+</domain-models>

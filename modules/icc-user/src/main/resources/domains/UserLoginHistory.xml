@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.0.xsd">
+
+    <module name="user" package="com.vnbig.user.db"/>
+    <entity name="UserLoginHistory"  table="user_login_history" sequential="false"  cacheable="true">
+        <many-to-one name="userId" required="true" ref="UserInfo" column="user_id"/>
+        <string name="loginIp" column="login_ip" required="true" max="64" />
+        <string name="loginAgent" column="login_agent" required="true" max="250"/>
+        <integer name="siteType" column="site_type" required="true" />
+        <string name="loginAddress" column="login_address" required="true" max="50" />
+    </entity>
+</domain-models>
